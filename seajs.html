@@ -16,29 +16,20 @@
   <div class="wrapper">
     <header id="left-side"></header>
 
-    <section>      <h2>Basic demo</h2>
+    <section>
+          <h2>Work with SeaJS</h2>
 
       <p>Hey, friend!</p>
-      <p>
-        Your UserAgent:
-        <span id="useragent"></span>
-      </p>
-      <p>
-        Your Browser:
-        <span id="browser"></span>
-      </p>
-      <p>
-        Your OS:
-        <span id="os"></span>
-      </p>
-      <p>
-        Your Device:
-        <span id="device"></span>
-      </p>
+      <p>Your UserAgent: <span id="useragent"></span></p>
+      <p>Your Browser: <span id="browser"></span></p>
+      <p>Your Platform: <span id="platform"></span></p>
       <p>
         <br/>
       </p>
-
+      <p>
+        Images can be downloaded from <a href="https://github.com/zsxsoft/php-useragent" target="_blank">https://github.com/zsxsoft/php-useragent</a>
+      </p>
+      
     </section>
     <footer>
       <p>
@@ -55,14 +46,8 @@
   </div>
   <script src="javascripts/scale.fix.js"></script>
   <script src="javascripts/global.js"></script>
-  <script src="javascripts/useragent.min.js"></script>
-  <script>  (function () {
-    var ua = USERAGENT.analyze(navigator.userAgent);
-    document.getElementById("useragent").innerHTML = ua.ua;
-    document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
-    document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
-    document.getElementById("device").innerHTML = ua.device.full;
-  })();</script>
+  <script src="javascripts/sea.js"></script>
+  <script>seajs.use("./javascripts/sea-test.js")</script>
 
 </body>
 </html>

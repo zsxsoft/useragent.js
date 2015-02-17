@@ -15,8 +15,8 @@
 <body>
   <div class="wrapper">
     <header id="left-side"></header>
-
-    <section>      <h2>Basic demo</h2>
+    <section>
+      <h2>Work with RequireJS</h2>
 
       <p>Hey, friend!</p>
       <p>
@@ -28,15 +28,15 @@
         <span id="browser"></span>
       </p>
       <p>
-        Your OS:
-        <span id="os"></span>
-      </p>
-      <p>
-        Your Device:
-        <span id="device"></span>
+        Your Platform:
+        <span id="platform"></span>
       </p>
       <p>
         <br/>
+      </p>
+      <p>
+        Images can be downloaded from
+        <a href="https://github.com/zsxsoft/php-useragent" target="_blank">https://github.com/zsxsoft/php-useragent</a>
       </p>
 
     </section>
@@ -55,14 +55,7 @@
   </div>
   <script src="javascripts/scale.fix.js"></script>
   <script src="javascripts/global.js"></script>
-  <script src="javascripts/useragent.min.js"></script>
-  <script>  (function () {
-    var ua = USERAGENT.analyze(navigator.userAgent);
-    document.getElementById("useragent").innerHTML = ua.ua;
-    document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
-    document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
-    document.getElementById("device").innerHTML = ua.device.full;
-  })();</script>
+  <script data-main="javascripts/require-test" src="javascripts/require.js"></script>
 
 </body>
 </html>
