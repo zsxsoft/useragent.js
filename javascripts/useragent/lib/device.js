@@ -27,7 +27,7 @@
 		else if (/BlackBerry/i.test(ret.ua)) {
 			ret.name = "BlackBerry";
 
-			if (rep = ret.ua.match(/blackberry([.0-9a-zA-Z]+)\//i)) {
+			if (rep = ret.ua.match(/blackberry ?([.0-9a-zA-Z]+)/i)) {
 				ret.name += " " + rep[1];
 			}
 

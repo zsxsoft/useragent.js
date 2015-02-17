@@ -5,7 +5,7 @@
 		'11(4|5)Browser', '2345(Explorer|chrome)', '360se|360ee|360\ aphone\ browser', 'Abolimba', 'Acoo\ Browser', 'ANTFresco',
 		'Alienforce', 'Amaya', 'Amiga-AWeb', 'MRCHROME', 'America\ Online\ Browser', 'AmigaVoyager',
 		'AOL', 'Arora', 'AtomicBrowser', 'BarcaPro', 'Barca', 'Beamrise',
-		'Beonex', 'BA?IDUBrowser|BaiduHD', 'BlackBerry', 'Blackbird', 'BlackHawk', 'Blazer',
+		'Beonex', 'BA?IDUBrowser|BaiduHD', 'Blackbird', 'BlackHawk', 'Blazer',
 		'Bolt', 'BonEcho', 'BrowseX', 'Browzar', 'Bunjalloo', 'Camino',
 		'Cayman\ Browser', 'Charon', 'Cheshire', 'Chimera', 'chromeframe', 'ChromePlus',
 		'curl', 'Iron', 'Chromium', 'Classilla', 'Coast', 'Columbus',
@@ -154,10 +154,6 @@
 		"baiduhd": {
 			"title": "{%BaiduHD%}",
 			"image": "bidubrowser"
-		},
-		"blackberry": {
-			"title": "{%BlackBerry%}",
-			"image": "blackberry"
 		},
 		"blackbird": {
 			"title": "{%Blackbird%}",

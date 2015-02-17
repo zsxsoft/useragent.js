@@ -5,7 +5,7 @@
 		'11(4|5)Browser', '2345(Explorer|chrome)', '360se|360ee|360\ aphone\ browser', 'Abolimba', 'Acoo\ Browser', 'ANTFresco',
 		'Alienforce', 'Amaya', 'Amiga-AWeb', 'MRCHROME', 'America\ Online\ Browser', 'AmigaVoyager',
 		'AOL', 'Arora', 'AtomicBrowser', 'BarcaPro', 'Barca', 'Beamrise',
-		'Beonex', 'BA?IDUBrowser|BaiduHD', 'BlackBerry', 'Blackbird', 'BlackHawk', 'Blazer',
+		'Beonex', 'BA?IDUBrowser|BaiduHD', 'Blackbird', 'BlackHawk', 'Blazer',
 		'Bolt', 'BonEcho', 'BrowseX', 'Browzar', 'Bunjalloo', 'Camino',
 		'Cayman\ Browser', 'Charon', 'Cheshire', 'Chimera', 'chromeframe', 'ChromePlus',
 		'curl', 'Iron', 'Chromium', 'Classilla', 'Coast', 'Columbus',
@@ -154,10 +154,6 @@
 		"baiduhd": {
 			"title": "{%BaiduHD%}",
 			"image": "bidubrowser"
-		},
-		"blackberry": {
-			"title": "{%BlackBerry%}",
-			"image": "blackberry"
 		},
 		"blackbird": {
 			"title": "{%Blackbird%}",
@@ -1418,7 +1414,7 @@
 		else if (/BlackBerry/i.test(ret.ua)) {
 			ret.name = "BlackBerry";
 
-			if (rep = ret.ua.match(/blackberry([.0-9a-zA-Z]+)\//i)) {
+			if (rep = ret.ua.match(/blackberry ?([.0-9a-zA-Z]+)/i)) {
 				ret.name += " " + rep[1];
 			}
 
@@ -2211,6 +2207,9 @@
 				ret.version = rep[1];
 			}
 			ret.image = "amigaos";
+		} else if (/BB10/i.test(ret.ua)) {
+			ret.name = "BlackBerry OS 10";
+			ret.image = "blackberry";
 		} else if (/BeOS/i.test(ret.ua)) {
 			ret.name = "BeOS";
 			ret.image = "beos";
@@ -2369,6 +2368,8 @@
 
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
+		returnObject.version = "0.1";
+		returnObject.publishDate = "20150217";
 		returnObject.ua = uaString;
 		if (typeof this.osDetect !== 'undefined') returnObject.os = this.osDetect.analyze(uaString);
 		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
