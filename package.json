@@ -4,7 +4,7 @@
   "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "nodeunit test/test.js"
   },
   "repository": {
     "type": "git",
