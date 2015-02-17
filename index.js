@@ -6,11 +6,11 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-
+	userAgent.version = "0.1";
+	userAgent.publishDate = "20150217";
+	
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
-		returnObject.version = "0.1";
-		returnObject.publishDate = "20150217";
 		returnObject.ua = uaString;
 		if (typeof this.osDetect !== 'undefined') returnObject.os = this.osDetect.analyze(uaString);
 		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
