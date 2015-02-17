@@ -37,6 +37,7 @@ console.log("TEST DEVICE:" + ua.device.full);
 
 
 ####In Browser
+[Click here](http://zsxsoft.github.io/useragent.js/basic.html)
 ```javascript
 (function () {
 		var ua = USERAGENT.analyze(navigator.userAgent);
@@ -48,15 +49,16 @@ console.log("TEST DEVICE:" + ua.device.full);
 ```
 
 ####In RequireJS
-[Click here](https://github.com/zsxsoft/useragent.js/blob/master/example/requirejs.html)
+[Click here](http://zsxsoft.github.io/useragent.js/requirejs.html)
 
 ####In SeaJS
-[Click here](https://github.com/zsxsoft/useragent.js/blob/master/example/seajs.html)
+[Click here](http://zsxsoft.github.io/useragent.js/seajs.html)
 
 ####In Classical ASP
 I don't know how to create a global variable in a closure... 
 
 ##Work with image
+[Click here](http://zsxsoft.github.io/useragent.js/withimage.html)
 Have you noticed it? The returned object has an "image" field. You can copy images from [php-useragent](https://github.com/zsxsoft/php-useragent).
 
 

@@ -1635,10 +1635,6 @@
 			['img/16/browser/blazer.png', 'img/16/device/palm.png', 'Blazer 3.0', 'Palm'],
 		],
 		[
-			['Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+'],
-			['img/16/browser/blackberry.png', 'img/16/device/blackberry.png', 'BlackBerry 9900', 'BlackBerry'],
-		],
-		[
 			['Mozilla/5.0 (Windows; U; WinNT; en; rv:1.0.2) Gecko/20030311 Beonex/0.8.2-stable'],
 			['img/16/browser/beonex.png', 'img/16/os/win-2.png', 'Beonex 0.8.2', 'Windows'],
 		],
@@ -2216,6 +2212,14 @@
 		[
 			['Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Superbird/37.0.2062.90 Chrome/37.0.2062.90 Safari/537.36'],
 			['img/16/browser/superbird.png', 'img/16/os/win-5.png', 'Superbird 37.0.2062.90', 'Windows 8.1 x64'],
+		],
+		[
+			['Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+'],
+			['img/16/browser/safari.png', 'img/16/device/blackberry.png', 'Mobile Safari 7.1.0.346', 'BlackBerry 9900']
+		],
+		[
+			['Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+'],
+			['img/16/browser/safari.png', 'img/16/os/blackerry.png', 'Mobile Safari 10.0.9.2372', 'BlackBerry OS 10']
 		],
 	];
 

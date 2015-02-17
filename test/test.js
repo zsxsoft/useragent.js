@@ -6,6 +6,7 @@ exports.testUserAgents = function(test) {
 		var ua = userAgent.analyze(item[0][0]);
 		test.equals(item[1][2], ua.browser.full, ua.ua);
 		test.equals(item[1][3], ua.platform.full, ua.ua);
+
 		/*if (item[1][3] != ua.platform.full) {
 			console.log(ua.ua);
 			console.log(item[1][3]);
