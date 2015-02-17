@@ -1201,7 +1201,8 @@
 			ret.name = "NiChrome";
 			return "NiChrome " + ret.version;
 		} else if (lowerTitle == "opera labs") {
-			var rep = ret.ua.match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i');
+			var rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i
+				);
 			if (rep !== null) {
 				ret.version = rep[1];
 			} else {
@@ -1327,33 +1328,29 @@
 		} else if (/MSIE/i.test(ret.ua) || /Trident/i.test(ret.ua)) {
 			ret.full = "Internet Explorer" + getVersion(ret, 'MSIE')
 			ret.image = "msie";
-			var rep = ret.ua.match('/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i');
+			var rep = ret.ua.match(/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i);
 			if (rep !== null) {
-				if (rep[1] >= 11) {
+				var ieVersion = parseInt(rep[2]);
+				if (ieVersion >= 11) {
 					ret.image = "msie11";
-				} else if (rep[1] >= 10) {
+				} else if (ieVersion >= 10) {
 					ret.image = "msie10";
-				} else if (rep[1] >= 9) {
+				} else if (ieVersion >= 9) {
 					ret.image = "msie9";
-				} else if (rep[1] >= 7) {
+				} else if (ieVersion >= 7) {
 					ret.image = "msie7";
-				} else if (rep[1] >= 6) {
+				} else if (ieVersion >= 6) {
 					ret.image = "msie6";
-				} else if (rep[1] >= 4) {
+				} else if (ieVersion >= 4) {
 					ret.image = "msie4";
-				} else if (rep[1] >= 3) {
+				} else if (ieVersion >= 3) {
 					ret.image = "msie3";
-				} else if (rep[1] >= 2) {
+				} else if (ieVersion >= 2) {
 					ret.image = "msie2";
 				}
 			}
 		} else if (/Mozilla/i.test(ret.ua)) {
 			ret.full = "Mozilla Compatible";
-			var rep = ret.ua.match('/rv:([.0-9a-zA-Z]+)/i');
-			if (rep !== null) {
-				ret.version = rep[1];
-				ret.full = "Mozilla " + rep[1];
-			}
 			ret.image = "mozilla";
 		} else {
 			ret.name = "Unknown";
