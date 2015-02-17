@@ -13,6 +13,7 @@
 		var browserDetect = require('./lib/browser');
 	}
 
+
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
 		if (typeof osDetect !== 'undefined') returnObject.os = osDetect.analyze(uaString);
