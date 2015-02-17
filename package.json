@@ -19,7 +19,10 @@
     "url": "https://github.com/zsxsoft/useragent.js/issues"
   },
   "devDependencies": {
-    "nodeunit": "*"
+    "nodeunit": "*",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-closurecompiler": "~0.9.9"
   },
   "homepage": "https://github.com/zsxsoft/useragent.js"
 }
