@@ -29,3 +29,12 @@ exports.testLinux = function(test) {
 
 	test.done();
 }
+
+exports.testX64 = function(test) {
+	test.equals(true, userAgent.analyze("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0").os.x64);
+	test.equals(false, userAgent.analyze("Mozilla/5.0 (Linux; Android 4.4.2; HTC One Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36").os.x64);
+	test.equals(true, userAgent.analyze("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36").os.x64);
+	test.equals(true, userAgent.analyze("WIN64; X64").os.x64);
+
+	test.done();
+}
