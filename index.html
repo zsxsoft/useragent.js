@@ -14,49 +14,11 @@
 </head>
 <body>
   <div class="wrapper">
-    <header>
-      <h1>Useragent.js</h1>
-      <p>
-        A simple project that allows you to display details about a computer&#39;s operating system or web browser with a user-agent.
-      </p>
+    <header id="left-side">
 
-      <p class="view">
-        <a href="https://github.com/zsxsoft/useragent.js">
-          View the Project on GitHub
-          <small>zsxsoft/useragent.js</small>
-        </a>
-      </p>
-
-      <ul>
-        <li>
-          <a href="https://github.com/zsxsoft/useragent.js/zipball/master">
-            Download <strong>ZIP File</strong>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/zsxsoft/useragent.js/tarball/master">
-            Download <strong>TAR Ball</strong>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/zsxsoft/useragent.js">
-            View On
-            <strong>GitHub</strong>
-          </a>
-        </li>
-      </ul>
     </header>
-    <section>
-      <h1>
-        <a id="useragentjs" class="anchor" href="#useragentjs" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        useragent.js
-      </h1>
 
-      <p>
-        A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
-      </p>
+    <section>
 
       <h2>
         <a id="compatibility" class="anchor" href="#compatibility" aria-hidden="true">
@@ -65,15 +27,9 @@
         Compatibility
       </h2>
 
-      <p>Node.JS</p>
-
-      <p>Internet Explorer 6+</p>
-
-      <p>Google Chrome</p>
-
-      <p>Mozilla Firefox</p>
-
-      <p>Apple Safari</p>
+      <p>
+        Node.JS / Internet Explorer 6+ / Google Chrome / Mozilla Firefox / Apple Safari
+      </p>
 
       <h2>
         <a id="installion" class="anchor" href="#installion" aria-hidden="true">
@@ -133,59 +89,7 @@
         In Browser
       </h4>
 
-      <div class="highlight highlight-javascript">
-        <pre>(<span class="pl-st">function</span> () {
-        <span class="pl-s">var</span> ua <span class="pl-k">=</span> USERAGENT.analyze(<span class="pl-s3">navigator</span>.<span class="pl-sc">userAgent</span>);
-        <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">"</span>#useragent<span class="pl-pds">"</span></span>).innerHTML <span class="pl-k">=</span> ua.ua;
-        <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">"</span>#browser<span class="pl-pds">"</span></span>).innerHTML <span class="pl-k">=</span> ua.browser.full <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> (<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.<span class="pl-sc">name</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> VERSION = <span class="pl-pds">"</span></span>  <span class="pl-k">+</span> ua.browser.<span class="pl-sc">version</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> )<span class="pl-pds">"</span></span>;
-        <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">"</span>#os<span class="pl-pds">"</span></span>).innerHTML <span class="pl-k">=</span> ua.os.full <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> (<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.os.<span class="pl-sc">name</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> VERSION = <span class="pl-pds">"</span></span>  <span class="pl-k">+</span> ua.os.<span class="pl-sc">version</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> )<span class="pl-pds">"</span></span>;
-        <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">"</span>#device<span class="pl-pds">"</span></span>).innerHTML <span class="pl-k">=</span> ua.device.full;
-})();</pre>
-      </div>
-
-      <h4>
-        <a id="in-requirejs" class="anchor" href="#in-requirejs" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        In RequireJS
-      </h4>
-
-      <p>
-        <a href="https://github.com/zsxsoft/useragent.js/blob/master/example/requirejs.html">Click here</a>
-      </p>
-
-      <h4>
-        <a id="in-seajs" class="anchor" href="#in-seajs" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        In SeaJS
-      </h4>
-
-      <p>
-        <a href="https://github.com/zsxsoft/useragent.js/blob/master/example/seajs.html">Click here</a>
-      </p>
-
-      <h4>
-        <a id="in-classical-asp" class="anchor" href="#in-classical-asp" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        In Classical ASP
-      </h4>
-
-      <p>I don't know how to create a global variable in a closure...</p>
-
-      <h2>
-        <a id="work-with-image" class="anchor" href="#work-with-image" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Work with image
-      </h2>
-
-      <p>
-        Have you noticed it? The returned object has an "image" field. You can copy images from
-        <a href="https://github.com/zsxsoft/php-useragent">php-useragent</a>
-        .
-      </p>
+      <p>Look left!</p>
 
       <h2>
         <a id="supported-browsersplatforms" class="anchor" href="#supported-browsersplatforms" aria-hidden="true">
@@ -222,6 +126,7 @@
     </footer>
   </div>
   <script src="javascripts/scale.fix.js"></script>
+  <script src="javascripts/global.js"></script>
 
 </body>
 </html>
