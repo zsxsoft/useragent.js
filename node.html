@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Useragent.js by zsxsoft</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="wrapper">
+    <header id="left-side"></header>
+    <section>
+      <h2>Work in Node</h2>
+
+      <code><pre>
+var userAgent = require("useragent");
+var ua = userAgent.analyze("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36");
+console.log("TEST UA: " + ua.ua);
+console.log("TEST BROWSER:" + ua.browser.full + " (" + ua.browser.name + " VERSION = " + ua.browser.version + " )");
+console.log("TEST OS:" + ua.os.full + " (" + ua.os.name + " VERSION = " + ua.os.version + " )");
+console.log("TEST DEVICE:" + ua.device.full);
+</pre></code>
+
+    </section>
+    <footer>
+      <p>
+        This project is maintained by
+        <a href="https://github.com/zsxsoft">zsxsoft</a>
+      </p>
+      <p>
+        <small>
+          Hosted on GitHub Pages &mdash; Theme by
+          <a href="https://github.com/orderedlist">orderedlist</a>
+        </small>
+      </p>
+    </footer>
+  </div>
+  <script src="javascripts/scale.fix.js"></script>
+  <script src="javascripts/global.js"></script>
+
+</body>
+</html>
