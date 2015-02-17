@@ -1,0 +1,25 @@
+{
+  "name": "useragent.js",
+  "version": "1.0.0",
+  "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zsxsoft/useragent.js.git"
+  },
+  "keywords": [
+    "UserAgent"
+  ],
+  "author": "zsx <zsx@zsxsoft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsxsoft/useragent.js/issues"
+  },
+  "devDependencies": {
+    "nodeunit": "*"
+  },
+  "homepage": "https://github.com/zsxsoft/useragent.js"
+}
