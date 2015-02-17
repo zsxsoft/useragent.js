@@ -1,10 +1,11 @@
-(function() {
+(function(root) {
 	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
 	var CMD = typeof define !== 'undefined' && define.cmd;
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
+
 
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
@@ -48,8 +49,8 @@
 		if (typeof USERAGENT_OS !== 'undefined') userAgent.osDetect = new USERAGENT_OS();
 		if (typeof USERAGENT_DEVICE !== 'undefined') userAgent.deviceDetect = new USERAGENT_DEVICE();
 		if (typeof USERAGENT_BROWSER !== 'undefined') userAgent.browserDetect = new USERAGENT_BROWSER();
-		window.USERAGENT = userAgent;
+		root.USERAGENT = userAgent;
 	}
 
 
-})();
+})(this);
