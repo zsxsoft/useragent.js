@@ -1,5 +1,5 @@
 (function() {
-
+	"use strict";
 	var userAgent = {};
 
 
@@ -16,9 +16,12 @@
 
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
+		returnObject.ua = uaString;
 		if (typeof osDetect !== 'undefined') returnObject.os = osDetect.analyze(uaString);
 		if (typeof deviceDetect !== 'undefined') returnObject.device = deviceDetect.analyze(uaString);
 		if (typeof browserDetect !== 'undefined') returnObject.browser = browserDetect.analyze(uaString);
+		if (typeof returnObject.device !== 'undefined') returnObject.platform = returnObject.device;
+		if (typeof returnObject.os !== 'undefined' && returnObject.device.name == "") returnObject.platform = returnObject.os;
 		return returnObject;
 	}
 
