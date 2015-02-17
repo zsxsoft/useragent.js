@@ -55,3 +55,6 @@ console.log("TEST DEVICE:" + ua.device.full);
 
 ####In Classical ASP
 I don't know how to create a global variable in a closure... 
+
+##Work with image
+Have you noticed it? The returned object has an "image" field. You can copy images from [php-useragent](https://github.com/zsxsoft/php-useragent).
