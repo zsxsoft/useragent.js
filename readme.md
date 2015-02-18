@@ -55,7 +55,7 @@ console.log("TEST DEVICE:" + ua.device.full);
 [Click here](http://zsxsoft.github.io/useragent.js/seajs.html)
 
 ####In Classical ASP
-I don't know how to create a global variable in a closure... 
+[Click here](http://zsxsoft.github.io/useragent.js/classicalasp.html)
 
 ##Work with image
 [Click here](http://zsxsoft.github.io/useragent.js/withimage.html)
