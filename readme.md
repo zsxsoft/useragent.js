@@ -33,10 +33,10 @@ console.log("TEST DEVICE:" + ua.device.full);
 ```javascript
 (function () {
 		var ua = USERAGENT.analyze(navigator.userAgent);
-		document.getElementById("#useragent").innerHTML = ua.ua;
-		document.getElementById("#browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
-		document.getElementById("#os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
-		document.getElementById("#device").innerHTML = ua.device.full;
+		document.getElementById("useragent").innerHTML = ua.ua;
+		document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
+		document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
+		document.getElementById("device").innerHTML = ua.device.full;
 })();
 ```
 
