@@ -39,7 +39,7 @@
       </h2>
 
       <div class="highlight highlight-bash">
-        <pre>$ npm install</pre>
+        <pre>$ npm install useragent.js</pre>
       </div>
 
       <p>
@@ -74,7 +74,7 @@
       </h4>
 
       <div class="highlight highlight-javascript">
-        <pre><span class="pl-s">var</span> userAgent <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">"</span>useragent<span class="pl-pds">"</span></span>);
+        <pre><span class="pl-s">var</span> userAgent <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">"</span>useragent.js<span class="pl-pds">"</span></span>);
 <span class="pl-s">var</span> ua <span class="pl-k">=</span> userAgent.analyze(<span class="pl-s1"><span class="pl-pds">"</span>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36<span class="pl-pds">"</span></span>);
 <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST UA: <span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.ua);
 <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST BROWSER:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.full <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> (<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.<span class="pl-sc">name</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> VERSION = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.<span class="pl-sc">version</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> )<span class="pl-pds">"</span></span>);
