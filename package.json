@@ -22,7 +22,13 @@
     "nodeunit": "*",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-closurecompiler": "~0.9.9"
+    "grunt-closurecompiler": "~0.9.9",
+    "grunt-text-replace": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-transcoding": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*"
   },
   "homepage": "https://github.com/zsxsoft/useragent.js"
 }
