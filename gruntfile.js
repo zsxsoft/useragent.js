@@ -22,7 +22,6 @@ module.exports = function(grunt) {
 				dest: "dist/", 
 				options: {
 					process: function (content, srcpath) {
-						console.log(srcpath);
 						return '<script language="javascript" runat="server">\n' + content + '\n</script>';
 					}
 				},
