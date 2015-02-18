@@ -7,9 +7,9 @@ Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Inte
 
 ##Installion
 ```bash
-$ npm install
+$ npm install useragent.js
 ```
-If you are using in your browser, you should run ```grunt``` to compress it.
+If you are using in your browser, you can run ```grunt``` to compress it.
 
 ##Test
 ```bash
@@ -19,7 +19,7 @@ $ npm test
 ##Run
 ####In Node
 ```javascript
-var userAgent = require("useragent");
+var userAgent = require("useragent.js");
 var ua = userAgent.analyze("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36");
 console.log("TEST UA: " + ua.ua);
 console.log("TEST BROWSER:" + ua.browser.full + " (" + ua.browser.name + " VERSION = " + ua.browser.version + " )");
