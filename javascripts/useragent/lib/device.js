@@ -1,6 +1,7 @@
 (function(root) {
 
 	var analyze = function(ret) {
+		var rep = null;
 
 		// meizu
 		if (/(MEIZU (MX|M9)|M030)|MX-3/i.test(ret.ua)) {
@@ -353,7 +354,7 @@
 		else {
 			ret.image = "null";
 		}
-	}
+	};
 
 
 
@@ -365,11 +366,11 @@
 			"name": "",
 			"image": "",
 			"dir": "device"
-		}
+		};
 		analyze(ret);
 		ret.full = ret.name;
 		return ret;
-	}
+	};
 
 
 	// Node.js
@@ -388,7 +389,7 @@
 			module.exports = DEVICE;
 		});
 	} else {
-		root.USERAGENT_DEVICE = function() {}
+		root.USERAGENT_DEVICE = function() {};
 		USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze;
 	}
 

@@ -16,16 +16,16 @@
 		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
 		if (typeof this.browserDetect !== 'undefined') returnObject.browser = this.browserDetect.analyze(uaString);
 		if (typeof returnObject.device !== 'undefined') returnObject.platform = returnObject.device;
-		if (typeof returnObject.os !== 'undefined' && returnObject.device.name == "") returnObject.platform = returnObject.os;
+		if (typeof returnObject.os !== 'undefined' && returnObject.device.name === "") returnObject.platform = returnObject.os;
 		return returnObject;
-	}
+	};
 
 
 	var requireFunction = function(userAgent, OS, DEVICE, BROWSER) {
 		userAgent.osDetect = OS;
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
-	}
+	};
 
 
 	// Node.js

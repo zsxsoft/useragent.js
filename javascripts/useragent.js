@@ -10,7 +10,7 @@
 		'Cayman\ Browser', 'Charon', 'Cheshire', 'Chimera', 'chromeframe', 'ChromePlus',
 		'curl', 'Iron', 'Chromium', 'Classilla', 'Coast', 'Columbus',
 		'CometBird', 'Comodo_Dragon', 'Conkeror', 'CoolNovo', 'CoRom', 'Crazy\ Browser',
-		'CrMo', 'Cruz', 'Cyberdog', 'DPlus', 'Deepnet\ Explorer', 'Demeter',
+		'CrMo', 'Cruz', 'Cyberdog', 'Deepnet\ Explorer', 'Demeter',
 		'DeskBrowse', 'Dillo', 'DoCoMo', 'DocZilla', 'Dolfin', 'Dooble',
 		'Doris', 'Dorothy', 'DPlus', 'Edbrowse', 'E?links', 'Element\ Browser',
 		'Enigma\ Browser', 'EnigmaFox', 'Epic', 'Epiphany', 'Escape|Espial', 'Fennec',
@@ -35,7 +35,7 @@
 		'RockMelt', 'Ryouko', 'SaaYaa', 'SeaMonkey', 'SEMC-Browser', 'SEMC-java',
 		'Shiira', 'Shiretoko', 'SiteKiosk', 'SkipStone', 'Skyfire', 'Sleipnir',
 		'Silk', 'SlimBoat', 'SlimBrowser', 'Superbird', 'SmartTV', 'Songbird',
-		'Stainless', 'SubStream', 'Sulfur', 'Sundance', 'Sunrise', 'Sunrise',
+		'Stainless', 'SubStream', 'Sulfur', 'Sundance', 'Sunrise',
 		'Surf', 'Swiftfox', 'Swiftweasel', 'Sylera', 'TaoBrowser', 'tear',
 		'TeaShark', 'Teleca', 'TenFourFox', 'TheWorld', 'Thunderbird', 'Tizen',
 		'Tjusig', 'TencentTraveler', 'UC?\ ?Browser|UCWEB', 'UltraBrowser', 'UP.Browser', 'UP.Link',
@@ -314,10 +314,6 @@
 		"dorothy": {
 			"title": "{%Dorothy%}",
 			"image": "dorothybrowser"
-		},
-		"dplus": {
-			"title": "{%DPlus%}",
-			"image": "dillo"
 		},
 		"edbrowse": {
 			"title": "{%Edbrowse%}",
@@ -888,10 +884,6 @@
 			"image": "sundance"
 		},
 		"sunrise": {
-			"title": "{%Sundial%}",
-			"image": "sundial"
-		},
-		"sunrise": {
 			"title": "{%Sunrise%}",
 			"image": "sunrise"
 		},
@@ -1094,8 +1086,8 @@
 		ret.image = rep.image;
 		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function(match, p1) {
 			return getVersion(ret, p1);
-		})
-	}
+		});
+	};
 
 	var getVersion = function(ret, title) {
 		var lowerTitle = title.toLowerCase();
@@ -1201,8 +1193,7 @@
 			ret.name = "NiChrome";
 			return "NiChrome " + ret.version;
 		} else if (lowerTitle == "opera labs") {
-			var rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i
-				);
+			rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i);
 			if (rep !== null) {
 				ret.version = rep[1];
 			} else {
@@ -1219,7 +1210,7 @@
 		} else {
 			return ret.name + " " + ret.version;
 		}
-	}
+	};
 
 	BROWSER.analyze = function(uaString) {
 		var ret = {
@@ -1229,15 +1220,17 @@
 			"full": "",
 			"image": "",
 			"dir": "browser"
-		}
+		};
 
 		var res = uaString.match(browserRegEx);
+		var rep = null;
+
 		if (res !== null) {
 			var name = res[0].toLowerCase();
 			if (typeof defaultBrowserList[name] !== 'undefined') {
-				var rep = defaultBrowserList[name];
+				rep = defaultBrowserList[name];
 			} else {
-				var rep = defaultBrowserList['none'];
+				rep = defaultBrowserList.none;
 			}
 			setRetName(ret, rep);
 		} else if (/Galaxy/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
@@ -1266,7 +1259,7 @@
 				ret.full = getVersion(ret, 'Opera Next');
 				ret.image = "opera-next";
 			} else if (/(Edition Developer)/i.test(ret.ua)) {
-				ret.full = getVersion(ret, 'Opera Developer')
+				ret.full = getVersion(ret, 'Opera Developer');
 				ret.image = "opera-developer";
 			} else {
 				ret.full = getVersion(ret, 'Opera');
@@ -1286,23 +1279,23 @@
 			ret.name = ret.full = "Ubuntu Web Browser";
 			ret.image = "ubuntuwebbrowser";
 		} else if (/Avant\ Browser/i.test(ret.ua)) {
-			ret.full = "Avant " + getVersion(ret, 'Browser')
+			ret.full = "Avant " + getVersion(ret, 'Browser');
 			ret.image = "avantbrowser";
 		} else if (/AppleWebkit/i.test(ret.ua) && /Android/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
-			ret.full = getVersion(ret, 'Android Webkit')
+			ret.full = getVersion(ret, 'Android Webkit');
 			ret.image = "android-webkit";
 		} else if (/Chrome|crios/i.test(ret.ua)) {
 
 			// Note: For IE11 Experimental Web Platform Features in Windows 10
 			// Spartan? Who knows.
 			if (/Windows NT 1.+Edge/i.test(ret.ua)) {
-				ret.full = "Internet Explorer " + getVersion(ret, 'Spartan')
+				ret.full = "Internet Explorer " + getVersion(ret, 'Spartan');
 				ret.image = "msie11";
 			} else if (/crios/i.test(ret.ua)) {
-				ret.full = "Google " + getVersion(ret, 'CriOS')
+				ret.full = "Google " + getVersion(ret, 'CriOS');
 				ret.image = "chrome";
 			} else {
-				ret.full = "Google " + getVersion(ret, 'Chrome')
+				ret.full = "Google " + getVersion(ret, 'Chrome');
 				ret.image = "chrome";
 			}
 		} else if (/Safari/i.test(ret.ua) && !/Nokia/i.test(ret.ua)) {
@@ -1323,12 +1316,12 @@
 			ret.full = "Nokia Web Browser";
 			ret.image = "maemo";
 		} else if (/Firefox/i.test(ret.ua)) {
-			ret.full = getVersion(ret, 'Firefox')
+			ret.full = getVersion(ret, 'Firefox');
 			ret.image = "firefox";
 		} else if (/MSIE/i.test(ret.ua) || /Trident/i.test(ret.ua)) {
-			ret.full = "Internet Explorer" + getVersion(ret, 'MSIE')
+			ret.full = "Internet Explorer" + getVersion(ret, 'MSIE');
 			ret.image = "msie";
-			var rep = ret.ua.match(/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i);
+			rep = ret.ua.match(/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i);
 			if (rep !== null) {
 				var ieVersion = parseInt(rep[2]);
 				if (ieVersion >= 11) {
@@ -1358,7 +1351,7 @@
 			ret.full = ret.name;
 		}
 		return ret;
-	}
+	};
 
 
 
@@ -1378,13 +1371,15 @@
 			module.exports = BROWSER;
 		});
 	} else {
-		root.USERAGENT_BROWSER = function() {}
+		root.USERAGENT_BROWSER = function() {};
 		USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze;
 	}
 
-})(this);;(function(root) {
+})(this);
+(function(root) {
 
 	var analyze = function(ret) {
+		var rep = null;
 
 		// meizu
 		if (/(MEIZU (MX|M9)|M030)|MX-3/i.test(ret.ua)) {
@@ -1737,7 +1732,7 @@
 		else {
 			ret.image = "null";
 		}
-	}
+	};
 
 
 
@@ -1749,11 +1744,11 @@
 			"name": "",
 			"image": "",
 			"dir": "device"
-		}
+		};
 		analyze(ret);
 		ret.full = ret.name;
 		return ret;
-	}
+	};
 
 
 	// Node.js
@@ -1772,33 +1767,35 @@
 			module.exports = DEVICE;
 		});
 	} else {
-		root.USERAGENT_DEVICE = function() {}
+		root.USERAGENT_DEVICE = function() {};
 		USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze;
 	}
 
-})(this);;(function(root) {
+})(this);
+(function(root) {
 
 	var analyzeWindows = function(ret) {
 		ret.full = "Windows";
 		ret.name = "Windows";
 		ret.image = 'win-2';
 		ret.version = "";
+		var rep = null;
 
 		if (/Windows Phone|WPDesktop|ZuneWP7|WP7/i.test(ret.ua)) {
 			ret.name += ' Phone';
 			ret.image = "windowsphone";
 
-			var rep = ret.ua.match(/Windows Phone (OS )?([0-9\.]+)/i);
+			rep = ret.ua.match(/Windows Phone (OS )?([0-9\.]+)/i);
 			if (rep !== null) {
 				ret.version = rep[2];
-				if (parseInt(ret.version) == 7) {
+				if (parseInt(ret.version) === 7) {
 					ret.image = "wp7";
 				}
 			}
-			ret.full = ret.name + (ret.version == "" ? '' : " " + ret.version);
+			ret.full = ret.name + (ret.version === "" ? '' : " " + ret.version);
 		} else if (/Windows NT/i.test(ret.ua)) {
 			ret.name = "Windows NT";
-			var rep = ret.ua.match(/Windows NT ([.0-9]+)/i);
+			rep = ret.ua.match(/Windows NT ([.0-9]+)/i);
 			if (rep !== null) {
 				switch (rep[1]) {
 					case "6.4":
@@ -1905,7 +1902,7 @@
 			ret.image = "win-phone";
 		}
 		// @codeCoverageIgnoreEnd
-	}
+	};
 
 
 	var analyzeLinux = function(ret) {
@@ -2168,7 +2165,7 @@
 				}
 			}
 
-			if (ret.image == '') {
+			if (ret.image === '') {
 				ret.image = "ubuntu-2";
 			}
 
@@ -2178,10 +2175,10 @@
 		}
 
 		ret.full = ret.name;
-		if (ret.version != "") {
+		if (ret.version !== "") {
 			ret.full += " " + ret.version;
 		}
-	}
+	};
 
 
 
@@ -2225,10 +2222,10 @@
 		} else if (/IRIX/i.test(ret.ua)) {
 			ret.name = "IRIX";
 			if (rep = ret.ua.match(/IRIX(64)?\ ([.0-9a-zA-Z]+)/i)) {
-				if (rep[1] != undefined) {
+				if (rep[1] !== undefined && rep[1] !== "") {
 					ret.x64 = true;
 				}
-				if (rep[2] != undefined) {
+				if (rep[2] !== undefined && rep[2] !== "") {
 					ret.version = rep[2];
 				}
 			}
@@ -2291,9 +2288,9 @@
 			ret.image = "null";
 		}
 
-		ret.full = ret.name + (ret.version == "" ? "" : " " + ret.version);
+		ret.full = ret.name + (ret.version === "" ? "" : " " + ret.version);
 
-	}
+	};
 
 
 
@@ -2309,7 +2306,7 @@
 			"linux": false,
 			"x64": false,
 			"dir": "os"
-		}
+		};
 		if (/x86_64|Win64; x64|WOW64/i.test(ret.ua)) {
 			ret.x64 = true;
 		}
@@ -2330,7 +2327,7 @@
 			ret.full += ' x64';
 		}
 		return ret;
-	}
+	};
 
 
 
@@ -2350,11 +2347,12 @@
 			module.exports = OS;
 		});
 	} else {
-		root.USERAGENT_OS = function() {}
+		root.USERAGENT_OS = function() {};
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
 
-})(this);;(function(root) {
+})(this);
+(function(root) {
 	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
@@ -2372,16 +2370,16 @@
 		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
 		if (typeof this.browserDetect !== 'undefined') returnObject.browser = this.browserDetect.analyze(uaString);
 		if (typeof returnObject.device !== 'undefined') returnObject.platform = returnObject.device;
-		if (typeof returnObject.os !== 'undefined' && returnObject.device.name == "") returnObject.platform = returnObject.os;
+		if (typeof returnObject.os !== 'undefined' && returnObject.device.name === "") returnObject.platform = returnObject.os;
 		return returnObject;
-	}
+	};
 
 
 	var requireFunction = function(userAgent, OS, DEVICE, BROWSER) {
 		userAgent.osDetect = OS;
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
-	}
+	};
 
 
 	// Node.js

@@ -5,22 +5,23 @@
 		ret.name = "Windows";
 		ret.image = 'win-2';
 		ret.version = "";
+		var rep = null;
 
 		if (/Windows Phone|WPDesktop|ZuneWP7|WP7/i.test(ret.ua)) {
 			ret.name += ' Phone';
 			ret.image = "windowsphone";
 
-			var rep = ret.ua.match(/Windows Phone (OS )?([0-9\.]+)/i);
+			rep = ret.ua.match(/Windows Phone (OS )?([0-9\.]+)/i);
 			if (rep !== null) {
 				ret.version = rep[2];
-				if (parseInt(ret.version) == 7) {
+				if (parseInt(ret.version) === 7) {
 					ret.image = "wp7";
 				}
 			}
-			ret.full = ret.name + (ret.version == "" ? '' : " " + ret.version);
+			ret.full = ret.name + (ret.version === "" ? '' : " " + ret.version);
 		} else if (/Windows NT/i.test(ret.ua)) {
 			ret.name = "Windows NT";
-			var rep = ret.ua.match(/Windows NT ([.0-9]+)/i);
+			rep = ret.ua.match(/Windows NT ([.0-9]+)/i);
 			if (rep !== null) {
 				switch (rep[1]) {
 					case "6.4":
@@ -127,7 +128,7 @@
 			ret.image = "win-phone";
 		}
 		// @codeCoverageIgnoreEnd
-	}
+	};
 
 
 	var analyzeLinux = function(ret) {
@@ -390,7 +391,7 @@
 				}
 			}
 
-			if (ret.image == '') {
+			if (ret.image === '') {
 				ret.image = "ubuntu-2";
 			}
 
@@ -400,10 +401,10 @@
 		}
 
 		ret.full = ret.name;
-		if (ret.version != "") {
+		if (ret.version !== "") {
 			ret.full += " " + ret.version;
 		}
-	}
+	};
 
 
 
@@ -447,10 +448,10 @@
 		} else if (/IRIX/i.test(ret.ua)) {
 			ret.name = "IRIX";
 			if (rep = ret.ua.match(/IRIX(64)?\ ([.0-9a-zA-Z]+)/i)) {
-				if (rep[1] != undefined) {
+				if (rep[1] !== undefined && rep[1] !== "") {
 					ret.x64 = true;
 				}
-				if (rep[2] != undefined) {
+				if (rep[2] !== undefined && rep[2] !== "") {
 					ret.version = rep[2];
 				}
 			}
@@ -513,9 +514,9 @@
 			ret.image = "null";
 		}
 
-		ret.full = ret.name + (ret.version == "" ? "" : " " + ret.version);
+		ret.full = ret.name + (ret.version === "" ? "" : " " + ret.version);
 
-	}
+	};
 
 
 
@@ -531,7 +532,7 @@
 			"linux": false,
 			"x64": false,
 			"dir": "os"
-		}
+		};
 		if (/x86_64|Win64; x64|WOW64/i.test(ret.ua)) {
 			ret.x64 = true;
 		}
@@ -552,7 +553,7 @@
 			ret.full += ' x64';
 		}
 		return ret;
-	}
+	};
 
 
 
@@ -572,7 +573,7 @@
 			module.exports = OS;
 		});
 	} else {
-		root.USERAGENT_OS = function() {}
+		root.USERAGENT_OS = function() {};
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
 

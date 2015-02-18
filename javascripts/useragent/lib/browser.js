@@ -10,7 +10,7 @@
 		'Cayman\ Browser', 'Charon', 'Cheshire', 'Chimera', 'chromeframe', 'ChromePlus',
 		'curl', 'Iron', 'Chromium', 'Classilla', 'Coast', 'Columbus',
 		'CometBird', 'Comodo_Dragon', 'Conkeror', 'CoolNovo', 'CoRom', 'Crazy\ Browser',
-		'CrMo', 'Cruz', 'Cyberdog', 'DPlus', 'Deepnet\ Explorer', 'Demeter',
+		'CrMo', 'Cruz', 'Cyberdog', 'Deepnet\ Explorer', 'Demeter',
 		'DeskBrowse', 'Dillo', 'DoCoMo', 'DocZilla', 'Dolfin', 'Dooble',
 		'Doris', 'Dorothy', 'DPlus', 'Edbrowse', 'E?links', 'Element\ Browser',
 		'Enigma\ Browser', 'EnigmaFox', 'Epic', 'Epiphany', 'Escape|Espial', 'Fennec',
@@ -35,7 +35,7 @@
 		'RockMelt', 'Ryouko', 'SaaYaa', 'SeaMonkey', 'SEMC-Browser', 'SEMC-java',
 		'Shiira', 'Shiretoko', 'SiteKiosk', 'SkipStone', 'Skyfire', 'Sleipnir',
 		'Silk', 'SlimBoat', 'SlimBrowser', 'Superbird', 'SmartTV', 'Songbird',
-		'Stainless', 'SubStream', 'Sulfur', 'Sundance', 'Sunrise', 'Sunrise',
+		'Stainless', 'SubStream', 'Sulfur', 'Sundance', 'Sunrise',
 		'Surf', 'Swiftfox', 'Swiftweasel', 'Sylera', 'TaoBrowser', 'tear',
 		'TeaShark', 'Teleca', 'TenFourFox', 'TheWorld', 'Thunderbird', 'Tizen',
 		'Tjusig', 'TencentTraveler', 'UC?\ ?Browser|UCWEB', 'UltraBrowser', 'UP.Browser', 'UP.Link',
@@ -314,10 +314,6 @@
 		"dorothy": {
 			"title": "{%Dorothy%}",
 			"image": "dorothybrowser"
-		},
-		"dplus": {
-			"title": "{%DPlus%}",
-			"image": "dillo"
 		},
 		"edbrowse": {
 			"title": "{%Edbrowse%}",
@@ -888,10 +884,6 @@
 			"image": "sundance"
 		},
 		"sunrise": {
-			"title": "{%Sundial%}",
-			"image": "sundial"
-		},
-		"sunrise": {
 			"title": "{%Sunrise%}",
 			"image": "sunrise"
 		},
@@ -1094,8 +1086,8 @@
 		ret.image = rep.image;
 		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function(match, p1) {
 			return getVersion(ret, p1);
-		})
-	}
+		});
+	};
 
 	var getVersion = function(ret, title) {
 		var lowerTitle = title.toLowerCase();
@@ -1201,8 +1193,7 @@
 			ret.name = "NiChrome";
 			return "NiChrome " + ret.version;
 		} else if (lowerTitle == "opera labs") {
-			var rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i
-				);
+			rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i);
 			if (rep !== null) {
 				ret.version = rep[1];
 			} else {
@@ -1219,7 +1210,7 @@
 		} else {
 			return ret.name + " " + ret.version;
 		}
-	}
+	};
 
 	BROWSER.analyze = function(uaString) {
 		var ret = {
@@ -1229,15 +1220,17 @@
 			"full": "",
 			"image": "",
 			"dir": "browser"
-		}
+		};
 
 		var res = uaString.match(browserRegEx);
+		var rep = null;
+
 		if (res !== null) {
 			var name = res[0].toLowerCase();
 			if (typeof defaultBrowserList[name] !== 'undefined') {
-				var rep = defaultBrowserList[name];
+				rep = defaultBrowserList[name];
 			} else {
-				var rep = defaultBrowserList['none'];
+				rep = defaultBrowserList.none;
 			}
 			setRetName(ret, rep);
 		} else if (/Galaxy/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
@@ -1266,7 +1259,7 @@
 				ret.full = getVersion(ret, 'Opera Next');
 				ret.image = "opera-next";
 			} else if (/(Edition Developer)/i.test(ret.ua)) {
-				ret.full = getVersion(ret, 'Opera Developer')
+				ret.full = getVersion(ret, 'Opera Developer');
 				ret.image = "opera-developer";
 			} else {
 				ret.full = getVersion(ret, 'Opera');
@@ -1286,23 +1279,23 @@
 			ret.name = ret.full = "Ubuntu Web Browser";
 			ret.image = "ubuntuwebbrowser";
 		} else if (/Avant\ Browser/i.test(ret.ua)) {
-			ret.full = "Avant " + getVersion(ret, 'Browser')
+			ret.full = "Avant " + getVersion(ret, 'Browser');
 			ret.image = "avantbrowser";
 		} else if (/AppleWebkit/i.test(ret.ua) && /Android/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
-			ret.full = getVersion(ret, 'Android Webkit')
+			ret.full = getVersion(ret, 'Android Webkit');
 			ret.image = "android-webkit";
 		} else if (/Chrome|crios/i.test(ret.ua)) {
 
 			// Note: For IE11 Experimental Web Platform Features in Windows 10
 			// Spartan? Who knows.
 			if (/Windows NT 1.+Edge/i.test(ret.ua)) {
-				ret.full = "Internet Explorer " + getVersion(ret, 'Spartan')
+				ret.full = "Internet Explorer " + getVersion(ret, 'Spartan');
 				ret.image = "msie11";
 			} else if (/crios/i.test(ret.ua)) {
-				ret.full = "Google " + getVersion(ret, 'CriOS')
+				ret.full = "Google " + getVersion(ret, 'CriOS');
 				ret.image = "chrome";
 			} else {
-				ret.full = "Google " + getVersion(ret, 'Chrome')
+				ret.full = "Google " + getVersion(ret, 'Chrome');
 				ret.image = "chrome";
 			}
 		} else if (/Safari/i.test(ret.ua) && !/Nokia/i.test(ret.ua)) {
@@ -1323,12 +1316,12 @@
 			ret.full = "Nokia Web Browser";
 			ret.image = "maemo";
 		} else if (/Firefox/i.test(ret.ua)) {
-			ret.full = getVersion(ret, 'Firefox')
+			ret.full = getVersion(ret, 'Firefox');
 			ret.image = "firefox";
 		} else if (/MSIE/i.test(ret.ua) || /Trident/i.test(ret.ua)) {
-			ret.full = "Internet Explorer" + getVersion(ret, 'MSIE')
+			ret.full = "Internet Explorer" + getVersion(ret, 'MSIE');
 			ret.image = "msie";
-			var rep = ret.ua.match(/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i);
+			rep = ret.ua.match(/(MSIE[\ |\/]?| rv:)([.0-9a-zA-Z]+)/i);
 			if (rep !== null) {
 				var ieVersion = parseInt(rep[2]);
 				if (ieVersion >= 11) {
@@ -1358,7 +1351,7 @@
 			ret.full = ret.name;
 		}
 		return ret;
-	}
+	};
 
 
 
@@ -1378,7 +1371,7 @@
 			module.exports = BROWSER;
 		});
 	} else {
-		root.USERAGENT_BROWSER = function() {}
+		root.USERAGENT_BROWSER = function() {};
 		USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze;
 	}
 
