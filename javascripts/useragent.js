@@ -2391,7 +2391,6 @@
 	else if (AMD) {
 		define(['./lib/os', './lib/device', './lib/browser'], function(OS, DEVICE, BROWSER) {
 			requireFunction(userAgent, OS, DEVICE, BROWSER);
-			console.log(userAgent);
 			return userAgent;
 		});
 	}
