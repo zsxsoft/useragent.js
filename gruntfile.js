@@ -113,7 +113,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', 'useragent.js', function() {
 		var tasks = ["nodeunit", "copy:base"];
-		if (language === "asp") tasks.push('replace:asp');
+		if (language === "asp" || language === "wscript") tasks.push('replace:asp');
 		tasks.push("jshint:before", "concat", "jshint:concat");
 		if (!doNotCompile) {
 			tasks.push('closurecompiler');

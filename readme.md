@@ -3,15 +3,7 @@ useragent.js
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
 ##Compatibility
-Node.JS
-
-Internet Explorer 6+
-
-Google Chrome
-
-Mozilla Firefox
-
-Apple Safari
+Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer 6+ / Google Chrome / Mozilla Firefox / Apple Safari
 
 ##Installion
 ```bash
