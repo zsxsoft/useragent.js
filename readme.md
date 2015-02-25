@@ -1,5 +1,9 @@
 useragent.js
 ===========
+[![Coverage Status](https://coveralls.io/repos/zsxsoft/useragent.js/badge.svg)](https://coveralls.io/r/zsxsoft/useragent.js)
+[![Build Status](https://travis-ci.org/zsxsoft/useragent.js.svg?branch=master)](https://travis-ci.org/zsxsoft/useragent.js)
+
+
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
 ##Compatibility
