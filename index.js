@@ -8,7 +8,7 @@
 
 	userAgent.version = "0.1";
 	userAgent.publishDate = "20150217";
-	
+
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
 		returnObject.ua = uaString;
@@ -30,7 +30,12 @@
 
 	// Node.js
 	if (NODE) {
-		requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
+		if (process.env.UAJS_COV) {
+			requireFunction(userAgent, require('./lib-cov/os'), require('./lib-cov/device'), require('./lib-cov/browser'));
+		} else {
+			requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
+		}
+
 		module.exports = userAgent;
 	}
 	// AMD

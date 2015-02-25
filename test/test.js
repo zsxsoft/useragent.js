@@ -1,6 +1,6 @@
-var userAgent = require('../index.js');
+var userAgent = require('../');
 exports.testUserAgents = function(test) {
-	var testUAList = require('./ualist.js');
+	var testUAList = require('./resources/ualist.js');
 	for (var index in testUAList) {
 		var item = testUAList[index];
 		var ua = userAgent.analyze(item[0][0]);
