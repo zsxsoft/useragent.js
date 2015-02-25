@@ -1,0 +1,27 @@
+{
+  "name": "useragent.js",
+  "main": "index.js",
+  "version": "0.1.0",
+  "homepage": "https://zsxsoft.github.io/useragent.js",
+  "authors": [
+    "zsx <zsx@zsxsoft.com>"
+  ],
+  "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
+  "moduleType": [
+    "amd",
+    "cmd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "UserAgent"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

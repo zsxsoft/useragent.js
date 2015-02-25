@@ -10,9 +10,10 @@ A simple project that allows you to display details about a computer's operating
 Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer 6+ / Google Chrome / Mozilla Firefox / Apple Safari
 
 ##Installion
-```bash
-$ npm install useragent.js
-```
+npm: ``$ npm install useragent.js``
+
+bower: ``$ bower install useragent.js``
+
 If you are using in your browser, you can run ```grunt``` to compress it.
 
 ##Test
