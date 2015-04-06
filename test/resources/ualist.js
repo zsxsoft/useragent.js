@@ -450,7 +450,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'],
-			['msie11', 'os', 'win-5', 'Internet Explorer Spartan 12.0', 'Windows 10 x64'],
+			['spartan', 'os', 'win-5', 'Spartan 12.0', 'Windows 10 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.69 Safari/537.36 2345chrome v2.4.0.2847'],
