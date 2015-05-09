@@ -450,7 +450,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'],
-			['spartan', 'os', 'win-5', 'Spartan 12.0', 'Windows 10 x64'],
+			['edge', 'os', 'win-5', 'Edge 12.0', 'Windows 10 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.69 Safari/537.36 2345chrome v2.4.0.2847'],
@@ -2223,7 +2223,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; NOKIA; Nokia 920) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0'],
-			['spartan', 'device', 'nokia', 'Spartan 12.0', 'Nokia Lumia 920'],
+			['edge', 'device', 'nokia', 'Edge 12.0', 'Nokia Lumia 920'],
 		],
 	];
 
