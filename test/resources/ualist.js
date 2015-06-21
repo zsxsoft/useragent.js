@@ -489,8 +489,8 @@
 			['uzbl', 'os', 'archlinux', 'uzbl', 'Arch Linux'],
 		],
 		[
-			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; uZardWeb/1.0; Server_JP)'],
-			['uzardweb', 'os', 'win-2', 'uZardWeb 1.0', 'Windows Server 2003'],
+			['Mozilla/5.0 ArchLinux (X11; Linux x86_64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.41 Safari/535.1'],
+			['chrome', 'os', 'archlinux', 'Google Chrome 13.0.782.41', 'Arch Linux x64'],
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; WOW64; SV1; uZardWeb/1.0; Server_CN)'],
@@ -1155,7 +1155,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; Linux 3.5.4-1-ARCH i686; es) KHTML/4.9.1 (like Gecko) Konqueror/4.9'],
-			['konqueror', 'os', 'archlinux', 'Konqueror 4.9', 'Arch Linux'],
+			['konqueror', 'os', 'linux', 'Konqueror 4.9', 'GNU/Linux'],
 		],
 		[
 			['Mozilla/5.0 (compatible; Konqueror/4.4; Linux 2.6.32-22-generic; X11; en_US) KHTML/4.4.3 (like Gecko) Kubuntu'],
