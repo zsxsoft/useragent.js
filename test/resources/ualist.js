@@ -819,7 +819,7 @@
 		],
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/4.0 (compatible; MSIE 5.0; UNIX) Opera 6.12 [en]/24.838; U; en) Presto/2.5.25 Version/10.54'],
-			['opera-2', 'os', 'unix', 'Opera Mini 4.0', 'Unix'],
+			['opera-2', 'os', 'java', 'Opera Mini 4.0', 'J2ME/MIDP Device'],
 		],
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/(Windows; U; Windows NT 5.1; en-US) AppleWebKit/23.411; U; en) Presto/2.5.25 Version/10.54'],
