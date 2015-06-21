@@ -474,7 +474,7 @@
 		],
 		[
 			['w3m/0.5.2 (Linux i686; it; Debian-3.0.6-3)'],
-			['w3m', 'os', 'debian', 'W3M 0.5.2', 'Debian GNU/Linux'],
+			['w3m', 'os', 'debian', 'W3M 0.5.2', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1pre) Gecko/20090629 Vonkeror/1.0'],
@@ -1279,7 +1279,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.7) Gecko/2009030814 Iceweasel Firefox/3.0.7 (Debian-3.0.7-1)'],
-			['iceweasel', 'os', 'debian', 'IceWeasel ', 'Debian GNU/Linux'],
+			['iceweasel', 'os', 'debian', 'IceWeasel ', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (X11; Linux i686; rv:9.0a2) Gecko/20111104 Firefox/9.0a2 Iceweasel/9.0a2'],
@@ -1379,7 +1379,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko/20090327 Galeon/2.0.7'],
@@ -1572,7 +1572,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.14) Gecko/20101020 Conkeror/0.9.2 (Debian-0.9.2+git100804-1)'],
-			['conkeror', 'os', 'debian', 'Conkeror 0.9.2', 'Debian GNU/Linux x64'],
+			['conkeror', 'os', 'debian', 'Conkeror 0.9.2', 'Debian x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7'],
@@ -1624,7 +1624,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; nl; rv:1.8.1b2) Gecko/20060821 BonEcho/2.0b2 (Debian-1.99+2.0b2+dfsg-1)'],
-			['firefoxdevpre', 'os', 'debian', 'BonEcho 2.0b2', 'Debian GNU/Linux'],
+			['firefoxdevpre', 'os', 'debian', 'BonEcho 2.0b2', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; BOLT/2.340) AppleWebKit/530+ (KHTML, like Gecko) Version/4.0 Safari/530.17 UNTRUSTED/1.0 3gpp-gba'],
@@ -1904,7 +1904,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-US; SkipStone 0.8.3) Gecko/20020615 Debian/1.0.0-3'],
-			['skipstone', 'os', 'debian', 'SkipStone 0.8.3', 'Debian GNU/Linux'],
+			['skipstone', 'os', 'debian', 'SkipStone 0.8.3', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.0.5) Gecko/2009021916 Songbird/1.1.2 (20090331142126)'],
@@ -2116,11 +2116,11 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; nl-NL; rv:1.6) Gecko/20050714 Linspire/1.6-5.1.0.50.linspire2.70'],
