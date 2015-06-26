@@ -466,7 +466,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20100121 Firefox/3.5.6 Wyzo/3.5.6.1'],
-			['Wyzo', 'os', 'win-4', 'Wyzo 3.5.6.1', 'Windows 7'],
+			['wyzo', 'os', 'win-4', 'Wyzo 3.5.6.1', 'Windows 7'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR) AppleWebKit/532.4 (KHTML, like Gecko) WeltweitimnetzBrowser/0.25 Safari/532.4'],

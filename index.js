@@ -6,8 +6,8 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.1";
-	userAgent.publishDate = "20150217";
+	userAgent.version = "0.2";
+	userAgent.publishDate = "20150626";
 
 	userAgent.analyze = function(uaString) {
 		var returnObject = {};
