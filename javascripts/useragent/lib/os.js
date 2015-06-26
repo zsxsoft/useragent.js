@@ -53,10 +53,12 @@
 						ret.full = "Windows XP";
 						ret.image = "win-2";
 						break;
+						//#JSCOVERAGE_IF false
 					case "5.01":
 						ret.full = "Windows 2000 Service Pack 1";
 						ret.image = "win-1";
 						break;
+						//#JSCOVERAGE_ENDIF
 					case "5.0":
 						ret.full = "Windows 2000";
 						ret.image = "win-1";
@@ -79,7 +81,6 @@
 			ret.name = "Windows NT";
 			ret.full = "Windows XP";
 			ret.image = "win-2";
-			// @codeCoverageIgnoreStart
 		} else if (/Windows 2000/i.test(ret.ua)) {
 			ret.version = "5.0";
 			ret.name = "Windows NT";
@@ -116,18 +117,18 @@
 		} else if (/Windows CE|Windows .+Mobile/i.test(ret.ua)) {
 			ret.full += " CE";
 			ret.image = "win-2";
-			// @codeCoverageIgnoreStart
+			//#JSCOVERAGE_IF false
 		} else if (/WM5/i.test(ret.ua)) {
 			ret.name += " Mobile";
 			ret.version = "5";
 			ret.full = ret.name + " " + ret.version;
 			ret.image = "win-phone";
+			//#JSCOVERAGE_ENDIF
 		} else if (/WindowsMobile/i.test(ret.ua)) {
 			ret.name += " Mobile";
 			ret.full = ret.name;
 			ret.image = "win-phone";
 		}
-		// @codeCoverageIgnoreEnd
 	};
 
 
@@ -136,10 +137,44 @@
 		ret.image = '';
 		ret.version = '';
 		var rep = null;
+		var linuxRegEx = new RegExp([
+			"Arch ?Linux", "Chakra", "Crunchbang", "Debian", "Gentoo", "Kanotix", "Knoppix",
+			"LindowsOS", "Linspire", "Mageia", "Pardus", "Rosa", "Sabayon",
+			"Slackware", "Suse", "VectorLinux", "Venenux", "Xandros", "Zenwalk"
+		].join("|"), "i");
+		var defaultLinuxList = {
+			"arch linux": {
+				image: "archlinux",
+				name: "Arch Linux"
+			},
+			archlinux: {
+				name: "Arch Linux"
+			},
+			suse: {
+				name: "openSUSE"
+			},
+			lindowsos: {
+				name: "LindowsOS"
+			},
+			linspire: {
+				image: "lindowsos"
+			}
+		};
 
-		if (/[^A-Za-z]Arch/i.test(ret.ua)) {
-			ret.name = "Arch Linux";
-			ret.image = "archlinux";
+		var res = ret.ua.match(linuxRegEx);
+
+		if (res !== null) {
+			var name = res[0].toLowerCase();
+			ret.name = name.replace(/(\w)/, function(string) {
+				return string.toUpperCase();
+			});
+			ret.image = name;
+
+			if (typeof defaultLinuxList[name] !== 'undefined') {
+				ret.name = defaultLinuxList[name].name || ret.name;
+				ret.image = defaultLinuxList[name].image || ret.image;
+			}
+
 		} else if (/CentOS/i.test(ret.ua)) {
 			ret.name = "CentOS";
 
@@ -148,34 +183,7 @@
 			}
 
 			ret.image = "centos";
-			// @codeCoverageIgnoreStart
-		} else if (/Chakra/i.test(ret.ua)) {
-			ret.name = "Chakra Linux";
-			ret.image = "chakra";
-			// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} else if (/Crunchbang/i.test(ret.ua)) {
-			ret.name = "Crunchbang";
-			ret.image = "crunchbang";
-			// @codeCoverageIgnoreEnd
-		} else if (/Debian/i.test(ret.ua)) {
-			ret.name = "Debian GNU/Linux";
-			ret.image = "debian";
-			// @codeCoverageIgnoreStart
-		} else if (/Edubuntu/i.test(ret.ua)) {
-			ret.name = "Edubuntu";
 
-			if (rep = ret.ua.match(/Edubuntu[\/|\ ]([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			if (parseInt(ret.version) < 10) {
-				ret.image = "edubuntu-1";
-			} else {
-				ret.image = "edubuntu-2";
-			}
-
-			// @codeCoverageIgnoreEnd
 		} else if (/Fedora/i.test(ret.ua)) {
 			ret.name = "Fedora";
 
@@ -192,42 +200,6 @@
 			}
 
 			ret.image = "foresight";
-		} else if (/Gentoo/i.test(ret.ua)) {
-			ret.name = "Gentoo";
-			ret.image = "gentoo";
-
-		} else if (/Kanotix/i.test(ret.ua)) {
-			ret.name = "Kanotix";
-			ret.image = "kanotix";
-			// @codeCoverageIgnoreStart
-		} else if (/Knoppix/i.test(ret.ua)) {
-			ret.name = "Knoppix";
-			ret.image = "knoppix";
-			// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} else if (/Kubuntu/i.test(ret.ua)) {
-			ret.name = "Kubuntu";
-
-			if (rep = ret.ua.match(/Kubuntu[\/|\ ]([.0-9]+)/i)) {
-				ret.version = rep[1];
-
-				if (parseInt(ret.version) < 10) {
-					ret.image = "kubuntu-1";
-				} else {
-					ret.image = "kubuntu-2";
-				}
-			} else {
-				ret.image = "kubuntu-2";
-			}
-
-			// @codeCoverageIgnoreEnd
-		} else if (/LindowsOS/i.test(ret.ua)) {
-			ret.name = "LindowsOS";
-			ret.image = "lindowsos";
-
-		} else if (/Linspire/i.test(ret.ua)) {
-			ret.name = "Linspire";
-			ret.image = "lindowsos";
 
 		} else if (/Linux\ Mint/i.test(ret.ua)) {
 			ret.name = "Linux Mint";
@@ -237,37 +209,16 @@
 			}
 
 			ret.image = "linuxmint";
-			// @codeCoverageIgnoreStart
+			//#JSCOVERAGE_IF false
 
-		} else if (/Lubuntu/i.test(ret.ua)) {
-			ret.name = "Lubuntu";
-
-			if (rep = ret.ua.match(/Lubuntu[\/|\ ]([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			if (parseInt(ret.version) < 10) {
-				ret.image = "lubuntu-1";
-			} else {
-				ret.image = "lubuntu-2";
-			}
-
-			// @codeCoverageIgnoreEnd
-
-			// @codeCoverageIgnoreStart
-
-		} else if (/Mageia/i.test(ret.ua)) {
-			ret.name = "Mageia";
-			ret.image = "mageia";
-			// @codeCoverageIgnoreEnd
 		} else if (/Mandriva/i.test(ret.ua)) {
 			ret.name = "Mandriva";
-			// @codeCoverageIgnoreStart
+			//#JSCOVERAGE_IF false
 
 			if (rep = ret.ua.match(/mdv([.0-9a-zA-Z]+)/i)) {
 				ret.version = rep[1];
 			}
-			// @codeCoverageIgnoreEnd
+			//#JSCOVERAGE_ENDIF
 
 			ret.image = "mandriva";
 
@@ -287,7 +238,7 @@
 			}
 
 			ret.image = "nova";
-			// @codeCoverageIgnoreStart
+			//#JSCOVERAGE_IF false
 
 		} else if (/Oracle/i.test(ret.ua)) {
 			ret.name = "Oracle";
@@ -299,12 +250,9 @@
 				ret.name += " Linux";
 			}
 			ret.image = "oracle";
-			// @codeCoverageIgnoreEnd
+			//#JSCOVERAGE_ENDIF
 
-		} else if (/Pardus/i.test(ret.ua)) {
-			ret.name = "Pardus";
-			ret.image = "pardus";
-			// @codeCoverageIgnoreStart
+			//#JSCOVERAGE_IF false
 
 		} else if (/PCLinuxOS/i.test(ret.ua)) {
 			ret.name = "PCLinuxOS";
@@ -314,7 +262,7 @@
 			}
 
 			ret.image = "pclinuxos";
-			// @codeCoverageIgnoreEnd
+			//#JSCOVERAGE_ENDIF
 
 		} else if (/Red\ Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
 			ret.name = "Red Hat";
@@ -325,63 +273,10 @@
 			}
 
 			ret.image = "red-hat";
-			// @codeCoverageIgnoreStart
 
-		} else if (/Rosa/i.test(ret.ua)) {
-			ret.name = "Rosa Linux";
-			ret.image = "rosa";
-			// @codeCoverageIgnoreEnd
+			// Pulled out of order to help ensure better detection for above platforms
+		} else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) {
 
-			// @codeCoverageIgnoreStart
-
-		} else if (/Sabayon/i.test(ret.ua)) {
-			ret.name = "Sabayon Linux";
-			ret.image = "sabayon";
-			// @codeCoverageIgnoreEnd
-
-		} else if (/Slackware/i.test(ret.ua)) {
-			ret.name = "Slackware";
-			ret.image = "slackware";
-		} else if (/Suse/i.test(ret.ua)) {
-			ret.name = "openSUSE";
-			ret.image = "suse";
-			// @codeCoverageIgnoreStart
-		} else if (/VectorLinux/i.test(ret.ua)) {
-			ret.name = "VectorLinux";
-			ret.image = "vectorlinux";
-			// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} else if (/Venenux/i.test(ret.ua)) {
-			ret.name = "Venenux GNU Linux";
-			ret.image = "venenux";
-			// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} else if (/Xandros/i.test(ret.ua)) {
-			ret.name = "Xandros";
-			ret.image = "xandros";
-			// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} else if (/Xubuntu/i.test(ret.ua)) {
-			ret.name = "Xubuntu";
-
-			if (rep = ret.ua.match(/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			if (parseInt(ret.version) < 10) {
-				ret.image = "xubuntu-1";
-			} else {
-				ret.image = "xubuntu-2";
-			}
-
-			// @codeCoverageIgnoreEnd
-		} else if (/Zenwalk/i.test(ret.ua)) {
-			ret.name = "Zenwalk GNU Linux";
-			ret.image = "zenwalk";
-		}
-
-		// Pulled out of order to help ensure better detection for above platforms
-		else if (/Ubuntu/i.test(ret.ua)) {
 			ret.name = "Ubuntu";
 
 			if (rep = ret.ua.match(/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i)) {
@@ -393,6 +288,15 @@
 
 			if (ret.image === '') {
 				ret.image = "ubuntu-2";
+			}
+
+			if (rep = ret.ua.match(/(L|K|X|Ed)Ubuntu/i)) {
+				var childUbuntuVersion = rep[1].toLowerCase();
+				ret.name = childUbuntuVersion + ret.name;
+				ret.name = ret.name.toLowerCase().replace(/(\w)/, function(m) {
+					return m.toUpperCase();
+				});
+				ret.image = childUbuntuVersion + ret.image;
 			}
 
 		} else {
@@ -414,8 +318,65 @@
 		ret.version = '';
 		ret.full = "";
 
+		var osRegEx = new RegExp([
+			"BB10", "BeOS", "DragonFly", "FreeBSD", "Inferno",
+			"SunOS", "Solaris", "J2ME\/MIDP",
+			"MorphOS", "NetBSD", "OpenBSD", "Unix", "webOS"
+		].join("|"), "i");
+		var defaultOSList = {
+			bb10: {
+				name: "BlackBerry OS 10",
+				image: "blackberry"
+			},
+			dragonfly: {
+				name: "DragonFly BSD",
+				image: "dragonflybsd"
+			},
+			freebsd: {
+				name: "FreeBSD"
+			},
+			morphos: {
+				name: "MorphOS"
+			},
+			openbsd: {
+				name: "OpenBSD"
+			},
+			netbsd: {
+				name: "NetBSD"
+			},
+			beos: {
+				name: "BeOS"
+			},
+			webos: {
+				name: "Palm webOS",
+				image: "palm"
+			}, 
+			sunos: {
+				name: "Solaris",
+				image: "solaris"
+			}, 
+			"j2me\/midp": {
+				name: "J2ME/MIDP Device",
+				image: "java"
+			}
+		};
+
+		var res = ret.ua.match(osRegEx);
+
+		if (res !== null) {
+			var name = res[0].toLowerCase();
+			ret.name = name.replace(/(\w)/, function(string) {
+				return string.toUpperCase();
+			});
+			ret.image = name;
+
+			if (typeof defaultOSList[name] !== 'undefined') {
+				ret.name = defaultOSList[name].name || ret.name;
+				ret.image = defaultOSList[name].image || ret.image;
+			}
+		}
 		// Opera's Useragent does not contains 'Linux'
-		if (/Android|ADR /i.test(ret.ua)) {
+		else if (/Android|ADR /i.test(ret.ua)) {
 			ret.name = "Android";
 			ret.image = "android";
 			if (rep = ret.ua.match(/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i)) {
@@ -427,24 +388,9 @@
 				ret.version = rep[1];
 			}
 			ret.image = "amigaos";
-		} else if (/BB10/i.test(ret.ua)) {
-			ret.name = "BlackBerry OS 10";
-			ret.image = "blackberry";
-		} else if (/BeOS/i.test(ret.ua)) {
-			ret.name = "BeOS";
-			ret.image = "beos";
 		} else if (/\b(?!Mi)CrOS(?!oft)/i.test(ret.ua)) {
 			ret.name = "Google Chrome OS";
 			ret.image = "chromeos";
-		} else if (/DragonFly/i.test(ret.ua)) {
-			ret.name = "DragonFly BSD";
-			ret.image = "dragonflybsd";
-		} else if (/FreeBSD/i.test(ret.ua)) {
-			ret.name = "FreeBSD";
-			ret.image = "freebsd";
-		} else if (/Inferno/i.test(ret.ua)) {
-			ret.name = "Inferno";
-			ret.image = "inferno";
 		} else if (/IRIX/i.test(ret.ua)) {
 			ret.name = "IRIX";
 			if (rep = ret.ua.match(/IRIX(64)?\ ([.0-9a-zA-Z]+)/i)) {
@@ -475,40 +421,18 @@
 				ret.name = "Macintosh";
 				ret.image = "mac-1";
 			}
-		} else if (/MorphOS/i.test(ret.ua)) {
-			ret.name = "MorphOS";
-			ret.image = "morphos";
-		} else if (/NetBSD/i.test(ret.ua)) {
-			ret.name = "NetBSD";
-			ret.image = "netbsd";
-		} else if (/OpenBSD/i.test(ret.ua)) {
-			ret.name = "OpenBSD";
-			ret.image = "openbsd";
 		} else if (/RISC OS/i.test(ret.ua)) {
 			ret.name = "RISC OS";
 			ret.image = "risc";
 			if (rep = ret.ua.match(/RISC OS ([.0-9a-zA-Z]+)/i)) {
 				ret.version = rep[1];
 			}
-		} else if (/Solaris|SunOS/i.test(ret.ua)) {
-			ret.name = "Solaris";
-			ret.image = "solaris";
 		} else if (/Symb(ian)?(OS)?/i.test(ret.ua)) {
 			ret.name = "SymbianOS";
 			if (rep = ret.ua.match(/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i)) {
 				ret.version = rep[3];
 			}
 			ret.image = "symbian";
-		} else if (/Unix/i.test(ret.ua)) {
-			ret.name = "Unix";
-			ret.image = "unix";
-			// @codeCoverageIgnoreStart
-		} else if (/webOS/i.test(ret.ua)) {
-			ret.name = "Palm webOS";
-			ret.image = "palm";
-		} else if (/J2ME\/MIDP/i.test(ret.ua)) {
-			ret.name = "J2ME/MIDP Device";
-			ret.image = "java";
 		} else {
 			ret.name = "Unknown";
 			ret.image = "null";
@@ -525,7 +449,7 @@
 	OS.analyze = function(uaString) {
 		var ret = {
 			"ua": uaString,
-			"name": "",
+			name: "",
 			"version": "",
 			"full": "",
 			"windows": false,
@@ -558,23 +482,32 @@
 
 
 	// Node.js
+	//#JSCOVERAGE_IF typeof module !== 'undefined' && module.exports
 	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = OS;
 	}
+	//#JSCOVERAGE_ENDIF
+	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
 		define([], function() {
 			return OS;
 		});
 	}
+	//#JSCOVERAGE_ENDIF
+	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
 		define([], function(require, exports, module) {
 			module.exports = OS;
 		});
+		//#JSCOVERAGE_ENDIF
+		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
 		root.USERAGENT_OS = function() {};
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
+	//#JSCOVERAGE_ENDIF
+
 
 })(this);
