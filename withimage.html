@@ -27,6 +27,12 @@
         <br/>
       </p>
       <p>
+        You can paste user-agent here.
+      </p>
+      <p>
+        <input type="text" id="txt-useragent" placeholder="User-Agent Here" style="width: 100%"/>
+      </p>
+      <p>
         Images can be downloaded from <a href="https://github.com/zsxsoft/php-useragent" target="_blank">https://github.com/zsxsoft/php-useragent</a>
       </p>
       
@@ -48,11 +54,18 @@
   <script src="javascripts/global.js"></script>
   <script src="javascripts/useragent.min.js"></script>
   <script>  (function () {
-    var ua = USERAGENT.analyze(navigator.userAgent);
-    document.getElementById("useragent").innerHTML = ua.ua;
-    document.getElementById("browser").innerHTML = '<img src="img/16/browser/' + ua.browser.image + '.png" alt="' + ua.browser.name + '" />' + ua.browser.full;
-    document.getElementById("platform").innerHTML = '<img src="img/16/' + ua.platform.dir + '/' + ua.platform.image + '.png" alt="' + ua.platform.name + '" />' + ua.platform.full;
-  })();</script>
+    var userAgentDom = document.getElementById("txt-useragent");
+    var changeEvent = function() {
+      var ua = USERAGENT.analyze(userAgentDom.value);
+      document.getElementById("useragent").innerHTML = ua.ua;
+      document.getElementById("browser").innerHTML = '<img src="img/16/browser/' + ua.browser.image + '.png" alt="' + ua.browser.name + '" />' + ua.browser.full;
+      document.getElementById("platform").innerHTML = '<img src="img/16/' + ua.platform.dir + '/' + ua.platform.image + '.png" alt="' + ua.platform.name + '" />' + ua.platform.full;
+    };
+    userAgentDom.addEventListener("keyup", changeEvent);
+    userAgentDom.addEventListener("change", changeEvent);
+    document.getElementById("txt-useragent").value = navigator.userAgent;
+    changeEvent();
+   })();</script>
 
 </body>
 </html>

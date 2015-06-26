@@ -58,7 +58,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Deepnet Explorer)'],
-			['deepnetexplorer', 'os', 'win-2', 'Deepnet Explorer ', 'Windows XP'],
+			['deepnetexplorer', 'os', 'win-2', 'Deepnet Explorer', 'Windows XP'],
 		],
 		[
 			['Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0'],
@@ -82,11 +82,11 @@
 		],
 		[
 			['Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30'],
-			['galaxy', 'device', 'samsung', 'Galaxy Nexus', 'Galaxy Nexus'],
+			['galaxy', 'device', 'samsung', 'Galaxy Nexus', 'Samsung Galaxy Nexus'],
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.3; zh-cn; SAMSUNG-SCH-P709E Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36'],
-			['chrome', 'device', 'samsung', 'Google Chrome 28.0.1500.94', 'Samsung SCH-P709E'],
+			['chrome', 'device', 'samsung', 'Google Chrome 28.0.1500.94', 'Samsung P709E'],
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.4.2; HTC One Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 QvodPlayerBrowser:3.4.19 Mobile-Ser:10086'],
@@ -114,7 +114,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; GreenBrowser)'],
-			['greenbrowser', 'os', 'win-4', 'GreenBrowser ', 'Windows 7 x64'],
+			['greenbrowser', 'os', 'win-4', 'GreenBrowser', 'Windows 7 x64'],
 		],
 		[
 			['Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.2.0'],
@@ -302,7 +302,7 @@
 		],
 		[
 			['Nokia5320di'],
-			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia 5320'],
+			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia 5320di'],
 		],
 		[
 			['Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.17'],
@@ -434,7 +434,7 @@
 		],
 		[
 			['NokiaC1-02i/2.0 (04.10) Profile/MIDP-2.1 Configuration/CLDC-1.1 UCWEB/2.0 (Java; U; MIDP-2.0; zh-CN; nokiac1-02i) U2/1.0.0 UCBrowser/9.0.0.261 U2/1.0.0 Mobile UNTRUSTED/1.0'],
-			['ucbrowser', 'device', 'nokia', 'UC Browser 9.0.0.261', 'Nokia'],
+			['ucbrowser', 'device', 'nokia', 'UC Browser 9.0.0.261', 'Nokia C1'],
 		],
 		[
 			['Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X; zh-CN) AppleWebKit/537.51.2 (KHTML, like Gecko) CriOS/23.0.1271.100 Mobile/11D257 Safari/7534.48.3 UCBrowser/9.9.2.490'],
@@ -450,7 +450,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'],
-			['msie11', 'os', 'win-5', 'Internet Explorer Spartan 12.0', 'Windows 10 x64'],
+			['edge', 'os', 'win-5', 'Edge 12.0', 'Windows 10 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.69 Safari/537.36 2345chrome v2.4.0.2847'],
@@ -474,7 +474,7 @@
 		],
 		[
 			['w3m/0.5.2 (Linux i686; it; Debian-3.0.6-3)'],
-			['w3m', 'os', 'debian', 'W3M 0.5.2', 'Debian GNU/Linux'],
+			['w3m', 'os', 'debian', 'W3M 0.5.2', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1pre) Gecko/20090629 Vonkeror/1.0'],
@@ -489,8 +489,8 @@
 			['uzbl', 'os', 'archlinux', 'uzbl', 'Arch Linux'],
 		],
 		[
-			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; uZardWeb/1.0; Server_JP)'],
-			['uzardweb', 'os', 'win-2', 'uZardWeb 1.0', 'Windows Server 2003'],
+			['Mozilla/5.0 ArchLinux (X11; Linux x86_64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.41 Safari/535.1'],
+			['chrome', 'os', 'archlinux', 'Google Chrome 13.0.782.41', 'Arch Linux x64'],
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; WOW64; SV1; uZardWeb/1.0; Server_CN)'],
@@ -510,7 +510,7 @@
 		],
 		[
 			['Links 2.0 (http://gossamer-threads.com/scripts/links/)'],
-			['null', 'os', 'null', 'Links ', 'Unknown'],
+			['null', 'os', 'null', 'Links', 'Unknown'],
 		],
 		[
 			['Wget/1.9.1'],
@@ -570,7 +570,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9pre) Gecko/2008040318 Firefox/3.0pre (Swiftfox)'],
-			['swiftfox', 'os', 'linux', 'Swiftfox ', 'GNU/Linux'],
+			['swiftfox', 'os', 'linux', 'Swiftfox', 'GNU/Linux'],
 		],
 		[
 			['Surf/0.4.1 (X11; U; Unix; en-US) AppleWebKit/531.2+ Compatible (Safari; MSIE 9.0)'],
@@ -590,7 +590,7 @@
 		],
 		[
 			['Sundance(Compatible; Windows; U; en-US;) Version/0.9.0.36'],
-			['sundance', 'os', 'win-2', 'Sundance ', 'Windows'],
+			['sundance', 'os', 'win-2', 'Sundance', 'Windows'],
 		],
 		[
 			['Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/528.16 (KHTML, like Gecko) Stainless/0.5.3 Safari/525.20.1'],
@@ -602,7 +602,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; SlimBrowser)'],
-			['slimbrowser', 'os', 'win-4', 'SlimBrowser ', 'Windows 7'],
+			['slimbrowser', 'os', 'win-4', 'SlimBrowser', 'Windows 7'],
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618; .NET4.0C; .NET4.0E; Sleipnir/2.9.9)'],
@@ -799,7 +799,7 @@
 			],*/
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/Nokia2730c-1/22.478; U; en) Presto/2.5.25 Version/10.54'],
-			['opera-2', 'device', 'nokia', 'Opera Mini Nokia2730c', 'Nokia 2730'],
+			['opera-2', 'device', 'nokia', 'Opera Mini Nokia2730c', 'Nokia 2730c'],
 		],
 		[
 			['Opera/9.80 (iPhone; Opera Mini/7.1.32694/27.1407; U; en) Presto/2.8.119 Version/11.10'],
@@ -819,11 +819,11 @@
 		],
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/4.0 (compatible; MSIE 5.0; UNIX) Opera 6.12 [en]/24.838; U; en) Presto/2.5.25 Version/10.54'],
-			['opera-2', 'os', 'unix', 'Opera Mini 4.0', 'Unix'],
+			['opera-2', 'os', 'java', 'Opera Mini 4.0', 'J2ME/MIDP Device'],
 		],
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/(Windows; U; Windows NT 5.1; en-US) AppleWebKit/23.411; U; en) Presto/2.5.25 Version/10.54'],
-			['opera-2', 'os', 'win-2', 'Opera Mini ', 'Windows XP'],
+			['opera-2', 'os', 'win-2', 'Opera Mini', 'Windows XP'],
 		],
 		[
 			['Opera/9.99 (Windows NT 5.1; U; pl) Presto/9.9.9'],
@@ -879,7 +879,7 @@
 		],
 		[
 			['Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/522+ (KHTML, like Gecko) OmniWeb'],
-			['omniweb', 'os', 'mac-3', 'OmniWeb ', 'Mac OS X'],
+			['omniweb', 'os', 'mac-3', 'OmniWeb', 'Mac OS X'],
 		],
 		[
 			['NokiaE5-00/SymbianOS/9.1 Series60/3.0 3gpp-gba'],
@@ -891,7 +891,7 @@
 		],
 		[
 			['NokiaN97i/SymbianOS/9.1 Series60/3.0'],
-			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia N97'],
+			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia N97i'],
 		],
 		[
 			['Nokia5250/10.0.011 (SymbianOS/9.4; U; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML, like Gecko) Safari/525 3gpp-gba'],
@@ -959,7 +959,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; MyIE2; .NET CLR 1.1.4322; InfoPath.1)'],
-			['myie2', 'os', 'win-2', 'MyIE2 ', 'Windows Server 2003'],
+			['myie2', 'os', 'win-2', 'MyIE2', 'Windows Server 2003'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:1.8.0.7) Gecko/20110321 MultiZilla/4.33.2.6a SeaMonkey/8.6.55'],
@@ -1079,7 +1079,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; de-at) AppleWebKit/525.1+ (KHTML, like Gecko, Safari/525.1+) midori'],
-			['midori', 'os', 'linux', 'Midori ', 'GNU/Linux x64'],
+			['midori', 'os', 'linux', 'Midori', 'GNU/Linux x64'],
 		],
 		[
 			['MOT-L7/NA.ACR_RB MIB/2.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1'],
@@ -1099,7 +1099,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; Maxthon; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)'],
-			['maxthon', 'os', 'win-2', 'Maxthon ', 'Windows XP'],
+			['maxthon', 'os', 'win-2', 'Maxthon', 'Windows XP'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux armv7l; ru-RU; rv:1.9.2.3pre) Gecko/20100723 Firefox/3.5 Maemo Browser 1.7.4.8 RX-51 N900'],
@@ -1115,7 +1115,7 @@
 		],
 		[
 			['Lynx (textmode)'],
-			['lynx', 'os', 'null', 'Lynx ', 'Unknown'],
+			['lynx', 'os', 'null', 'Lynx', 'Unknown'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.28) Gecko/20120410 Firefox/3.6.28 Lunascape/6.7.1.25446'],
@@ -1155,7 +1155,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; Linux 3.5.4-1-ARCH i686; es) KHTML/4.9.1 (like Gecko) Konqueror/4.9'],
-			['konqueror', 'os', 'archlinux', 'Konqueror 4.9', 'Arch Linux'],
+			['konqueror', 'os', 'linux', 'Konqueror 4.9', 'GNU/Linux'],
 		],
 		[
 			['Mozilla/5.0 (compatible; Konqueror/4.4; Linux 2.6.32-22-generic; X11; en_US) KHTML/4.4.3 (like Gecko) Kubuntu'],
@@ -1275,11 +1275,11 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.0; Trident/3.1; IEMobile/7.0; Nokia;N70)'],
-			['msie-mobile', 'device', 'nokia', 'IEMobile 7.0', 'Nokia'],
+			['msie-mobile', 'device', 'nokia', 'IEMobile 7.0', 'Nokia Lumia N70'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.7) Gecko/2009030814 Iceweasel Firefox/3.0.7 (Debian-3.0.7-1)'],
-			['iceweasel', 'os', 'debian', 'IceWeasel ', 'Debian GNU/Linux'],
+			['iceweasel', 'os', 'debian', 'IceWeasel', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (X11; Linux i686; rv:9.0a2) Gecko/20111104 Firefox/9.0a2 Iceweasel/9.0a2'],
@@ -1303,7 +1303,7 @@
 		],
 		[
 			['IBM WebExplorer /v0.94'],
-			['ibmwebexplorer', 'os', 'null', 'IBM WebExplorer ', 'Unknown'],
+			['ibmwebexplorer', 'os', 'null', 'IBM WebExplorer', 'Unknown'],
 		],
 		[
 			['HotJava/1.1.2 FCS'],
@@ -1319,7 +1319,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.5.30729; InfoPath.2; .NET CLR 3.0.30729; GreenBrowser)'],
-			['greenbrowser', 'os', 'win-3', 'GreenBrowser ', 'Windows Vista'],
+			['greenbrowser', 'os', 'win-3', 'GreenBrowser', 'Windows Vista'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.9a8) Gecko/2007100620 GranParadiso/3.1'],
@@ -1331,7 +1331,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; chromeframe; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; MAXTHON 2.0)'],
-			['chrome', 'os', 'win-4', 'Google Chrome Frame ', 'Windows 7 x64'],
+			['chrome', 'os', 'win-4', 'Google Chrome Frame', 'Windows 7 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36 Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10'],
@@ -1355,31 +1355,31 @@
 		],
 		[
 			['Nokia5800XpressMusic/GoBrowser/1.6.0.46'],
-			['gobrowser', 'device', 'nokia', 'GO Browser 1.6.0.46', 'Nokia 5800'],
+			['gobrowser', 'device', 'nokia', 'GO Browser 1.6.0.46', 'Nokia 5800XpressMusic'],
 		],
 		[
 			['Mozilla/5.0 (Android 2.2; zh-cn; HTC Desire)/GoBrowser'],
-			['gobrowser', 'device', 'htc', 'GO Browser ', 'HTC Desire'],
+			['gobrowser', 'device', 'htc', 'GO Browser', 'HTC Desire'],
 		],
 		[
 			['NokiaX6/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser ', 'Nokia'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia X6'],
 		],
 		[
 			['NokiaN97_mini/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser ', 'Nokia N97'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia N97'],
 		],
 		[
 			['NokiaC5-00/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser ', 'Nokia'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia C5'],
 		],
 		[
 			['Nokia6120c/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser ', 'Nokia 6120'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia 6120c'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko/20090327 Galeon/2.0.7'],
@@ -1435,7 +1435,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Gentoo Linux x86_64; pl-PL) Gecko Firefox'],
-			['firefox', 'os', 'gentoo', 'Firefox ', 'Gentoo x64'],
+			['firefox', 'os', 'gentoo', 'Firefox', 'Gentoo x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; x64; fr; rv:1.9.2.13) Gecko/20101203 Firebird/3.6.13'],
@@ -1463,7 +1463,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-gb) AppleWebKit/525.1+ (KHTML, like Gecko, Safari/525.1+) epiphany-webkit'],
-			['epiphany', 'os', 'linux', 'Epiphany ', 'GNU/Linux'],
+			['epiphany', 'os', 'linux', 'Epiphany', 'GNU/Linux'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.9.0.13) Gecko/2009073022 EnigmaFox/3.0.13'],
@@ -1471,7 +1471,7 @@
 		],
 		[
 			['Enigma Browser'],
-			['enigmabrowser', 'os', 'null', 'Enigma Browser ', 'Unknown'],
+			['enigmabrowser', 'os', 'null', 'Enigma Browser', 'Unknown'],
 		],
 		[
 			['ELinks/0.9.3 (textmode; Linux 2.6.9-kanotix-8 i686; 127x41)'],
@@ -1479,7 +1479,7 @@
 		],
 		[
 			['ELinks (0.11.3; Linux 2.6.23-gentoo-r6 i686; 128x48)'],
-			['elinks', 'os', 'gentoo', 'Elinks ', 'Gentoo'],
+			['elinks', 'os', 'gentoo', 'Elinks', 'Gentoo'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533+ (KHTML, like Gecko) Element Browser 5.0'],
@@ -1491,12 +1491,12 @@
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows CE; Mobile; like Android; ko-kr) AppleWebKit/533.3 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.3 Dorothy'],
-			['dorothybrowser', 'os', 'win-2', 'Dorothy ', 'Windows CE'],
+			['dorothybrowser', 'os', 'win-2', 'Dorothy', 'Windows CE'],
 		],
 		/*
 			[
 			['Mozilla/5.0 (Windows; U; Windows CE; Mobile; like iPhone; ko-kr) AppleWebKit/533.3 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.3 Dorothy'],
-			['dorothybrowser', 'os', 'win-2', 'Dorothy ', 'Windows CE'],
+			['dorothybrowser', 'os', 'win-2', 'Dorothy', 'Windows CE'],
 			],*/
 		[
 			['Doris/1.15 [en] (Symbian)'],
@@ -1572,7 +1572,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.14) Gecko/20101020 Conkeror/0.9.2 (Debian-0.9.2+git100804-1)'],
-			['conkeror', 'os', 'debian', 'Conkeror 0.9.2', 'Debian GNU/Linux x64'],
+			['conkeror', 'os', 'debian', 'Conkeror 0.9.2', 'Debian x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7'],
@@ -1608,7 +1608,7 @@
 		],
 		[
 			['Mozilla/4.08 (Charon; Inferno)'],
-			['null', 'os', 'inferno', 'Charon ', 'Inferno'],
+			['null', 'os', 'inferno', 'Charon', 'Inferno'],
 		],
 		[
 			['Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.8; it; rv:1.93.26.2658) Gecko/20141026 Camino/2.176.223 (MultiLang) (like Firefox/3.64.2268)0'],
@@ -1620,11 +1620,11 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; Browzar)'],
-			['browzar', 'os', 'win-2', 'Browzar ', 'Windows XP'],
+			['browzar', 'os', 'win-2', 'Browzar', 'Windows XP'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; nl; rv:1.8.1b2) Gecko/20060821 BonEcho/2.0b2 (Debian-1.99+2.0b2+dfsg-1)'],
-			['firefoxdevpre', 'os', 'debian', 'BonEcho 2.0b2', 'Debian GNU/Linux'],
+			['firefoxdevpre', 'os', 'debian', 'BonEcho 2.0b2', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; BOLT/2.340) AppleWebKit/530+ (KHTML, like Gecko) Version/4.0 Safari/530.17 UNTRUSTED/1.0 3gpp-gba'],
@@ -1640,7 +1640,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; Avant Browser; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)'],
-			['avantbrowser', 'os', 'win-4', 'Avant Browser ', 'Windows 7'],
+			['avantbrowser', 'os', 'win-4', 'Avant Browser', 'Windows 7'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux; de-DE) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.8.0'],
@@ -1672,7 +1672,7 @@
 		],
 		[
 			['Mozilla/5.0 (Linux; U; Android 2.3; en-us) AppleWebKit/999+ (KHTML, like Gecko) Safari/999.9'],
-			['android-webkit', 'os', 'android', 'Android Webkit ', 'Android 2.3'],
+			['android-webkit', 'os', 'android', 'Android Webkit', 'Android 2.3'],
 		],
 		[
 			['AmigaVoyager/3.2 (AmigaOS/MC680x0)'],
@@ -1860,7 +1860,7 @@
 		],
 		[
 			['Mozilla/5.0 (Macintosh; Intel Mac OS X 1095) AppleWebKit/537.36 (KHTML like Gecko) Chrome/34.0.1771.0 Safari/537.36 Epic'],
-			['epicbrowser', 'os', 'mac-3', 'Epic ', 'Mac OS X 1095'],
+			['epicbrowser', 'os', 'mac-3', 'Epic', 'Mac OS X 1095'],
 		],
 		[
 			['Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_1; nl-nl) AppleWebKit/532.3+ (KHTML, like Gecko) Fluid/0.9.6 Safari/532.3+'],
@@ -1872,7 +1872,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB7.5; GOSURF; Foxy/1; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)'],
-			['gosurf', 'os', 'win-3', 'GoSurf ', 'Windows Vista'],
+			['gosurf', 'os', 'win-3', 'GoSurf', 'Windows Vista'],
 		],
 		[
 			['Mozilla/5.0 (Linux; U; Android 4.2.2; en-us ; HV3 Build/JDQ39) AppleWebKit/533.1 (KHTML like Gecko) Version/4.0 Mobile Safari/533.1/UCBrowser/8.6.1.262/145/355'],
@@ -1884,7 +1884,7 @@
 		],
 		[
 			['Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5'],
-			['kirix-strata', 'device', 'iphone', 'Kirix Strata ', 'iPhone iOS 712'],
+			['kirix-strata', 'device', 'iphone', 'Kirix Strata', 'iPhone iOS 712'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/31.0.1650.63 Safari/537.36'],
@@ -1892,7 +1892,7 @@
 		],
 		[
 			['Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; LEGALBROWSER)'],
-			['lbrowser', 'os', 'win-4', 'LBrowser ', 'Windows 7 x64'],
+			['lbrowser', 'os', 'win-4', 'LBrowser', 'Windows 7 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; cs; rv:1.9.2.6) Gecko/20100628 myibrow/4alpha2'],
@@ -1904,7 +1904,7 @@
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-US; SkipStone 0.8.3) Gecko/20020615 Debian/1.0.0-3'],
-			['skipstone', 'os', 'debian', 'SkipStone 0.8.3', 'Debian GNU/Linux'],
+			['skipstone', 'os', 'debian', 'SkipStone 0.8.3', 'Debian'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.0.5) Gecko/2009021916 Songbird/1.1.2 (20090331142126)'],
@@ -2036,7 +2036,7 @@
 		],
 		[
 			['CoolPad8736_CMCC_TD/1.0 Linux/3.0.8 Android/4.2 Release/6.25.2013 Browser/AppleWebkit534.30'],
-			['android-webkit', 'device', 'coolpad', 'Android Webkit ', 'CoolPad 8736'],
+			['android-webkit', 'device', 'coolpad', 'Android Webkit', 'CoolPad 8736'],
 		],
 		[
 			['Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21'],
@@ -2052,11 +2052,11 @@
 		],
 		[
 			['HUAWEI_P6-T00_TD/5.0 Android/4.2.2 (Linux; U; Android 4.2.2; zh-cn) Release/03.20.2013 Browser/WAP2.0 (AppleWebKit/534.30) Mobile Safari/534.30'],
-			['android-webkit', 'device', 'huawei', 'Android Webkit ', 'Huawei P6'],
+			['android-webkit', 'device', 'huawei', 'Android Webkit', 'Huawei P6'],
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19'],
-			['chrome', 'device', 'samsung', 'Google Chrome 18.0.1025.133', 'Galaxy Nexus'],
+			['chrome', 'device', 'samsung', 'Google Chrome 18.0.1025.133', 'Samsung Galaxy Nexus'],
 		],
 		[
 			['Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/531.2+ (KHTML, like Gecko) WebBrowser/1.0 SmartTV Safari/531.2+'],
@@ -2112,15 +2112,15 @@
 		],
 		[
 			['Mozilla/2.0 (Compatible; AOL-IWENG 3.0; Win16)'],
-			['aol', 'os', 'win-1', 'AOL ', 'Windows 3.11'],
+			['aol', 'os', 'win-1', 'AOL', 'Windows 3.11'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
-			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'],
+			['icecat', 'os', 'zenwalk', 'GNU IceCat 3.6.13', 'Zenwalk'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; nl-NL; rv:1.6) Gecko/20050714 Linspire/1.6-5.1.0.50.linspire2.70'],
@@ -2220,6 +2220,10 @@
 		[
 			['Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+'],
 			['safari', 'os', 'blackberry', 'Mobile Safari 10.0.9.2372', 'BlackBerry OS 10']
+		],
+		[
+			['Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; NOKIA; Nokia 920) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0'],
+			['edge', 'device', 'nokia', 'Edge 12.0', 'Nokia Lumia 920'],
 		],
 	];
 
