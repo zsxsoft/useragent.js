@@ -11,10 +11,9 @@ module.exports = function(grunt) {
 		pkg: packageJson,
 		copy: {
 			base: {
-				files: [{
-					src: ['lib/*.js', 'index.js'],
-					dest: 'dist/tmp/'
-				}]
+				src: ['lib/*.js', 'index.js'],
+				dest: 'dist/tmp/',
+				expand: true
 			}, 
 			asp: {
 				expand: true, 
