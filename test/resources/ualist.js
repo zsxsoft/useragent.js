@@ -82,11 +82,11 @@
 		],
 		[
 			['Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30'],
-			['galaxy', 'device', 'samsung', 'Galaxy Nexus', 'Galaxy Nexus'],
+			['galaxy', 'device', 'samsung', 'Galaxy Nexus', 'Samsung Galaxy Nexus'],
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.3; zh-cn; SAMSUNG-SCH-P709E Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36'],
-			['chrome', 'device', 'samsung', 'Google Chrome 28.0.1500.94', 'Samsung SCH-P709E'],
+			['chrome', 'device', 'samsung', 'Google Chrome 28.0.1500.94', 'Samsung P709E'],
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.4.2; HTC One Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 QvodPlayerBrowser:3.4.19 Mobile-Ser:10086'],
@@ -302,7 +302,7 @@
 		],
 		[
 			['Nokia5320di'],
-			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia 5320'],
+			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia 5320di'],
 		],
 		[
 			['Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.17'],
@@ -434,7 +434,7 @@
 		],
 		[
 			['NokiaC1-02i/2.0 (04.10) Profile/MIDP-2.1 Configuration/CLDC-1.1 UCWEB/2.0 (Java; U; MIDP-2.0; zh-CN; nokiac1-02i) U2/1.0.0 UCBrowser/9.0.0.261 U2/1.0.0 Mobile UNTRUSTED/1.0'],
-			['ucbrowser', 'device', 'nokia', 'UC Browser 9.0.0.261', 'Nokia'],
+			['ucbrowser', 'device', 'nokia', 'UC Browser 9.0.0.261', 'Nokia C1'],
 		],
 		[
 			['Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X; zh-CN) AppleWebKit/537.51.2 (KHTML, like Gecko) CriOS/23.0.1271.100 Mobile/11D257 Safari/7534.48.3 UCBrowser/9.9.2.490'],
@@ -799,7 +799,7 @@
 			],*/
 		[
 			['Opera/9.80 (J2ME/MIDP; Opera Mini/Nokia2730c-1/22.478; U; en) Presto/2.5.25 Version/10.54'],
-			['opera-2', 'device', 'nokia', 'Opera Mini Nokia2730c', 'Nokia 2730'],
+			['opera-2', 'device', 'nokia', 'Opera Mini Nokia2730c', 'Nokia 2730c'],
 		],
 		[
 			['Opera/9.80 (iPhone; Opera Mini/7.1.32694/27.1407; U; en) Presto/2.8.119 Version/11.10'],
@@ -891,7 +891,7 @@
 		],
 		[
 			['NokiaN97i/SymbianOS/9.1 Series60/3.0'],
-			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia N97'],
+			['maemo', 'device', 'nokia', 'Nokia Web Browser', 'Nokia N97i'],
 		],
 		[
 			['Nokia5250/10.0.011 (SymbianOS/9.4; U; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML, like Gecko) Safari/525 3gpp-gba'],
@@ -1275,7 +1275,7 @@
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.0; Trident/3.1; IEMobile/7.0; Nokia;N70)'],
-			['msie-mobile', 'device', 'nokia', 'IEMobile 7.0', 'Nokia'],
+			['msie-mobile', 'device', 'nokia', 'IEMobile 7.0', 'Nokia Lumia N70'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.7) Gecko/2009030814 Iceweasel Firefox/3.0.7 (Debian-3.0.7-1)'],
@@ -1355,7 +1355,7 @@
 		],
 		[
 			['Nokia5800XpressMusic/GoBrowser/1.6.0.46'],
-			['gobrowser', 'device', 'nokia', 'GO Browser 1.6.0.46', 'Nokia 5800'],
+			['gobrowser', 'device', 'nokia', 'GO Browser 1.6.0.46', 'Nokia 5800XpressMusic'],
 		],
 		[
 			['Mozilla/5.0 (Android 2.2; zh-cn; HTC Desire)/GoBrowser'],
@@ -1363,7 +1363,7 @@
 		],
 		[
 			['NokiaX6/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia X6'],
 		],
 		[
 			['NokiaN97_mini/GoBrowser'],
@@ -1371,11 +1371,11 @@
 		],
 		[
 			['NokiaC5-00/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia C5'],
 		],
 		[
 			['Nokia6120c/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia 6120'],
+			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia 6120c'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
@@ -2056,7 +2056,7 @@
 		],
 		[
 			['Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19'],
-			['chrome', 'device', 'samsung', 'Google Chrome 18.0.1025.133', 'Galaxy Nexus'],
+			['chrome', 'device', 'samsung', 'Google Chrome 18.0.1025.133', 'Samsung Galaxy Nexus'],
 		],
 		[
 			['Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/531.2+ (KHTML, like Gecko) WebBrowser/1.0 SmartTV Safari/531.2+'],
