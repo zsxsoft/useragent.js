@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 				dest: 'dist/useragent.js'
 			}
 		},
-		closurecompiler: {
+		uglify: {
 			dist: {
 				options: {
 					banner: '/*!\n * ' + packageJson.name + '\n * version: ' + packageJson.version + '\n * build: <%= new Date() %>\n * author: zsx<zsx@zsxsoft.com> \n*/',
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-closurecompiler');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-transcoding');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 		if (language === "asp" || language === "wscript") tasks.push('replace:asp');
 		tasks.push("jshint:before", "concat", "jshint:concat");
 		if (!doNotCompile) {
-			tasks.push('closurecompiler');
+			tasks.push('uglify');
 		}
 
 		tasks.push("transcoding");
