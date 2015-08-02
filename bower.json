@@ -9,7 +9,6 @@
   "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
   "moduleType": [
     "amd",
-    "cmd",
     "globals",
     "node"
   ],
@@ -17,6 +16,9 @@
     "UserAgent"
   ],
   "license": "MIT",
+  "main": {
+    "dist/useragent.min.js"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
