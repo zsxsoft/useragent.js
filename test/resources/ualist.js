@@ -1351,31 +1351,31 @@
 		],
 		[
 			['NokiaE66/GoBrowser/2.0.297'],
-			['gobrowser', 'device', 'nokia', 'GO Browser 2.0.297', 'Nokia E66'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser 2.0.297', 'Nokia E66'],
 		],
 		[
 			['Nokia5800XpressMusic/GoBrowser/1.6.0.46'],
-			['gobrowser', 'device', 'nokia', 'GO Browser 1.6.0.46', 'Nokia 5800XpressMusic'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser 1.6.0.46', 'Nokia 5800XpressMusic'],
 		],
 		[
 			['Mozilla/5.0 (Android 2.2; zh-cn; HTC Desire)/GoBrowser'],
-			['gobrowser', 'device', 'htc', 'GO Browser', 'HTC Desire'],
+			['gobrowser', 'device', 'htc', 'GOBrowser', 'HTC Desire'],
 		],
 		[
 			['NokiaX6/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia X6'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser', 'Nokia X6'],
 		],
 		[
 			['NokiaN97_mini/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia N97'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser', 'Nokia N97'],
 		],
 		[
 			['NokiaC5-00/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia C5'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser', 'Nokia C5'],
 		],
 		[
 			['Nokia6120c/GoBrowser'],
-			['gobrowser', 'device', 'nokia', 'GO Browser', 'Nokia 6120c'],
+			['gobrowser', 'device', 'nokia', 'GOBrowser', 'Nokia 6120c'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)'],
@@ -1543,32 +1543,12 @@
 			['crazybrowser', 'os', 'win-5', 'Crazy Browser 3.1.0', 'Windows 8'],
 		],
 		[
-			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; InfoPath.2; Crazy Browser 3.0.5)'],
-			['crazybrowser', 'os', 'win-2', 'Crazy Browser 3.0.5', 'Windows XP'],
-		],
-		[
-			['Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Crazy Browser 3.0.5) ; .NET CLR 3.0.04506.30; InfoPath.2; InfoPath.3; .NET CLR 1.1.4322; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727)'],
-			['crazybrowser', 'os', 'win-2', 'Crazy Browser 3.0.5', 'Windows XP'],
-		],
-		[
-			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; Q312461; Crazy Browser 1.0.5; .NET CLR 1.0.3705)'],
-			['crazybrowser', 'os', 'win-1', 'Crazy Browser 1.0.5', 'Windows 2000'],
-		],
-		[
-			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Q312461; Crazy Browser 1.0.5)'],
-			['crazybrowser', 'os', 'win-2', 'Crazy Browser 1.0.5', 'Windows XP'],
-		],
-		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Avant Browser [avantbrowser.com]; Crazy Browser 1.0.5)'],
-			['crazybrowser', 'os', 'win-2', 'Crazy Browser .com', 'Windows XP'],
+			['crazybrowser', 'os', 'win-2', 'Crazy Browser 1.0.5', 'Windows XP'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 6.1; rv:16.0) Gecko/20121010 conkeror/1.0pre'],
 			['conkeror', 'os', 'win-4', 'Conkeror 1.0pre', 'Windows 7'],
-		],
-		[
-			['Mozilla/5.0 (X11; Linux x86_64; rv:6.0.1) Gecko/20110831 conkeror/0.9.3'],
-			['conkeror', 'os', 'linux', 'Conkeror 0.9.3', 'GNU/Linux x64'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.14) Gecko/20101020 Conkeror/0.9.2 (Debian-0.9.2+git100804-1)'],
