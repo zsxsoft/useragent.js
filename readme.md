@@ -31,7 +31,11 @@ console.log("TEST BROWSER:" + ua.browser.full + " (" + ua.browser.name + " VERSI
 console.log("TEST OS:" + ua.os.full + " (" + ua.os.name + " VERSION = " + ua.os.version + " )");
 console.log("TEST DEVICE:" + ua.device.full);
 ```
-
+####In Webpack / browserify
+```javascript
+import Useragent from 'useragent.js';
+console.log(Useragent);
+```
 
 ####In Browser
 [Click here](http://zsxsoft.github.io/useragent.js/basic.html)

@@ -1,4 +1,4 @@
-(function(root) {
+(function (root) {
 	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
@@ -9,19 +9,19 @@
 	userAgent.version = "0.2";
 	userAgent.publishDate = "20150626";
 
-	userAgent.analyze = function(uaString) {
+	userAgent.analyze = function (uaString) {
 		var returnObject = {};
 		returnObject.ua = uaString;
-		if (typeof this.osDetect !== 'undefined') returnObject.os = this.osDetect.analyze(uaString);
-		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
-		if (typeof this.browserDetect !== 'undefined') returnObject.browser = this.browserDetect.analyze(uaString);
-		if (typeof returnObject.device !== 'undefined') returnObject.platform = returnObject.device;
-		if (typeof returnObject.os !== 'undefined' && returnObject.device.name === "") returnObject.platform = returnObject.os;
+		if (this.osDetect) returnObject.os = this.osDetect.analyze(uaString);
+		if (this.deviceDetect) returnObject.device = this.deviceDetect.analyze(uaString);
+		if (this.browserDetect) returnObject.browser = this.browserDetect.analyze(uaString);
+		if (returnObject.device) returnObject.platform = returnObject.device;
+		if (returnObject.device && returnObject.os && returnObject.device.name === "") returnObject.platform = returnObject.os;
 		return returnObject;
 	};
 
 
-	var requireFunction = function(userAgent, OS, DEVICE, BROWSER) {
+	var requireFunction = function (userAgent, OS, DEVICE, BROWSER) {
 		userAgent.osDetect = OS;
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
@@ -31,7 +31,8 @@
 	// Node.js
 	if (NODE) {
 		if (process.env.UAJS_COV) {
-			requireFunction(userAgent, require('./lib-cov/os'), require('./lib-cov/device'), require('./lib-cov/browser'));
+			var libs = ["-cov/os", "-cov/device", "-cov/browser"]; // To prevent webpack pack lib-cov.
+			requireFunction(userAgent, require('./lib' + libs[0]), require('./lib' + libs[1]), require('./lib' + libs[2]));
 		} else {
 			requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
 		}
@@ -40,14 +41,14 @@
 	}
 	// AMD
 	else if (AMD) {
-		define(['./lib/os', './lib/device', './lib/browser'], function(OS, DEVICE, BROWSER) {
+		define(['./lib/os', './lib/device', './lib/browser'], function (OS, DEVICE, BROWSER) {
 			requireFunction(userAgent, OS, DEVICE, BROWSER);
 			return userAgent;
 		});
 	}
 	// CMD
 	else if (CMD) {
-		define(function(require, exports, module) {
+		define(function (require, exports, module) {
 			requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
 			module.exports = userAgent;
 		});
