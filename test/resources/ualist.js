@@ -1779,10 +1779,6 @@
 			['firefoxdevpre', 'os', 'win-3', 'Mozilla Developer Preview 3.7a5', 'Windows Vista'],
 		],
 		[
-			['Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20 Novarra-Vision/8.0'],
-			['novarra', 'os', 'nova', 'Novarra Vision 8.0', 'Nova'],
-		],
-		[
 			['Mozilla/4.7 (compatible; OffByOne; Windows )'],
 			['offbyone', 'os', 'win-2', 'Off By One', 'Windows'],
 		],
