@@ -1,3 +1,7 @@
+/* global USERAGENT_OS */
+/* global USERAGENT_DEVICE */
+/* global USERAGENT_BROWSER */
+/* global define */
 (function (root) {
 	"use strict";
 
@@ -6,8 +10,8 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.2";
-	userAgent.publishDate = "20150626";
+	userAgent.version = "0.3";
+	userAgent.publishDate = "20151107";
 
 	userAgent.analyze = function (uaString) {
 		var returnObject = {};
