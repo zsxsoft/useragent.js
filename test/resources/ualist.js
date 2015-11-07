@@ -1795,8 +1795,8 @@
 			['owb', 'os', 'amigaos', 'Oregano Web Browser', 'AmigaOS 4.1'],
 		],
 		[
-			['Mozilla/5.0 (Linux; Android 4.4.3; Amazon Otter Build/KTU84M) AppleWebKit/537.36 (KHTML like Gecko) Version/4.0 Chrome/33.0.0.0 Safari/537.36'],
-			['otter', 'os', 'android', 'Otter Build', 'Android 4.4.3'],
+			['Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/538.1 (KHTML, like Gecko) Otter/0.9.08'],
+			['otter', 'os', 'win-5', 'Otter 0.9.08', 'Windows 8 x64'],
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) SlimBoat/1.0.8 Version/5.1 Safari/533.3'],
@@ -1872,7 +1872,7 @@
 		],
 		[
 			['Mozilla/5.0 (Linux; U; Android 4.2.2; en-us ; HV3 Build/JDQ39) AppleWebKit/533.1 (KHTML like Gecko) Version/4.0 Mobile Safari/533.1/UCBrowser/8.6.1.262/145/355'],
-			['hv3', 'os', 'android', 'Hv3 Build', 'Android 4.2.2'],
+			['hv3', 'os', 'android', 'Hv3', 'Android 4.2.2'],
 		],
 		[
 			['Mozilla/5.0 (Java 1.6.0_01; Windows XP 5.1 x86; en) ICEbrowser/v6_1_2'],
