@@ -11,98 +11,29 @@
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style type="text/css">
+  .imgElement {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  </style>
 </head>
 <body>
   <div class="wrapper">
-    <header id="left-side">
-
-    </header>
+    <header id="left-side"></header>
 
     <section>
+    <h2>Supported</h2>
+      
+      <h3>OS:</h3>
+      <section id="os-value">Loading...</section>
 
-      <h2>
-        <a id="compatibility" class="anchor" href="#compatibility" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Compatibility
-      </h2>
+      <h3>Device:</h3>
+      <section id="device-value">Loading...</section>
 
-      <p>
-        Node.JS / Internet Explorer 6+ / Google Chrome / Mozilla Firefox / Apple Safari / Classical ASP
-      </p>
-
-      <h2>
-        <a id="installion" class="anchor" href="#installion" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Installion
-      </h2>
-
-      <div class="highlight highlight-bash">
-        npm: <pre>$ npm install useragent.js</pre>
-      </div>
-      <div class="highlight highlight-bash">
-        bower: <pre>$ bower install useragent.js</pre>
-      </div>
-
-      <p>
-        If you are using in your browser, you should run
-        <code>grunt</code>
-        to compress it.
-      </p>
-
-      <h2>
-        <a id="test" class="anchor" href="#test" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Test
-      </h2>
-
-      <div class="highlight highlight-bash">
-        <pre>$ npm <span class="pl-s3">test</span></pre>
-      </div>
-
-      <h2>
-        <a id="run" class="anchor" href="#run" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Run
-      </h2>
-
-      <h4>
-        <a id="in-node" class="anchor" href="#in-node" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        In Node
-      </h4>
-
-      <div class="highlight highlight-javascript">
-        <pre><span class="pl-s">var</span> userAgent <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">"</span>useragent.js<span class="pl-pds">"</span></span>);
-<span class="pl-s">var</span> ua <span class="pl-k">=</span> userAgent.analyze(<span class="pl-s1"><span class="pl-pds">"</span>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36<span class="pl-pds">"</span></span>);
-<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST UA: <span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.ua);
-<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST BROWSER:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.full <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> (<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.<span class="pl-sc">name</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> VERSION = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.browser.<span class="pl-sc">version</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> )<span class="pl-pds">"</span></span>);
-<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST OS:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.os.full <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> (<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.os.<span class="pl-sc">name</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> VERSION = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.os.<span class="pl-sc">version</span> <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span> )<span class="pl-pds">"</span></span>);
-<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>TEST DEVICE:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> ua.device.full);</pre>
-      </div>
-
-      <h4>
-        <a id="in-browser" class="anchor" href="#in-browser" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        In Browser
-      </h4>
-
-      <p>Look left!</p>
-
-      <h2>
-        <a id="supported-browsersplatforms" class="anchor" href="#supported-browsersplatforms" aria-hidden="true">
-          <span class="octicon octicon-link"></span>
-        </a>
-        Supported Browsers/Platforms
-      </h2>
-
-      <p><a href="supported.html" alt="Click here">Click here</a></p>
-
+      <h3>Browser:</h3>
+      <section id="browser-value">Loading...</section>
     </section>
     <footer>
       <p>
@@ -119,6 +50,57 @@
   </div>
   <script src="javascripts/scale.fix.js"></script>
   <script src="javascripts/global.js"></script>
+  <script src="javascripts/useragent.min.js"></script>
+  <script src="javascripts/ualist.js"></script>
+  <script>
+  (function() {
+    Array.prototype.unique = function(findAttr) {
+      var res = [];
+      var json = {};
+      this.forEach(function(value) {
+        var findObject = value;
+        if (findAttr == "device") {
+          findObject = value.name.replace(/ .*/, "");
+        } else if (findAttr == "os") {
+          findObject = (value.full.indexOf("Windows") > -1 ? value.full : value.name).trim().replace(/ x64|\.0$/, "");
+        } else {
+          findObject = value.name;
+        }
+        if (!json[findObject] && findObject != "") {
+          res.push(value);
+          json[findObject] = true;
+        }
+      });
+      return res;
+    }
+    var uaList = {};
+    var retList = {};
+    var findList = ["os", "device", "browser"];
+    testUAList.forEach(function(value) {
+      var ua = USERAGENT.analyze(value[0][0]);
+      findList.forEach(function(key) {
+        if (!uaList[key]) uaList[key] = [];
+        uaList[key].push(ua[key]);
+        uaList[key][uaList[key].length - 1].lowerValue = ua[key].name.toLowerCase();
+      });
+    });
+    findList.forEach(function(key) {
+      var value = uaList[key];
+      if (!value instanceof Array) return;
+      retList[key] = value.unique(key).sort(function(obj1, obj2) {
+        return obj1.lowerValue > obj2.lowerValue ? 1 :-1;
+      });
+      document.getElementById(key + "-value").innerHTML = (function(list) {
+        var ret = ["<table>"];
+        var sizeOfOutput = 0;
+        list.forEach(function(value) {
+          ret.push('<div class="imgElement"><img src="img/16/' + value.dir + '/' + value.image + '.png" alt="' + value.name + '" title="' + value.name + '"/>' + value.full + "</div>");
+        });
+        return ret.join("");
+      })(retList[key]);
+    });
+  })();
 
+  </script>
 </body>
 </html>
