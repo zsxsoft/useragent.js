@@ -1,4 +1,4 @@
-(function(root) {
+(function (root) {
 	var BROWSER = {};
 	var browserRegEx = new RegExp([
 		'11(4|5)Browser', '2345(Explorer|chrome)', '360se|360ee|360\ aphone\ browser', 'Abolimba', 'Acoo\ Browser', 'ANTFresco',
@@ -14,7 +14,7 @@
 		'Doris', 'Dorothy', 'DPlus', 'Edbrowse', 'E?links', 'Element\ Browser',
 		'Enigma\ Browser', 'EnigmaFox', 'Epic', 'Epiphany', 'Escape|Espial', 'Fennec',
 		'Firebird', 'Fireweb\ Navigator', 'Flock', 'Fluid', 'Galeon', 'GlobalMojo',
-		'GoBrowser', 'Google\ Wireless\ Transcoder', 'GoSurf', 'GranParadiso', 'GreenBrowser', 'Hana',
+		'GoBrowser', 'Google\ Wireless\ Transcoder', 'GoSurf', 'GranParadiso', 'GreenBrowser', 'GSA', 'Hana',
 		'HotJava', 'Hv3', 'Hydra\ Browser', 'Iris', 'IBM\ WebExplorer', 'JuziBrowser',
 		'MiuiBrowser', 'MxNitro', 'IBrowse', 'iCab', 'IceBrowser', 'Iceape',
 		'IceCat', 'IceDragon', 'IceWeasel', 'iNet\ Browser', 'iRider', 'InternetSurfboard',
@@ -59,7 +59,7 @@
 			"title": "Abolimba"
 		},
 		"acoo browser": {
-			"title": "Acoo {%Browser%}",
+			"title": "{%Acoo Browser%}",
 			"image": "acoobrowser"
 		},
 		"amiga-aweb": {
@@ -78,7 +78,7 @@
 			"image": "my-internet-browser"
 		},
 		"america online browser": {
-			"title": "America Online {%Browser%}",
+			"title": "{%America Online Browser%}",
 			"image": "aol"
 		},
 		"amigavoyager": {
@@ -114,7 +114,7 @@
 			"title": "BrowseX"
 		},
 		"cayman browser": {
-			"title": "Cayman {%Browser%}",
+			"title": "{%Cayman Browser%}",
 			"image": "caymanbrowser"
 		},
 		"charon": {
@@ -150,7 +150,7 @@
 			"title": "{%CoRom%}"
 		},
 		"crazy browser": {
-			"title": "Crazy {%Browser%}",
+			"title": "{%Crazy Browser%}",
 			"image": "crazybrowser"
 		},
 		"crmo": {
@@ -182,11 +182,11 @@
 			"image": "dorothybrowser"
 		},
 		"element browser": {
-			"title": "Element {%Browser%}",
+			"title": "{%Element Browser%}",
 			"image": "elementbrowser"
 		},
 		"enigma browser": {
-			"title": "Enigma {%Browser%}",
+			"title": "{%Enigma Browser%}",
 			"image": "enigmabrowser"
 		},
 		"enigmafox": {
@@ -210,7 +210,7 @@
 			"title": "{%GlobalMojo%}"
 		},
 		"gobrowser": {
-			"title": "GO {%Browser%}"
+			"title": "{%GOBrowser%}"
 		},
 		"google wireless transcoder": {
 			"title": "Google Wireless Transcoder",
@@ -225,6 +225,10 @@
 		},
 		"greenbrowser": {
 			"title": "{%GreenBrowser%}"
+		},
+		"gsa": {
+			"title": "{%GSA%}",
+			"image": "google"
 		},
 		"hotjava": {
 			"title": "{%HotJava%}"
@@ -265,7 +269,7 @@
 			"title": "{%IceWeasel%}"
 		},
 		"inet browser": {
-			"title": "iNet {%Browser%}",
+			"title": "{%iNet Browser%}",
 			"image": "null"
 		},
 		"irider": {
@@ -450,7 +454,7 @@
 			"title": "{%QQ%}"
 		},
 		"qtweb internet browser": {
-			"title": "QtWeb Internet {%Browser%}",
+			"title": "{%QtWeb Internet Browser%}",
 			"image": "qtwebinternetbrowser"
 		},
 		"qtcarbrowser": {
@@ -621,9 +625,6 @@
 		"worldwideweb": {
 			"title": "{%WorldWideWeb%}"
 		},
-		"wyzo": {
-			"image": "Wyzo"
-		},
 		"x-smiles": {
 			"title": "{%X-Smiles%}"
 		},
@@ -641,7 +642,7 @@
 			"title": "{%ZipZap%}"
 		},
 		"abrowse": {
-			"title": "ABrowse {%Browser%}"
+			"title": "{%ABrowse Browser%}"
 		},
 		"none": {
 			"title": "Unknown",
@@ -650,7 +651,7 @@
 	};
 	var displayNameList = {
 		"msie": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				if (ret.version == "7.0" && /Trident\/4.0/i.test(ret.ua)) {
 					ret.name = " 8.0 (Compatibility Mode)";
 					ret.version = "";
@@ -728,8 +729,11 @@
 		"nichrome/self": {
 			name: "NiChrome"
 		},
+		"gsa": {
+			name: "Google Search App"
+		},
 		"opera labs": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i);
 				if (rep !== null) {
 					ret.version = rep[1];
@@ -743,20 +747,20 @@
 			version: ""
 		},
 		"iceweasel": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				if (ret.version == "Firefox") {
 					ret.version = "";
 				}
 			}
 		}
 	};
-	var setRetName = function(ret, rep) {
+	var setRetName = function (ret, rep) {
 		ret.image = rep.image;
-		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function(match, p1) {
+		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function (match, p1) {
 			return getVersion(ret, p1);
 		});
 	};
-	var getVersion = function(ret, title) {
+	var getVersion = function (ret, title) {
 		var lowerTitle = title.toLowerCase();
 		var start = lowerTitle;
 		ret.name = title;
@@ -769,7 +773,7 @@
 			((lowerTitle == "safari" && /Version/i.test(ret.ua))) ||
 			((lowerTitle == "pre" && /Version/i.test(ret.ua))) ||
 			((lowerTitle == "android webkit"))
-		) {
+			) {
 			start = "Version";
 		} else if (lowerTitle == "links") {
 			start = "Links (";
@@ -781,7 +785,7 @@
 			lowerTitle == "tenfourfox" ||
 			lowerTitle == "classilla" ||
 			lowerTitle == "msie" && /\ rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
-		) {
+			) {
 			// We have IE11 or newer
 			start = " rv";
 		} else if (lowerTitle == "nichrome/self") {
@@ -793,6 +797,10 @@
 		if (rep !== null) {
 			ret.version = rep[1];
 		} else {
+			ret.version = "";
+		}
+		
+		if (ret.version.toLowerCase() == "build") { // To Fix some ua like 'Amazon Otter Build/KTU84M'
 			ret.version = "";
 		}
 		if (lowerTitle in displayNameList) {
@@ -808,7 +816,7 @@
 		return ret.name + (ret.version !== "" ? (" " + ret.version) : "");
 	};
 
-	BROWSER.analyze = function(uaString) {
+	BROWSER.analyze = function (uaString) {
 		var ret = {
 			"ua": uaString,
 			"name": "",
@@ -826,7 +834,7 @@
 				rep = defaultBrowserList[name];
 			}
 			if (typeof rep.title == "undefined") {
-				rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function(m) {
+				rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function (m) {
 					return m.toUpperCase(); // Repeat dirty code...
 				}) + "%}";
 			}
@@ -946,7 +954,7 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
-		define([], function() {
+		define([], function () {
 			return BROWSER;
 		});
 	}
@@ -954,279 +962,279 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
-		define([], function(require, exports, module) {
+		define([], function (require, exports, module) {
 			module.exports = BROWSER;
 		});
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_BROWSER = function() {};
+		root.USERAGENT_BROWSER = function () { };
 		USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze;
 	}
 	//#JSCOVERAGE_ENDIF
 })(this);
-(function(root) {
+(function (root) {
 	var deviceList = [{
 		regEx: /(MEIZU (MX|M9)|M030)|MX-3/i,
 		name: "Meizu",
 		image: "meizu"
 	}, {
-		regEx: /MI-ONE|MI \d|HM NOTE/i,
-		name: "Xiaomi",
-		image: "xiaomi",
-		childItem: [{
-			regEx: /HM NOTE ([A-Z0-9]+)/i,
-			name: "HM-NOTE $1"
+			regEx: /MI-ONE|MI \d|HM NOTE/i,
+			name: "Xiaomi",
+			image: "xiaomi",
+			childItem: [{
+				regEx: /HM NOTE ([A-Z0-9]+)/i,
+				name: "HM-NOTE $1"
+			}, {
+					regEx: /MI ([A-Z0-9]+)/i,
+					name: "$1"
+				}, {
+					regEx: /MI-ONE/i,
+					name: "1"
+				}]
 		}, {
-			regEx: /MI ([A-Z0-9]+)/i,
-			name: "$1"
-		}, {
-			regEx: /MI-ONE/i,
-			name: "1"
-		}]
-	}, {
-		regEx: /BlackBerry/i,
-		name: "BlackBerry",
-		image: "blackberry",
-		version: {
-			start: "blackberry ?"
-		}
-	}, {
-		regEx: /Coolpad/i,
-		name: "CoolPad",
-		image: "coolpad",
-		version: {
-			start: "CoolPad( |\_)?",
-			item: 2
-		}
-	}, {
-		regEx: /Dell/i,
-		name: "Dell",
-		image: "dell",
-		childItem: [{
-			regEx: /Dell Streak/i,
-			name: "Streak"
-		}]
-	}, {
-		regEx: /HTC|Desire|Rhodium|WMD\-50433/i,
-		name: "HTC",
-		image: "htc",
-		childItem: [{
-			regEx: /Desire/i,
-			name: "Desire"
-		}, {
-			regEx: /Rhodium|WMD\-50433|HTC[_|\ ]Touch[_|\ ]Pro2/i,
-			name: "Touch Pro2"
-		}, {
-			regEx: /HTC[_|\ ]Touch[_|\ ]Pro/i,
-			name: "Touch Pro"
-		}, {
-			regEx: /Windows Phone .+ by HTC/i,
+			regEx: /BlackBerry/i,
+			name: "BlackBerry",
+			image: "blackberry",
 			version: {
-				start: "Windows Phone ",
-				end: " by HTC"
+				start: "blackberry ?"
 			}
-		}],
-		version: {
-			start: "HTC[ |_|-]?"
-		}
-	}, {
-		regEx: /huawei/i,
-		name: "Huawei",
-		image: "huawei",
-		version: {
-			start: "HUAWEI( |\_)?",
-			item: 2
-		}
-	}, {
-		regEx: /Kindle/i,
-		name: "Kindle",
-		image: "kindle",
-		version: {
-			start: "Kindle\/"
-		}
-	}, {
-		regEx: /K-Touch/i,
-		name: "K-Touch",
-		image: "k-touch",
-		version: {
-			start: "k-touch[ _]"
-		}
-	}, {
-		regEx: /Lenovo|lepad/i,
-		name: "Lenovo",
-		image: "lenovo",
-		childItem: [{
-			regEx: "lepad",
-			name: "LePad"
-		}],
-		version: {
-			start: "Lenovo[\ |\-|\/|\_]"
-		}
-	}, {
-		regEx: /LG/i,
-		name: "LG",
-		image: "lg",
-		version: {
-			start: "LGE?([- \/])",
-			item: 2
-		}
-	}, {
-		regEx: / Droid|XT720|MOT-|MIB|XOOM/i, 
-		name: "Motorola",
-		image: "motorola",
-		childItem: [{
-			regEx: / Droid/i,
-			name: "Droid"
 		}, {
-			regEx: /MOT\-|MIB/i,
+			regEx: /Coolpad/i,
+			name: "CoolPad",
+			image: "coolpad",
 			version: {
-				start: "MOT(O|-)",
+				start: "CoolPad( |\_)?",
 				item: 2
 			}
 		}, {
-			regEx: /XOOM/i,
-			name: "Xoom"
+			regEx: /Dell/i,
+			name: "Dell",
+			image: "dell",
+			childItem: [{
+				regEx: /Dell Streak/i,
+				name: "Streak"
+			}]
 		}, {
-			regEx: /XT720/i,
-			name: "XT720"
-		}]
-	}, {
-		regEx: /Nintendo/i,
-		name: "Nintendo",
-		image: "nintendo",
-		childItem: [{
-			regEx: /DSi/,
-			name: "DSi",
-			image: "nintendodsi"
-		}, {
-			regEx: /DS/,
-			name: "DS",
-			image: "nintendods"
-		}, {
-			regEx: /WiiU/,
-			name: "Wii U",
-			image: "nintendowiiu"
-		}, {
-			regEx: /Wii/,
-			name: "Wii",
-			image: "nintendowii"
-		}]
-	}, {
-		regEx: /Nokia/i,
-		name: "Nokia",
-		image: "nokia",
-		childItem: [{
-			regEx: /Nokia 909/i,
-			name: "Lumia 1020"
-		}, {
-			regEx: /IEMobile|WPDesktop|Edge/i,
-			name: "Lumia",
+			regEx: /HTC|Desire|Rhodium|WMD\-50433/i,
+			name: "HTC",
+			image: "htc",
+			childItem: [{
+				regEx: /Desire/i,
+				name: "Desire"
+			}, {
+					regEx: /Rhodium|WMD\-50433|HTC[_|\ ]Touch[_|\ ]Pro2/i,
+					name: "Touch Pro2"
+				}, {
+					regEx: /HTC[_|\ ]Touch[_|\ ]Pro/i,
+					name: "Touch Pro"
+				}, {
+					regEx: /Windows Phone .+ by HTC/i,
+					version: {
+						start: "Windows Phone ",
+						end: " by HTC"
+					}
+				}],
 			version: {
-				start: "(Nokia |Lumia |Nokia;)",
-				item: 2
-			}	
-		}],
-		version: {
-			start: "Nokia",
-			item: 1
-		}
-	}, {
-		regEx: /Onda/i,
-		name: "Onda",
-		image: "onda"
-	}, {
-		regEx: /oppo/i,
-		name: "OPPO",
-		image: "oppo"
-	}, {
-		regEx: / Pixi\/| Pre\/|Palm|webos/i, 
-		name: "Palm",
-		image: "palm",
-		childItem: [{
-			regEx: /Pixi/i,
-			name: "Pixi"
-		}, {
-			regEx: /Pre/i,
-			name: "Pre"
-		}]
-	}, {
-		regEx: /Galaxy Nexus|Smart-?TV|GT-|Samsung/i,
-		name: "Samsung",
-		image: "samsung",
-		childItem: [{
-			regEx: /Smart-?TV/i,
-			name: "Smart TV"
-		}, {
-			regEx: /Galaxy Nexus/i,
-			name: "Galaxy Nexus"	
-		}, {
-			regEx: /GT-/i,
-			version: {
-				start: "GT-"
+				start: "HTC[ |_|-]?"
 			}
-		}], 
-		version: {
-			start: "Samsung-(SCH-)?",
-			item: 2
-		}
-	}, {
-		regEx: /PlayStation/i,
-		name: "PlayStation",
-		image: "playstation",
-		version: {
-			start: "PlayStation "
-		}
-	}, {
-		regEx: /SonyEricsson/i,
-		name: "SonyEricsson",
-		image: "sonyericsson",
-		version: {
-			start: "SonyEricsson"
-		}
-	}, {
-		regEx: /vivo/i,
-		name: "vivo",
-		image: "vivo",
-		version: {
-			start: "VIVO "
-		}
-	}, {
-		regEx: /Xperia/i,
-		name: "Xperia",
-		image: "xperia",
-		version: {
-			start: "Xperia(-T)?( |\_|\-)?",
-			item: 3
-		}
-	}, {
-		regEx: /zte/i,
-		name: "ZTE",
-		image: "zte",
-		version: {
-			start: "ZTE "
-		}
-	}, {
-		regEx: /Ubuntu; (Mobile|Tablet)/i,
-		name: "Ubuntu",
-		image: "ubuntutouch",
-		childItem: [{
-			regEx: /Mobile/i,
-			name: "Phone"
 		}, {
-			regEx: /Tablet/i,
-			name: "Tablet"
-		}]
-	}, {
-		regEx: /Nexus/i,
-		name: "Nexus",
-		image: "google-nexusone",
-		version: {
-			start: "Nexus "
-		}
-	}];
+			regEx: /huawei/i,
+			name: "Huawei",
+			image: "huawei",
+			version: {
+				start: "HUAWEI( |\_)?",
+				item: 2
+			}
+		}, {
+			regEx: /Kindle/i,
+			name: "Kindle",
+			image: "kindle",
+			version: {
+				start: "Kindle\/"
+			}
+		}, {
+			regEx: /K-Touch/i,
+			name: "K-Touch",
+			image: "k-touch",
+			version: {
+				start: "k-touch[ _]"
+			}
+		}, {
+			regEx: /Lenovo|lepad/i,
+			name: "Lenovo",
+			image: "lenovo",
+			childItem: [{
+				regEx: "lepad",
+				name: "LePad"
+			}],
+			version: {
+				start: "Lenovo[\ |\-|\/|\_]"
+			}
+		}, {
+			regEx: /LG/i,
+			name: "LG",
+			image: "lg",
+			version: {
+				start: "LGE?([- \/])",
+				item: 2
+			}
+		}, {
+			regEx: / Droid|XT720|MOT-|MIB|XOOM/i,
+			name: "Motorola",
+			image: "motorola",
+			childItem: [{
+				regEx: / Droid/i,
+				name: "Droid"
+			}, {
+					regEx: /MOT\-|MIB/i,
+					version: {
+						start: "MOT(O|-)",
+						item: 2
+					}
+				}, {
+					regEx: /XOOM/i,
+					name: "Xoom"
+				}, {
+					regEx: /XT720/i,
+					name: "XT720"
+				}]
+		}, {
+			regEx: /Nintendo/i,
+			name: "Nintendo",
+			image: "nintendo",
+			childItem: [{
+				regEx: /DSi/,
+				name: "DSi",
+				image: "nintendodsi"
+			}, {
+					regEx: /DS/,
+					name: "DS",
+					image: "nintendods"
+				}, {
+					regEx: /WiiU/,
+					name: "Wii U",
+					image: "nintendowiiu"
+				}, {
+					regEx: /Wii/,
+					name: "Wii",
+					image: "nintendowii"
+				}]
+		}, {
+			regEx: /Nokia/i,
+			name: "Nokia",
+			image: "nokia",
+			childItem: [{
+				regEx: /Nokia 909/i,
+				name: "Lumia 1020"
+			}, {
+					regEx: /IEMobile|WPDesktop|Edge/i,
+					name: "Lumia",
+					version: {
+						start: "(Nokia |Lumia |Nokia;)",
+						item: 2
+					}
+				}],
+			version: {
+				start: "Nokia",
+				item: 1
+			}
+		}, {
+			regEx: /Onda/i,
+			name: "Onda",
+			image: "onda"
+		}, {
+			regEx: /oppo/i,
+			name: "OPPO",
+			image: "oppo"
+		}, {
+			regEx: / Pixi\/| Pre\/|Palm|webos/i,
+			name: "Palm",
+			image: "palm",
+			childItem: [{
+				regEx: /Pixi/i,
+				name: "Pixi"
+			}, {
+					regEx: /Pre/i,
+					name: "Pre"
+				}]
+		}, {
+			regEx: /Galaxy Nexus|Smart-?TV|GT-|Samsung/i,
+			name: "Samsung",
+			image: "samsung",
+			childItem: [{
+				regEx: /Smart-?TV/i,
+				name: "Smart TV"
+			}, {
+					regEx: /Galaxy Nexus/i,
+					name: "Galaxy Nexus"
+				}, {
+					regEx: /GT-/i,
+					version: {
+						start: "GT-"
+					}
+				}],
+			version: {
+				start: "Samsung-(SCH-)?",
+				item: 2
+			}
+		}, {
+			regEx: /PlayStation/i,
+			name: "PlayStation",
+			image: "playstation",
+			version: {
+				start: "PlayStation "
+			}
+		}, {
+			regEx: /SonyEricsson/i,
+			name: "SonyEricsson",
+			image: "sonyericsson",
+			version: {
+				start: "SonyEricsson"
+			}
+		}, {
+			regEx: /vivo/i,
+			name: "vivo",
+			image: "vivo",
+			version: {
+				start: "VIVO "
+			}
+		}, {
+			regEx: /Xperia/i,
+			name: "Xperia",
+			image: "xperia",
+			version: {
+				start: "Xperia(-T)?( |\_|\-)?",
+				item: 3
+			}
+		}, {
+			regEx: /zte/i,
+			name: "ZTE",
+			image: "zte",
+			version: {
+				start: "ZTE "
+			}
+		}, {
+			regEx: /Ubuntu; (Mobile|Tablet)/i,
+			name: "Ubuntu",
+			image: "ubuntutouch",
+			childItem: [{
+				regEx: /Mobile/i,
+				name: "Phone"
+			}, {
+					regEx: /Tablet/i,
+					name: "Tablet"
+				}]
+		}, {
+			regEx: /Nexus/i,
+			name: "Nexus",
+			image: "google-nexusone",
+			version: {
+				start: "Nexus "
+			}
+		}];
 
-	var analyzeVersion = function(ret, deviceItem) {
+	var analyzeVersion = function (ret, deviceItem) {
 		var rep;
 
 		if (!('end' in deviceItem.version)) deviceItem.version.end = "";
@@ -1241,7 +1249,7 @@
 
 	};
 
-	var analyzeItem = function(ret, deviceList) {
+	var analyzeItem = function (ret, deviceList) {
 		var rep = null;
 		var fixedName = "";
 		var i = 0;
@@ -1269,14 +1277,14 @@
 							fixedName = fixedName.replace(new RegExp("\\$" + i, "g"), rep[i]);
 						}
 						ret[singleName] += fixedName;
-						
+
 						break;
 					default:
 						ret[singleName] = singleItem;
 						break;
 				}
 			}
-			
+
 			var checkVersionSwitch = ('version' in deviceItem);
 			if ('childItem' in deviceItem) {
 				if (analyzeItem(ret, deviceItem.childItem)) {
@@ -1295,11 +1303,8 @@
 		return false;
 	};
 
-	var analyze = function(ret) {
-		var deviceItem = null;
-		var singleName = null;
-		var singleItem = null;
-
+	var analyze = function (ret) {
+		var rep = null;
 		if (analyzeItem(ret, deviceList)) {
 			return;
 		}
@@ -1347,7 +1352,7 @@
 
 	var DEVICE = {};
 
-	DEVICE.analyze = function(uaString) {
+	DEVICE.analyze = function (uaString) {
 		var ret = {
 			"ua": uaString,
 			"name": "",
@@ -1369,7 +1374,7 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
-		define([], function() {
+		define([], function () {
 			return DEVICE;
 		});
 	}
@@ -1377,21 +1382,21 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
-		define([], function(require, exports, module) {
+		define([], function (require, exports, module) {
 			module.exports = DEVICE;
 		});
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_DEVICE = function() {};
+		root.USERAGENT_DEVICE = function () { };
 		USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze;
 	}
 	//#JSCOVERAGE_ENDIF
 
 })(this);
-(function(root) {
+(function (root) {
 
-	var analyzeWindows = function(ret) {
+	var analyzeWindows = function (ret) {
 		ret.full = "Windows";
 		ret.name = "Windows";
 		ret.image = 'win-2';
@@ -1418,7 +1423,7 @@
 					case "6.4":
 					case "10.0":
 						ret.full = "Windows 10";
-						ret.image = "win-5";
+						ret.image = "win-6";
 						break;
 					case "6.3":
 						ret.full = "Windows 8.1";
@@ -1444,12 +1449,12 @@
 						ret.full = "Windows XP";
 						ret.image = "win-2";
 						break;
-						//#JSCOVERAGE_IF false
+					//#JSCOVERAGE_IF false
 					case "5.01":
 						ret.full = "Windows 2000 Service Pack 1";
 						ret.image = "win-1";
 						break;
-						//#JSCOVERAGE_ENDIF
+					//#JSCOVERAGE_ENDIF
 					case "5.0":
 						ret.full = "Windows 2000";
 						ret.image = "win-1";
@@ -1523,7 +1528,7 @@
 	};
 
 
-	var analyzeLinux = function(ret) {
+	var analyzeLinux = function (ret) {
 		ret.name = '';
 		ret.image = '';
 		ret.version = '';
@@ -1556,7 +1561,7 @@
 
 		if (res !== null) {
 			var name = res[0].toLowerCase();
-			ret.name = name.replace(/(\w)/, function(string) {
+			ret.name = name.replace(/(\w)/, function (string) {
 				return string.toUpperCase();
 			});
 			ret.image = name;
@@ -1600,19 +1605,13 @@
 			}
 
 			ret.image = "linuxmint";
-			//#JSCOVERAGE_IF false
-
 		} else if (/Mandriva/i.test(ret.ua)) {
 			ret.name = "Mandriva";
-			//#JSCOVERAGE_IF false
-
 			if (rep = ret.ua.match(/mdv([.0-9a-zA-Z]+)/i)) {
 				ret.version = rep[1];
 			}
-			//#JSCOVERAGE_ENDIF
 
 			ret.image = "mandriva";
-
 		} else if (/moonOS/i.test(ret.ua)) {
 			ret.name = "moonOS";
 
@@ -1621,39 +1620,6 @@
 			}
 
 			ret.image = "moonos";
-		} else if (/Nova/i.test(ret.ua)) {
-			ret.name = "Nova";
-
-			if (rep = ret.ua.match(/Nova[\/|\ ]([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "nova";
-			//#JSCOVERAGE_IF false
-
-		} else if (/Oracle/i.test(ret.ua)) {
-			ret.name = "Oracle";
-
-			if (rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)) {
-				ret.name += " Enterprise Linux";
-				ret.version = rep[1].replace(/_/g, ".");
-			} else {
-				ret.name += " Linux";
-			}
-			ret.image = "oracle";
-			//#JSCOVERAGE_ENDIF
-
-			//#JSCOVERAGE_IF false
-
-		} else if (/PCLinuxOS/i.test(ret.ua)) {
-			ret.name = "PCLinuxOS";
-
-			if (rep = ret.ua.match(/PCLinuxOS\/[.\-0-9a-zA-Z]+pclos([.\-0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1].replace(/_/g, ".");
-			}
-
-			ret.image = "pclinuxos";
-			//#JSCOVERAGE_ENDIF
 
 		} else if (/Red\ Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
 			ret.name = "Red Hat";
@@ -1684,7 +1650,7 @@
 			if (rep = ret.ua.match(/(L|K|X|Ed)Ubuntu/i)) {
 				var childUbuntuVersion = rep[1].toLowerCase();
 				ret.name = childUbuntuVersion + ret.name;
-				ret.name = ret.name.toLowerCase().replace(/(\w)/, function(m) {
+				ret.name = ret.name.toLowerCase().replace(/(\w)/, function (m) {
 					return m.toUpperCase();
 				});
 				ret.image = childUbuntuVersion + ret.image;
@@ -1703,7 +1669,7 @@
 
 
 
-	var analyzeOther = function(ret) {
+	var analyzeOther = function (ret) {
 		ret.name = '';
 		ret.image = '';
 		ret.version = '';
@@ -1741,11 +1707,11 @@
 			webos: {
 				name: "Palm webOS",
 				image: "palm"
-			}, 
+			},
 			sunos: {
 				name: "Solaris",
 				image: "solaris"
-			}, 
+			},
 			"j2me\/midp": {
 				name: "J2ME/MIDP Device",
 				image: "java"
@@ -1753,10 +1719,11 @@
 		};
 
 		var res = ret.ua.match(osRegEx);
+		var rep;
 
 		if (res !== null) {
 			var name = res[0].toLowerCase();
-			ret.name = name.replace(/(\w)/, function(string) {
+			ret.name = name.replace(/(\w)/, function (string) {
 				return string.toUpperCase();
 			});
 			ret.image = name;
@@ -1837,16 +1804,16 @@
 
 	var OS = {};
 
-	OS.analyze = function(uaString) {
+	OS.analyze = function (uaString) {
 		var ret = {
-			"ua": uaString,
+			ua: uaString,
 			name: "",
-			"version": "",
-			"full": "",
-			"windows": false,
-			"linux": false,
-			"x64": false,
-			"dir": "os"
+			version: "",
+			full: "",
+			windows: false,
+			linux: false,
+			x64: false,
+			dir: "os"
 		};
 		if (/x86_64|Win64; x64|WOW64/i.test(ret.ua)) {
 			ret.x64 = true;
@@ -1881,7 +1848,7 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
-		define([], function() {
+		define([], function () {
 			return OS;
 		});
 	}
@@ -1889,20 +1856,24 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
-		define([], function(require, exports, module) {
+		define([], function (require, exports, module) {
 			module.exports = OS;
 		});
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_OS = function() {};
+		root.USERAGENT_OS = function () { };
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
 	//#JSCOVERAGE_ENDIF
 
 
 })(this);
-(function(root) {
+/* global USERAGENT_OS */
+/* global USERAGENT_DEVICE */
+/* global USERAGENT_BROWSER */
+/* global define */
+(function (root) {
 	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
@@ -1910,22 +1881,22 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.1";
-	userAgent.publishDate = "20150217";
+	userAgent.version = "0.3";
+	userAgent.publishDate = "20151107";
 
-	userAgent.analyze = function(uaString) {
+	userAgent.analyze = function (uaString) {
 		var returnObject = {};
 		returnObject.ua = uaString;
-		if (typeof this.osDetect !== 'undefined') returnObject.os = this.osDetect.analyze(uaString);
-		if (typeof this.deviceDetect !== 'undefined') returnObject.device = this.deviceDetect.analyze(uaString);
-		if (typeof this.browserDetect !== 'undefined') returnObject.browser = this.browserDetect.analyze(uaString);
-		if (typeof returnObject.device !== 'undefined') returnObject.platform = returnObject.device;
-		if (typeof returnObject.os !== 'undefined' && returnObject.device.name === "") returnObject.platform = returnObject.os;
+		if (this.osDetect) returnObject.os = this.osDetect.analyze(uaString);
+		if (this.deviceDetect) returnObject.device = this.deviceDetect.analyze(uaString);
+		if (this.browserDetect) returnObject.browser = this.browserDetect.analyze(uaString);
+		if (returnObject.device) returnObject.platform = returnObject.device;
+		if (returnObject.device && returnObject.os && returnObject.device.name === "") returnObject.platform = returnObject.os;
 		return returnObject;
 	};
 
 
-	var requireFunction = function(userAgent, OS, DEVICE, BROWSER) {
+	var requireFunction = function (userAgent, OS, DEVICE, BROWSER) {
 		userAgent.osDetect = OS;
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
@@ -1935,7 +1906,8 @@
 	// Node.js
 	if (NODE) {
 		if (process.env.UAJS_COV) {
-			requireFunction(userAgent, require('./lib-cov/os'), require('./lib-cov/device'), require('./lib-cov/browser'));
+			var libs = ["-cov/os", "-cov/device", "-cov/browser"]; // To prevent webpack pack lib-cov.
+			requireFunction(userAgent, require('./lib' + libs[0]), require('./lib' + libs[1]), require('./lib' + libs[2]));
 		} else {
 			requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
 		}
@@ -1944,14 +1916,14 @@
 	}
 	// AMD
 	else if (AMD) {
-		define(['./lib/os', './lib/device', './lib/browser'], function(OS, DEVICE, BROWSER) {
+		define(['./lib/os', './lib/device', './lib/browser'], function (OS, DEVICE, BROWSER) {
 			requireFunction(userAgent, OS, DEVICE, BROWSER);
 			return userAgent;
 		});
 	}
 	// CMD
 	else if (CMD) {
-		define(function(require, exports, module) {
+		define(function (require, exports, module) {
 			requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'));
 			module.exports = userAgent;
 		});
