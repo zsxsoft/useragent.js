@@ -502,7 +502,7 @@
 		],
 		[
 			['curl/7.8 (i386-redhat-linux-gnu) libcurl 7.8 (OpenSSL 0.9.6b) (ipv6 enabled)'],
-			['null', 'os', 'red-hat', 'curl 7.8', 'Red Hat'],
+			['null', 'os', 'red-hat', 'Curl 7.8', 'Red Hat'],
 		],
 		[
 			['Links (1.00pre3; SunOS 5.9 i86pc; 80x24)'],
@@ -514,15 +514,15 @@
 		],
 		[
 			['Wget/1.9.1'],
-			['null', 'os', 'null', 'wget 1.9.1', 'Unknown'],
+			['null', 'os', 'null', 'Wget 1.9.1', 'Unknown'],
 		],
 		[
 			['curl/7.19.6 (i686-pc-cygwin) libcurl/7.19.6 OpenSSL/0.9.8n zlib/1.2.3 libidn/1.18 libssh2/1.2'],
-			['null', 'os', 'null', 'curl 7.19.6', 'Unknown'],
+			['null', 'os', 'null', 'Curl 7.19.6', 'Unknown'],
 		],
 		[
 			['curl/7.19.5 (i586-pc-mingw32msvc) libcurl/7.19.5 zlib/1.2.3'],
-			['null', 'os', 'null', 'curl 7.19.5', 'Unknown'],
+			['null', 'os', 'null', 'Curl 7.19.5', 'Unknown'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; nl; rv:1.9.1.11) Gecko/20100714 openSUSE/3.0.6 Thunderbird/3.0.6 ThunderBrowse/3.3.2'],
@@ -718,7 +718,7 @@
 		],
 		[
 			['retawq/0.2.6c [en] (text)'],
-			['terminal', 'os', 'null', 'retawq 0.2.6c', 'Unknown'],
+			['terminal', 'os', 'null', 'Retawq 0.2.6c', 'Unknown'],
 		],
 		[
 			['Mozilla/5.0 (X11; U; Linux x86_64; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) rekonq Safari/533.3'],
@@ -1139,7 +1139,7 @@
 		],
 		[
 			['Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.1.17) Gecko/20110123 Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2) Gecko/20070225 lolifox/0.32'],
-			['lolifox', 'os', 'win-4', 'lolifox 0.32', 'Windows 7'],
+			['lolifox', 'os', 'win-4', 'Lolifox 0.32', 'Windows 7'],
 		],
 		[
 			['Mozilla/4.0 (compatible; MSIE 6.0; Windows XP 5.1) Lobo/0.98.4'],
