@@ -1,4 +1,4 @@
-(function(root) {
+(function (root) {
 	var BROWSER = {};
 	var browserRegEx = new RegExp([
 		'11(4|5)Browser', '2345(Explorer|chrome)', '360se|360ee|360\ aphone\ browser', 'Abolimba', 'Acoo\ Browser', 'ANTFresco',
@@ -14,7 +14,7 @@
 		'Doris', 'Dorothy', 'DPlus', 'Edbrowse', 'E?links', 'Element\ Browser',
 		'Enigma\ Browser', 'EnigmaFox', 'Epic', 'Epiphany', 'Escape|Espial', 'Fennec',
 		'Firebird', 'Fireweb\ Navigator', 'Flock', 'Fluid', 'Galeon', 'GlobalMojo',
-		'GoBrowser', 'Google\ Wireless\ Transcoder', 'GoSurf', 'GranParadiso', 'GreenBrowser', 'Hana',
+		'GoBrowser', 'Google\ Wireless\ Transcoder', 'GoSurf', 'GranParadiso', 'GreenBrowser', 'GSA', 'Hana',
 		'HotJava', 'Hv3', 'Hydra\ Browser', 'Iris', 'IBM\ WebExplorer', 'JuziBrowser',
 		'MiuiBrowser', 'MxNitro', 'IBrowse', 'iCab', 'IceBrowser', 'Iceape',
 		'IceCat', 'IceDragon', 'IceWeasel', 'iNet\ Browser', 'iRider', 'InternetSurfboard',
@@ -59,7 +59,7 @@
 			"title": "Abolimba"
 		},
 		"acoo browser": {
-			"title": "Acoo {%Browser%}",
+			"title": "{%Acoo Browser%}",
 			"image": "acoobrowser"
 		},
 		"amiga-aweb": {
@@ -78,7 +78,7 @@
 			"image": "my-internet-browser"
 		},
 		"america online browser": {
-			"title": "America Online {%Browser%}",
+			"title": "{%America Online Browser%}",
 			"image": "aol"
 		},
 		"amigavoyager": {
@@ -114,7 +114,7 @@
 			"title": "BrowseX"
 		},
 		"cayman browser": {
-			"title": "Cayman {%Browser%}",
+			"title": "{%Cayman Browser%}",
 			"image": "caymanbrowser"
 		},
 		"charon": {
@@ -150,7 +150,7 @@
 			"title": "{%CoRom%}"
 		},
 		"crazy browser": {
-			"title": "Crazy {%Browser%}",
+			"title": "{%Crazy Browser%}",
 			"image": "crazybrowser"
 		},
 		"crmo": {
@@ -182,11 +182,11 @@
 			"image": "dorothybrowser"
 		},
 		"element browser": {
-			"title": "Element {%Browser%}",
+			"title": "{%Element Browser%}",
 			"image": "elementbrowser"
 		},
 		"enigma browser": {
-			"title": "Enigma {%Browser%}",
+			"title": "{%Enigma Browser%}",
 			"image": "enigmabrowser"
 		},
 		"enigmafox": {
@@ -210,7 +210,7 @@
 			"title": "{%GlobalMojo%}"
 		},
 		"gobrowser": {
-			"title": "GO {%Browser%}"
+			"title": "{%GOBrowser%}"
 		},
 		"google wireless transcoder": {
 			"title": "Google Wireless Transcoder",
@@ -225,6 +225,10 @@
 		},
 		"greenbrowser": {
 			"title": "{%GreenBrowser%}"
+		},
+		"gsa": {
+			"title": "{%GSA%}",
+			"image": "google"
 		},
 		"hotjava": {
 			"title": "{%HotJava%}"
@@ -265,7 +269,7 @@
 			"title": "{%IceWeasel%}"
 		},
 		"inet browser": {
-			"title": "iNet {%Browser%}",
+			"title": "{%iNet Browser%}",
 			"image": "null"
 		},
 		"irider": {
@@ -450,7 +454,7 @@
 			"title": "{%QQ%}"
 		},
 		"qtweb internet browser": {
-			"title": "QtWeb Internet {%Browser%}",
+			"title": "{%QtWeb Internet Browser%}",
 			"image": "qtwebinternetbrowser"
 		},
 		"qtcarbrowser": {
@@ -621,9 +625,6 @@
 		"worldwideweb": {
 			"title": "{%WorldWideWeb%}"
 		},
-		"wyzo": {
-			"image": "Wyzo"
-		},
 		"x-smiles": {
 			"title": "{%X-Smiles%}"
 		},
@@ -641,7 +642,7 @@
 			"title": "{%ZipZap%}"
 		},
 		"abrowse": {
-			"title": "ABrowse {%Browser%}"
+			"title": "{%ABrowse Browser%}"
 		},
 		"none": {
 			"title": "Unknown",
@@ -650,7 +651,7 @@
 	};
 	var displayNameList = {
 		"msie": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				if (ret.version == "7.0" && /Trident\/4.0/i.test(ret.ua)) {
 					ret.name = " 8.0 (Compatibility Mode)";
 					ret.version = "";
@@ -728,8 +729,11 @@
 		"nichrome/self": {
 			name: "NiChrome"
 		},
+		"gsa": {
+			name: "Google Search App"
+		},
 		"opera labs": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				rep = ret.ua.match(/Edition\ Labs([\ ._0-9a-zA-Z]+);/i);
 				if (rep !== null) {
 					ret.version = rep[1];
@@ -743,20 +747,20 @@
 			version: ""
 		},
 		"iceweasel": {
-			callback: function(rep, ret) {
+			callback: function (rep, ret) {
 				if (ret.version == "Firefox") {
 					ret.version = "";
 				}
 			}
 		}
 	};
-	var setRetName = function(ret, rep) {
+	var setRetName = function (ret, rep) {
 		ret.image = rep.image;
-		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function(match, p1) {
+		ret.full = rep.title.replace(/\{\%(.+)\%\}/, function (match, p1) {
 			return getVersion(ret, p1);
 		});
 	};
-	var getVersion = function(ret, title) {
+	var getVersion = function (ret, title) {
 		var lowerTitle = title.toLowerCase();
 		var start = lowerTitle;
 		ret.name = title;
@@ -769,7 +773,7 @@
 			((lowerTitle == "safari" && /Version/i.test(ret.ua))) ||
 			((lowerTitle == "pre" && /Version/i.test(ret.ua))) ||
 			((lowerTitle == "android webkit"))
-		) {
+			) {
 			start = "Version";
 		} else if (lowerTitle == "links") {
 			start = "Links (";
@@ -781,7 +785,7 @@
 			lowerTitle == "tenfourfox" ||
 			lowerTitle == "classilla" ||
 			lowerTitle == "msie" && /\ rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
-		) {
+			) {
 			// We have IE11 or newer
 			start = " rv";
 		} else if (lowerTitle == "nichrome/self") {
@@ -793,6 +797,10 @@
 		if (rep !== null) {
 			ret.version = rep[1];
 		} else {
+			ret.version = "";
+		}
+		
+		if (ret.version.toLowerCase() == "build") { // To Fix some ua like 'Amazon Otter Build/KTU84M'
 			ret.version = "";
 		}
 		if (lowerTitle in displayNameList) {
@@ -808,7 +816,7 @@
 		return ret.name + (ret.version !== "" ? (" " + ret.version) : "");
 	};
 
-	BROWSER.analyze = function(uaString) {
+	BROWSER.analyze = function (uaString) {
 		var ret = {
 			"ua": uaString,
 			"name": "",
@@ -826,7 +834,7 @@
 				rep = defaultBrowserList[name];
 			}
 			if (typeof rep.title == "undefined") {
-				rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function(m) {
+				rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function (m) {
 					return m.toUpperCase(); // Repeat dirty code...
 				}) + "%}";
 			}
@@ -946,7 +954,7 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
-		define([], function() {
+		define([], function () {
 			return BROWSER;
 		});
 	}
@@ -954,13 +962,13 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
-		define([], function(require, exports, module) {
+		define([], function (require, exports, module) {
 			module.exports = BROWSER;
 		});
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_BROWSER = function() {};
+		root.USERAGENT_BROWSER = function () { };
 		USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze;
 	}
 	//#JSCOVERAGE_ENDIF

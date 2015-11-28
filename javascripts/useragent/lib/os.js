@@ -1,6 +1,6 @@
-(function(root) {
+(function (root) {
 
-	var analyzeWindows = function(ret) {
+	var analyzeWindows = function (ret) {
 		ret.full = "Windows";
 		ret.name = "Windows";
 		ret.image = 'win-2';
@@ -27,7 +27,7 @@
 					case "6.4":
 					case "10.0":
 						ret.full = "Windows 10";
-						ret.image = "win-5";
+						ret.image = "win-6";
 						break;
 					case "6.3":
 						ret.full = "Windows 8.1";
@@ -53,12 +53,12 @@
 						ret.full = "Windows XP";
 						ret.image = "win-2";
 						break;
-						//#JSCOVERAGE_IF false
+					//#JSCOVERAGE_IF false
 					case "5.01":
 						ret.full = "Windows 2000 Service Pack 1";
 						ret.image = "win-1";
 						break;
-						//#JSCOVERAGE_ENDIF
+					//#JSCOVERAGE_ENDIF
 					case "5.0":
 						ret.full = "Windows 2000";
 						ret.image = "win-1";
@@ -132,7 +132,7 @@
 	};
 
 
-	var analyzeLinux = function(ret) {
+	var analyzeLinux = function (ret) {
 		ret.name = '';
 		ret.image = '';
 		ret.version = '';
@@ -165,7 +165,7 @@
 
 		if (res !== null) {
 			var name = res[0].toLowerCase();
-			ret.name = name.replace(/(\w)/, function(string) {
+			ret.name = name.replace(/(\w)/, function (string) {
 				return string.toUpperCase();
 			});
 			ret.image = name;
@@ -209,19 +209,13 @@
 			}
 
 			ret.image = "linuxmint";
-			//#JSCOVERAGE_IF false
-
 		} else if (/Mandriva/i.test(ret.ua)) {
 			ret.name = "Mandriva";
-			//#JSCOVERAGE_IF false
-
 			if (rep = ret.ua.match(/mdv([.0-9a-zA-Z]+)/i)) {
 				ret.version = rep[1];
 			}
-			//#JSCOVERAGE_ENDIF
 
 			ret.image = "mandriva";
-
 		} else if (/moonOS/i.test(ret.ua)) {
 			ret.name = "moonOS";
 
@@ -230,39 +224,6 @@
 			}
 
 			ret.image = "moonos";
-		} else if (/Nova/i.test(ret.ua)) {
-			ret.name = "Nova";
-
-			if (rep = ret.ua.match(/Nova[\/|\ ]([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "nova";
-			//#JSCOVERAGE_IF false
-
-		} else if (/Oracle/i.test(ret.ua)) {
-			ret.name = "Oracle";
-
-			if (rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)) {
-				ret.name += " Enterprise Linux";
-				ret.version = rep[1].replace(/_/g, ".");
-			} else {
-				ret.name += " Linux";
-			}
-			ret.image = "oracle";
-			//#JSCOVERAGE_ENDIF
-
-			//#JSCOVERAGE_IF false
-
-		} else if (/PCLinuxOS/i.test(ret.ua)) {
-			ret.name = "PCLinuxOS";
-
-			if (rep = ret.ua.match(/PCLinuxOS\/[.\-0-9a-zA-Z]+pclos([.\-0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1].replace(/_/g, ".");
-			}
-
-			ret.image = "pclinuxos";
-			//#JSCOVERAGE_ENDIF
 
 		} else if (/Red\ Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
 			ret.name = "Red Hat";
@@ -293,7 +254,7 @@
 			if (rep = ret.ua.match(/(L|K|X|Ed)Ubuntu/i)) {
 				var childUbuntuVersion = rep[1].toLowerCase();
 				ret.name = childUbuntuVersion + ret.name;
-				ret.name = ret.name.toLowerCase().replace(/(\w)/, function(m) {
+				ret.name = ret.name.toLowerCase().replace(/(\w)/, function (m) {
 					return m.toUpperCase();
 				});
 				ret.image = childUbuntuVersion + ret.image;
@@ -312,7 +273,7 @@
 
 
 
-	var analyzeOther = function(ret) {
+	var analyzeOther = function (ret) {
 		ret.name = '';
 		ret.image = '';
 		ret.version = '';
@@ -350,11 +311,11 @@
 			webos: {
 				name: "Palm webOS",
 				image: "palm"
-			}, 
+			},
 			sunos: {
 				name: "Solaris",
 				image: "solaris"
-			}, 
+			},
 			"j2me\/midp": {
 				name: "J2ME/MIDP Device",
 				image: "java"
@@ -362,10 +323,11 @@
 		};
 
 		var res = ret.ua.match(osRegEx);
+		var rep;
 
 		if (res !== null) {
 			var name = res[0].toLowerCase();
-			ret.name = name.replace(/(\w)/, function(string) {
+			ret.name = name.replace(/(\w)/, function (string) {
 				return string.toUpperCase();
 			});
 			ret.image = name;
@@ -446,16 +408,16 @@
 
 	var OS = {};
 
-	OS.analyze = function(uaString) {
+	OS.analyze = function (uaString) {
 		var ret = {
-			"ua": uaString,
+			ua: uaString,
 			name: "",
-			"version": "",
-			"full": "",
-			"windows": false,
-			"linux": false,
-			"x64": false,
-			"dir": "os"
+			version: "",
+			full: "",
+			windows: false,
+			linux: false,
+			x64: false,
+			dir: "os"
 		};
 		if (/x86_64|Win64; x64|WOW64/i.test(ret.ua)) {
 			ret.x64 = true;
@@ -490,7 +452,7 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
 	// AMD
 	else if (typeof define !== 'undefined' && define.amd) {
-		define([], function() {
+		define([], function () {
 			return OS;
 		});
 	}
@@ -498,13 +460,13 @@
 	//#JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
 	// CMD
 	else if (typeof define !== 'undefined' && define.cmd) {
-		define([], function(require, exports, module) {
+		define([], function (require, exports, module) {
 			module.exports = OS;
 		});
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_OS = function() {};
+		root.USERAGENT_OS = function () { };
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
 	//#JSCOVERAGE_ENDIF
