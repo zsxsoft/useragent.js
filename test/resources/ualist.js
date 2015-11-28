@@ -1696,11 +1696,7 @@
 		],
 		[
 			['BarcaPro/1.4.xxxx'],
-			['barca', 'os', 'null', 'Barca Pro 1.4.xxxx', 'Unknown'],
-		],
-		[
-			['Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; SIMBARCA5238C3-B76C-4BCE-8B03-0CE1EA1E621D; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)'],
-			['barca', 'os', 'win-2', 'Barca 5238C3', 'Windows XP'],
+			['barca', 'os', 'null', 'BarcaPro 1.4.xxxx', 'Unknown'],
 		],
 		[
 			['Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML like Gecko) Chrome/32.0.1700.77 Beamrise/32.2.1700.77 Safari/537.36'],
