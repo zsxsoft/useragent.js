@@ -31,6 +31,7 @@ console.log("TEST BROWSER:" + ua.browser.full + " (" + ua.browser.name + " VERSI
 console.log("TEST OS:" + ua.os.full + " (" + ua.os.name + " VERSION = " + ua.os.version + " )");
 console.log("TEST DEVICE:" + ua.device.full);
 ```
+
 ####In Webpack / browserify
 ```javascript
 import Useragent from 'useragent.js';
@@ -60,15 +61,15 @@ console.log(Useragent);
 
 ##Work with image
 [Click here](http://zsxsoft.github.io/useragent.js/withimage.html)
-Have you noticed it? The returned object has an "image" field. You can copy images from [php-useragent](https://github.com/zsxsoft/php-useragent).
 
+You can get images from [php-useragent](https://github.com/zsxsoft/php-useragent).
 
 ## Supported Browsers/Platforms
 
-Click here to see full list.
+[Click here to see full list.](http://project.zsxsoft.com/useragent.js/supported.html)
 
-Tested Browsers: 115Browser / 2345Explorer / Amazon Silk / America Online Browser / Android Webkit / Avant Browser / Comodo Dragon / curl / Firefox / Google Chrome / Internet Explorer / Microsoft Edge / Liebao Browser / Links / Lunascape / Lynx / Maxthon / Safari / MxNitro / Opera / QQBrowser / Safari / Sogou Explorer / SRWare Iron / Teleca Q7 / UC Browser / Vivaldi / W3M / wget / Yandex.Browser and so on.. 
+Tested Browsers: Amazon Silk / Android Webkit / Avant Browser / Comodo Dragon / curl / Firefox / Google Chrome / Internet Explorer / Microsoft Edge / Links / Lynx / Maxthon / MxNitro / Opera / QQBrowser / Safari SRWare Iron / Teleca Q7 / UC Browser / Vivaldi / W3M / wget / Yandex.Browser and so on.. 
 
-OS: Android / Arch Linux / CentOS / Chrome OS / Debain / Fedora / FreeBSD / OpenBSD / OSX / Red Hat / openSUSE / SymbianOS / Unix / Palm webOS / Windows 3.1 - 10 / Ubuntu / Linux and so on..
+OS: Android / Arch Linux / CentOS / Chrome OS / Debain / Fedora / FreeBSD / OSX / Red Hat / openSUSE / SymbianOS / Unix / Palm webOS / Windows 3.1 - 10 / Ubuntu / Linux and so on..
 
-Devices: BenQ-Siemens / Meizu / Xiaomi / BlackBerry / Dell / Nexus / HTC / Huawei / Kindle / Lenovo / LG / Motorola / Nokia / OnePlus / Palm / PlayStation / Samsung / Sony Xperia / ZTE / Ubuntu / Windows Phone / Apple Family and so on.
+Devices: Xiaomi / BlackBerry / Nexus / HTC / Huawei / Kindle / Lenovo / LG / Motorola / Nokia / OnePlus / PlayStation / Samsung / Sony Xperia / ZTE / Ubuntu / Windows Phone / Apple Family and so on.
