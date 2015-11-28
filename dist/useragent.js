@@ -1,654 +1,627 @@
 (function (root) {
 	var BROWSER = {};
-	var browserRegEx = new RegExp([
-		'11(4|5)Browser', '2345(Explorer|chrome)', '360se|360ee|360\ aphone\ browser', 'Abolimba', 'Acoo\ Browser', 'ANTFresco',
-		'Alienforce', 'Amaya', 'Amiga-AWeb', 'MRCHROME', 'America\ Online\ Browser', 'AmigaVoyager',
-		'AOL', 'Arora', 'AtomicBrowser', 'BarcaPro', 'Barca', 'Beamrise',
-		'Beonex', 'BA?IDUBrowser|BaiduHD', 'Blackbird', 'BlackHawk', 'Blazer',
-		'Bolt', 'BonEcho', 'BrowseX', 'Browzar', 'Bunjalloo', 'Camino',
-		'Cayman\ Browser', 'Charon', 'Cheshire', 'Chimera', 'chromeframe', 'ChromePlus',
-		'curl', 'Iron', 'Chromium', 'Classilla', 'Coast', 'Columbus',
-		'CometBird', 'Comodo_Dragon', 'Conkeror', 'CoolNovo', 'CoRom', 'Crazy\ Browser',
-		'CrMo', 'Cruz', 'Cyberdog', 'Deepnet\ Explorer', 'Demeter',
-		'DeskBrowse', 'Dillo', 'DoCoMo', 'DocZilla', 'Dolfin', 'Dooble',
-		'Doris', 'Dorothy', 'DPlus', 'Edbrowse', 'E?links', 'Element\ Browser',
-		'Enigma\ Browser', 'EnigmaFox', 'Epic', 'Epiphany', 'Escape|Espial', 'Fennec',
-		'Firebird', 'Fireweb\ Navigator', 'Flock', 'Fluid', 'Galeon', 'GlobalMojo',
-		'GoBrowser', 'Google\ Wireless\ Transcoder', 'GoSurf', 'GranParadiso', 'GreenBrowser', 'GSA', 'Hana',
-		'HotJava', 'Hv3', 'Hydra\ Browser', 'Iris', 'IBM\ WebExplorer', 'JuziBrowser',
-		'MiuiBrowser', 'MxNitro', 'IBrowse', 'iCab', 'IceBrowser', 'Iceape',
-		'IceCat', 'IceDragon', 'IceWeasel', 'iNet\ Browser', 'iRider', 'InternetSurfboard',
-		'Jasmine', 'K-Meleon', 'K-Ninja', 'Kapiko', 'Kazehakase', 'Strata',
-		'KKman', 'Kinza', 'KMail', 'KMLite', 'Konqueror', 'Kylo',
-		'LBrowser', 'LBBrowser|Liebaofast', 'LeechCraft', 'Lobo', 'lolifox', 'Lorentz',
-		'Lunascape', 'Lynx', 'Madfox', 'Maemo\ Browser', 'Maxthon', '\ MIB\/',
-		'Tablet\ browser', 'MicroMessenger', 'Midori', 'Minefield', 'MiniBrowser', 'Minimo',
-		'Mosaic', 'MozillaDeveloperPreview', 'Multi-Browser', 'MultiZilla', 'MyIE2', 'myibrow',
-		'Namoroka', 'Navigator', 'NetBox', 'NetCaptor', 'NetFront', 'NetNewsWire',
-		'NetPositive', 'Netscape', 'NetSurf', 'NF-Browser', 'Nichrome\/self', 'NokiaBrowser',
-		'Novarra-Vision', 'Obigo', 'OffByOne', 'OmniWeb', 'OneBrowser', 'Orca',
-		'Oregano', 'Origyn\ Web\ Browser', 'osb-browser', 'Otter', '\ Pre\/', 'Palemoon',
-		'Patriott\:\:Browser', 'Perk', 'Phaseout', 'Phoenix', 'PlayStation\ 4', 'Podkicker',
-		'Podkicker\ Pro', 'Pogo', 'Polaris', 'Polarity', 'Prism', 'M?QQBrowser',
-		'QQ(?!Download|Pinyin)', 'QtWeb\ Internet\ Browser', 'QtCarBrowser', 'QupZilla', 'rekonq', 'retawq',
-		'RockMelt', 'Ryouko', 'SaaYaa', 'SeaMonkey', 'SEMC-Browser', 'SEMC-java',
-		'Shiira', 'Shiretoko', 'SiteKiosk', 'SkipStone', 'Skyfire', 'Sleipnir',
-		'Silk', 'SlimBoat', 'SlimBrowser', 'Superbird', 'SmartTV', 'Songbird',
-		'Stainless', 'SubStream', 'Sulfur', 'Sundance', 'Sunrise',
-		'Surf', 'Swiftfox', 'Swiftweasel', 'Sylera', 'TaoBrowser', 'tear',
-		'TeaShark', 'Teleca', 'TenFourFox', 'TheWorld', 'Thunderbird', 'Tizen',
-		'Tjusig', 'TencentTraveler', 'UC?\ ?Browser|UCWEB', 'UltraBrowser', 'UP.Browser', 'UP.Link',
-		'Usejump', 'uZardWeb', 'uZard', 'uzbl', 'Vimprobable', 'Vivaldi',
-		'Vonkeror', 'w3m', 'IEMobile', 'Waterfox', 'WebianShell', 'Webrender',
-		'WeltweitimnetzBrowser', 'wKiosk', 'WorldWideWeb', 'wget', 'WhiteHat Aviator', 'Wyzo',
-		'X-Smiles', 'Xiino', 'YaBrowser', 'zBrowser', 'ZipZap'
-	].join("|"), "i");
+	var browserList = [
+		'11(4|5)Browser', '2345(Explorer|chrome)', 'Conkeror',
+		'Alienforce', 'Amaya', "Arora",
+		'Beamrise',
+		'Beonex', 'Blazer', "bidubrowser", 'Blackbird',
+		'Bolt', 'Browzar', 'Bunjalloo', 'Camino',
+		'Chromium', 'Classilla', 'Coast', 'Columbus',
+		'Cruz', 'Cyberdog', 'Demeter', 'Dooble', 'dillo',
+		'Doris', 'Edbrowse', 'E?links', 
+		'Epiphany', 'Escape|Espial', 'Fennec',
+		'Firebird', 'Flock', 'Fluid', 'Galeon',
+		'Hv3', 'Iris',  'lolifox',
+		'Iceape', 'Hana',
+		'Kapiko', 'Kazehakase', 'Kinza', 'Konqueror', 'Kylo',
+		'Lunascape', 'Lynx', 'Madfox', 'Maxthon', 
+		'Midori', 'Minefield', 'Minimo',
+		'Mosaic', 'Netscape', 
+		'Obigo', 'Orca',
+		'Oregano', 'Otter', 
+		'Perk',  'Phoenix', 'Podkicker',
+		'Ryouko', 'Sleipnir', 
+		'Shiira', 'Skyfire',
+		'Stainless', 'Sundance', 'Sunrise',
+		'Surf', 'Swiftfox', 'Swiftweasel',
+		'Thunderbird', 'Tizen',
+		'Tjusig', 'UC?\ ?Browser|UCWEB',
+		'polarity', 'polaris', 'pogo', 'prism', 'superbird', 'songbird', 
+		'Usejump', 'Vivaldi', 'Wyzo',
+	];
+
 	var defaultBrowserList = {
 		"360se": {
-			"title": "360 Explorer"
+			title: "360 Explorer"
 		},
 		"360ee": {
-			"title": "360 Chrome",
-			"image": "360se"
+			title: "360 Chrome",
+			image: "360se"
 		},
 		"360 aphone browser": {
-			"title": "360 Aphone Browser",
-			"image": "360se"
+			title: "360 Aphone Browser",
+			image: "360se"
 		},
 		"abolimba": {
-			"title": "Abolimba"
+			title: "Abolimba"
 		},
 		"acoo browser": {
-			"title": "{%Acoo Browser%}",
-			"image": "acoobrowser"
+			title: "{%Acoo Browser%}",
+			image: "acoobrowser"
 		},
 		"amiga-aweb": {
-			"title": "Amiga {%AWeb%}",
-			"image": "amiga-aweb"
+			title: "Amiga {%AWeb%}",
+			image: "amiga-aweb"
 		},
 		"antfresco": {
-			"title": "ANT {%Fresco%}"
+			title: "ANT {%Fresco%}"
 		},
 		"mrchrome": {
-			"title": "Amigo",
-			"image": "amigo"
+			title: "Amigo",
+			image: "amigo"
 		},
 		"myibrow": {
-			"title": "{%myibrow%}",
-			"image": "my-internet-browser"
+			title: "{%myibrow%}",
+			image: "my-internet-browser"
 		},
 		"america online browser": {
-			"title": "{%America Online Browser%}",
-			"image": "aol"
+			title: "{%America Online Browser%}",
+			image: "aol"
 		},
 		"amigavoyager": {
-			"title": "Amiga {%Voyager%}"
+			title: "Amiga {%Voyager%}"
 		},
 		"aol": {
-			"title": "{%AOL%}"
+			upper: [0, 1, 2], // AOL
 		},
 		"atomicbrowser": {
-			"title": "{%AtomicBrowser%}",
-			"image": "atomicwebbrowser"
+			upper: [0, 6], // AtomicBrowser
+			image: "atomicwebbrowser"
 		},
 		"barcapro": {
-			"title": "{%BarcaPro%}",
-			"image": "barca"
+			title: "{%BarcaPro%}",
+			image: "barca"
 		},
-		// Baidu Browser Spark does not have own UA.
 		"baidubrowser": {
-			"image": "bidubrowser"
+			image: "bidubrowser"
 		},
 		"baiduhd": {
-			"title": "{%BaiduHD%}",
-			"image": "bidubrowser"
+			title: "{%BaiduHD%}",
+			image: "bidubrowser"
 		},
 		"blackhawk": {
-			"title": "{%BlackHawk%}"
+			upper: [0, 5] //BlackHawk
 		},
 		"bonecho": {
-			"title": "{%BonEcho%}",
-			"image": "firefoxdevpre"
+			title: "{%BonEcho%}",
+			image: "firefoxdevpre"
 		},
 		"browsex": {
-			"title": "BrowseX"
+			upper: [0, 6] // BrowseX
 		},
 		"cayman browser": {
-			"title": "{%Cayman Browser%}",
-			"image": "caymanbrowser"
+			title: "{%Cayman Browser%}",
+			image: "caymanbrowser"
 		},
 		"charon": {
-			"image": "null"
+			image: "null"
 		},
 		"cheshire": {
-			"image": "aol"
+			image: "aol"
 		},
 		"chimera": {
-			"image": "null"
+			image: "null"
 		},
 		"chromeframe": {
-			"image": "chrome"
+			image: "chrome"
 		},
 		"chromeplus": {
-			"title": "{%ChromePlus%}"
+			title: "{%ChromePlus%}"
 		},
 		"iron": {
-			"title": "SRWare {%Iron%}",
-			"image": "srwareiron"
+			title: "SRWare {%Iron%}",
+			image: "srwareiron"
 		},
 		"cometbird": {
-			"title": "{%CometBird%}"
+			upper: [0, 5]
 		},
 		"comodo_dragon": {
-			"title": "Comodo {%Dragon%}",
-			"image": "comodo-dragon"
+			title: "Comodo {%Dragon%}",
+			image: "comodo-dragon"
 		},
 		"coolnovo": {
-			"title": "{%CoolNovo%}"
+			upper: [0, 4] 
 		},
 		"corom": {
-			"title": "{%CoRom%}"
+			upper: [0, 2] // CoRom
 		},
 		"crazy browser": {
-			"title": "{%Crazy Browser%}",
-			"image": "crazybrowser"
+			upper: [0, 6], 
+			image: "crazybrowser"
 		},
 		"crmo": {
-			"title": "{%CrMo%}",
-			"image": "chrome"
+			upper: [0, 2], // CrMo
+			image: "chrome"
 		},
 		"dplus": {
-			"title": "{%DPlus%}",
-			"image": "dillo"
+			upper: [0, 1], // DPlus
+			image: "dillo"
 		},
 		"deepnet explorer": {
-			"title": "{%Deepnet Explorer%}",
-			"image": "deepnetexplorer"
+			upper: [0, 8],
+			image: "deepnetexplorer"
 		},
 		"deskbrowse": {
-			"title": "{%DeskBrowse%}"
+			upper: [0, 4],
 		},
 		"docomo": {
-			"title": "{%DoCoMo%}",
-			"image": "null"
+			upper: [0, 2, 4], // DoCoMo
+			image: "null"
 		},
 		"doczilla": {
-			"title": "{%DocZilla%}"
+			upper: [0, 3],
 		},
 		"dolfin": {
-			"image": "samsung"
+			image: "samsung"
 		},
 		"dorothy": {
-			"image": "dorothybrowser"
+			image: "dorothybrowser"
 		},
 		"element browser": {
-			"title": "{%Element Browser%}",
-			"image": "elementbrowser"
+			upper: [0, 8],
+			image: "elementbrowser"
 		},
 		"enigma browser": {
-			"title": "{%Enigma Browser%}",
-			"image": "enigmabrowser"
+			upper: [0, 7],
+			image: "enigmabrowser"
 		},
 		"enigmafox": {
-			"title": "{%EnigmaFox%}",
-			"image": "null"
+			upper: [0, 6],
+			image: "null"
 		},
 		"epic": {
-			"image": "epicbrowser"
+			image: "epicbrowser"
 		},
 		"escape": {
-			"image": "espialtvbrowser"
+			image: "espialtvbrowser"
 		},
 		"espial": {
-			"image": "espialtvbrowser"
+			image: "espialtvbrowser"
 		},
 		"fireweb navigator": {
-			"title": "{%Fireweb Navigator%}",
-			"image": "firewebnavigator"
+			upper: [0, 8],
+			image: "firewebnavigator"
 		},
 		"globalmojo": {
-			"title": "{%GlobalMojo%}"
+			upper: [0, 6]
 		},
 		"gobrowser": {
-			"title": "{%GOBrowser%}"
+			upper: [0, 1, 2]
 		},
 		"google wireless transcoder": {
-			"title": "Google Wireless Transcoder",
-			"image": "google"
+			title: "Google Wireless Transcoder",
+			image: "google"
 		},
 		"gosurf": {
-			"title": "{%GoSurf%}"
+			upper: [0, 2]
 		},
 		"granparadiso": {
-			"title": "{%GranParadiso%}",
-			"image": "firefoxdevpre"
+			upper: [0, 4],
+			image: "firefoxdevpre"
 		},
 		"greenbrowser": {
-			"title": "{%GreenBrowser%}"
+			upper: [0, 5]
 		},
 		"gsa": {
-			"title": "{%GSA%}",
-			"image": "google"
+			upper: [0, 1, 2],
+			image: "google"
 		},
 		"hotjava": {
-			"title": "{%HotJava%}"
+			upper: [0, 3]
 		},
 		"hydra browser": {
-			"title": "Hydra Browser",
-			"image": "hydrabrowser"
+			title: "Hydra Browser",
+			image: "hydrabrowser"
 		},
 		"ibm webexplorer": {
-			"title": "IBM {%WebExplorer%}",
-			"image": "ibmwebexplorer"
+			title: "IBM {%WebExplorer%}",
+			image: "ibmwebexplorer"
 		},
 		"juzibrowser": {
-			"title": "JuziBrowser"
+			upper: [0, 4]
 		},
 		"miuibrowser": {
-			"title": "{%MiuiBrowser%}"
+			upper: [0, 4]
 		},
 		"mxnitro": {
-			"title": "{%MxNitro%}"
+			upper: [0, 2]
 		},
 		"ibrowse": {
-			"title": "{%IBrowse%}"
+			upper: [0, 1]
 		},
 		"icab": {
-			"title": "{%iCab%}"
+			upper: [1]
 		},
 		"icebrowser": {
-			"title": "{%IceBrowser%}"
+			upper: [0, 3]
 		},
 		"icecat": {
-			"title": "GNU {%IceCat%}"
+			title: "GNU {%IceCat%}"
 		},
 		"icedragon": {
-			"title": "{%IceDragon%}"
+			upper: [0, 3]
 		},
 		"iceweasel": {
-			"title": "{%IceWeasel%}"
+			upper: [0, 3]
 		},
 		"inet browser": {
-			"title": "{%iNet Browser%}",
-			"image": "null"
+			upper: [1, 5],
+			image: "null"
 		},
 		"irider": {
-			"title": "{%iRider%}"
+			upper: [1]
 		},
 		"internetsurfboard": {
-			"title": "{%InternetSurfboard%}"
+			upper: [0, 8],
 		},
 		"jasmine": {
-			"image": "samsung"
+			image: "samsung"
 		},
 		"k-meleon": {
-			"title": "{%K-Meleon%}",
-			"image": "kmeleon"
+			upper: [0, 2],
+			image: "kmeleon"
 		},
 		"k-ninja": {
-			"title": "{%K-Ninja%}",
-			"image": "kninja"
+			upper: [0, 2],
+			image: "kninja"
 		},
 		"strata": {
-			"title": "Kirix {%Strata%}",
-			"image": "kirix-strata"
+			title: "Kirix {%Strata%}",
+			image: "kirix-strata"
 		},
 		"kkman": {
-			"title": "{%KKman%}"
+			upper: [0, 1]
 		},
 		"kmail": {
-			"title": "{%KMail%}"
+			upper: [0, 1]
 		},
 		"kmlite": {
-			"title": "{%KMLite%}",
-			"image": "kmeleon"
+			upper: [0, 1, 2],
+			image: "kmeleon"
 		},
 		"lbrowser": {
-			"title": "{%LBrowser%}"
+			upper: [0, 1]
 		},
 		"links": {
-			"image": "null"
+			image: "null"
 		},
 		"lbbrowser": {
-			"title": "Liebao Browser"
+			title: "Liebao Browser"
 		},
 		"liebaofast": {
-			"image": "lbbrowser"
+			image: "lbbrowser"
 		},
 		"leechcraft": {
-			"title": "LeechCraft",
-			"image": "null"
+			title: "LeechCraft",
+			image: "null"
 		},
 		"lobo": {
-			"title": "{%Lobo%}"
-		},
-		"lolifox": {
-			"title": "{%lolifox%}"
+			upper: [0]
 		},
 		"lorentz": {
-			"title": "{%Lorentz%}",
-			"image": "firefoxdevpre"
+			upper: [0],
+			image: "firefoxdevpre"
 		},
 		"maemo browser": {
-			"title": "{%Maemo Browser%}",
-			"image": "maemo"
+			upper: [0, 6],
+			image: "maemo"
 		},
 		" mib/": {
-			"title": "{%MIB%}",
-			"image": "mib"
-		},
-		"tablet browser": {
-			"title": "{%Tablet browser%}",
-			"image": "microb"
+			title: "{%MIB%}",
+			image: "mib"
 		},
 		"micromessenger": {
-			"title": "{%MicroMessenger%}",
-			"image": "wechat"
+			upper: [0, 5],
+			image: "wechat"
 		},
 		"minibrowser": {
-			"title": "{%MiniBrowser%}"
+			upper: [0, 5]
 		},
 		"mozilladeveloperpreview": {
-			"title": "{%MozillaDeveloperPreview%}",
-			"image": "firefoxdevpre"
+			title: "{%MozillaDeveloperPreview%}",
+			image: "firefoxdevpre"
 		},
 		"mqqbrowser": {
-			"title": "{%MQQBrowser%}",
-			"image": "qqbrowser"
+			upper: [0, 1, 2, 3], // MQQBrowser
+			image: "qqbrowser"
 		},
 		"multi-browser": {
-			"title": "{%Multi-Browser%}",
-			"image": "multi-browserxp"
+			upper: [0, 6],
+			image: "multi-browserxp"
 		},
 		"multizilla": {
-			"title": "{%MultiZilla%}",
-			"image": "mozilla"
+			upper: [0, 5],
+			image: "mozilla"
 		},
 		"myie2": {
-			"title": "{%MyIE2%}"
+			upper: [0, 2, 3]
 		},
 		"namoroka": {
-			"image": "firefoxdevpre"
+			image: "firefoxdevpre"
 		},
 		"navigator": {
-			"title": "Netscape {%Navigator%}",
-			"image": "netscape"
+			title: "Netscape {%Navigator%}",
+			image: "netscape"
 		},
 		"netbox": {
-			"title": "{%NetBox%}"
+			upper: [0, 3]
 		},
 		"netcaptor": {
-			"title": "{%NetCaptor%}"
+			upper: [0, 3]
 		},
 		"netfront": {
-			"title": "{%NetFront%}"
+			upper: [0, 3]
 		},
 		"netnewswire": {
-			"title": "{%NetNewsWire%}"
+			upper: [0, 3, 7]
 		},
 		"netpositive": {
-			"title": "{%NetPositive%}"
+			upper: [0, 3]
 		},
 		"netsurf": {
-			"title": "{%NetSurf%}"
+			upper: [0, 3]
 		},
 		"nf-browser": {
-			"title": "{%NF-Browser%}",
-			"image": "netfront"
+			upper: [0, 1, 2, 4],
+			image: "netfront"
 		},
 		"nichrome/self": {
-			"title": "{%Nichrome/self%}",
-			"image": "nichromeself"
+			title: "{%Nichrome/self%}",
+			image: "nichromeself"
 		},
 		"nokiabrowser": {
-			"title": "Nokia {%Browser%}",
-			"image": "nokia"
+			title: "Nokia {%Browser%}",
+			image: "nokia"
 		},
 		"novarra-vision": {
-			"title": "Novarra {%Vision%}",
-			"image": "novarra"
+			title: "Novarra {%Vision%}",
+			image: "novarra"
 		},
 		"offbyone": {
-			"title": "Off By One"
+			title: "Off By One"
 		},
 		"omniweb": {
-			"title": "{%OmniWeb%}"
+			upper: [0, 4]
 		},
 		"onebrowser": {
-			"title": "{%OneBrowser%}"
+			upper: [0, 3]
 		},
 		"origyn web browser": {
-			"title": "Oregano Web Browser",
-			"image": "owb"
+			title: "Oregano Web Browser",
+			image: "owb"
 		},
 		"osb-browser": {
-			"title": "{%osb-browser%}",
-			"image": "null"
+			image: "null"
 		},
 		" pre/": {
-			"title": "Palm {%Pre%}",
-			"image": "palmpre"
+			title: "Palm {%Pre%}",
+			image: "palmpre"
 		},
 		"palemoon": {
-			"title": "Pale {%Moon%}"
+			title: "Pale {%Moon%}"
 		},
 		"patriott::browser": {
-			"title": "Patriott {%Browser%}",
-			"image": "patriott"
+			title: "Patriott {%Browser%}",
+			image: "patriott"
 		},
 		"phaseout": {
-			"title": "Phaseout"
+			title: "Phaseout"
 		},
 		"playstation 4": {
-			"title": "PS4 Web Browser",
-			"image": "webkit"
+			title: "PS4 Web Browser",
+			image: "webkit"
 		},
 		"podkicker pro": {
-			"title": "{%Podkicker Pro%}",
-			"image": "podkicker"
+			upper: [0, 8],
+			image: "podkicker"
 		},
 		"qqbrowser": {
-			"title": "{%QQBrowser%}"
-		},
-		"qq": {
-			"title": "{%QQ%}"
+			upper: [0, 1, 2]
 		},
 		"qtweb internet browser": {
-			"title": "{%QtWeb Internet Browser%}",
-			"image": "qtwebinternetbrowser"
+			title: "{%QtWeb Internet Browser%}",
+			image: "qtwebinternetbrowser"
 		},
 		"qtcarbrowser": {
-			"title": "{%qtcarbrowser%}",
-			"image": "tesla"
+			image: "tesla"
 		},
 		"qupzilla": {
-			"title": "{%QupZilla%}"
+			upper: [0, 3]
 		},
 		"rekonq": {
-			"title": "rekonq"
+			title: "rekonq"
 		},
 		"retawq": {
-			"title": "{%retawq%}",
-			"image": "terminal"
+			image: "terminal"
 		},
 		"rockmelt": {
-			"title": "{%RockMelt%}"
+			upper: [0, 4]
 		},
 		"saayaa": {
-			"title": "SaaYaa Explorer"
+			title: "SaaYaa Explorer"
 		},
 		"seamonkey": {
-			"title": "{%SeaMonkey%}"
+			upper: [0, 3]
 		},
 		"semc-browser": {
-			"title": "{%SEMC-Browser%}",
-			"image": "semcbrowser"
+			upper: [0, 1, 2, 3, 5],
+			image: "semcbrowser"
 		},
 		"semc-java": {
-			"title": "{%SEMC-java%}",
-			"image": "semcbrowser"
+			upper: [0, 1, 2, 3],
+			image: "semcbrowser"
 		},
 		"shiretoko": {
-			"title": "{%Shiretoko%}",
-			"image": "firefoxdevpre"
+			upper: [0],
+			image: "firefoxdevpre"
 		},
 		"sitekiosk": {
-			"title": "{%SiteKiosk%}"
+			upper: [0, 4]
 		},
 		"skipstone": {
-			"title": "{%SkipStone%}"
+			upper: [0, 4]
 		},
 		"silk": {
-			"title": "Amazon {%Silk%}"
+			title: "Amazon {%Silk%}"
 		},
 		"slimboat": {
-			"title": "{%SlimBoat%}"
+			upper: [0, 4]
 		},
 		"slimbrowser": {
-			"title": "{%SlimBrowser%}"
+			upper: [0, 4]
 		},
 		"smarttv": {
-			"title": "{%SmartTV%}",
-			"image": "maplebrowser"
+			upper: [0, 5, 6],
+			image: "maplebrowser"
 		},
 		"substream": {
-			"title": "{%SubStream%}"
+			upper: [0, 3]
 		},
 		"sulfur": {
-			"title": "Flock {%Sulfur%}",
-			"image": "flock"
+			title: "Flock {%Sulfur%}",
+			image: "flock"
 		},
 		"sylera": {
-			"title": "{%Sylera%}",
-			"image": "null"
+			upper: [0],
+			image: "null"
 		},
 		"taobrowser": {
-			"title": "{%TaoBrowser%}"
+			upper: [0, 3],
 		},
 		"tear": {
-			"title": "Tear"
+			title: "Tear"
 		},
 		"teashark": {
-			"title": "{%TeaShark%}"
+			upper: [0, 3]
 		},
 		"teleca": {
-			"image": "obigo"
+			image: "obigo"
 		},
 		"tencenttraveler": {
-			"title": "Tencent {%Traveler%}"
+			title: "Tencent {%Traveler%}"
 		},
 		"tenfourfox": {
-			"title": "{%TenFourFox%}"
+			upper: [0, 3, 7]
 		},
 		"theworld": {
-			"title": "TheWorld Browser"
+			title: "TheWorld Browser"
 		},
 		"ubrowser": {
-			"title": "{%UBrowser%}",
-			"image": "ucbrowser"
+			upper: [0, 1],
+			image: "ucbrowser"
 		},
 		"ucbrowser": {
-			"title": "{%UCBrowser%}"
+			upper: [0, 1, 2, 3],
 		},
 		"uc browser": {
-			"title": "{%UC Browser%}",
-			"image": "ucbrowser"
+			upper: [0, 1, 2, 4],
+			image: "ucbrowser"
 		},
 		"ucweb": {
-			"title": "{%UCWEB%}",
-			"image": "ucbrowser"
+			upper: [0, 1, 2, 3, 4],
+			image: "ucbrowser"
 		},
 		"ultrabrowser": {
-			"title": "{%UltraBrowser%}"
+			upper: [0, 5],
 		},
 		"up.browser": {
-			"title": "{%UP.Browser%}",
-			"image": "openwave"
+			upper: [0, 3],
+			image: "openwave"
 		},
 		"up.link": {
-			"title": "{%UP.Link%}",
-			"image": "openwave"
+			upper: [0, 3],
+			image: "openwave"
 		},
 		"uzardweb": {
-			"title": "{%uZardWeb%}"
+			title: "{%uZardWeb%}"
 		},
 		"uzard": {
-			"title": "{%uZard%}",
-			"image": "uzardweb"
+			upper: [1],
+			image: "uzardweb"
 		},
 		"uzbl": {
-			"title": "uzbl"
+			title: "uzbl"
 		},
 		"vimprobable": {
-			"title": "{%Vimprobable%}",
-			"image": "null"
+			upper: [0],
+			image: "null"
 		},
 		"vonkeror": {
-			"title": "{%Vonkeror%}",
-			"image": "null"
+			upper: [0],
+			image: "null"
 		},
 		"w3m": {
-			"title": "{%W3M%}"
+			upper: [0, 2]
 		},
 		"wget": {
-			"title": "{%wget%}",
-			"image": "null"
+			image: "null"
 		},
 		"curl": {
-			"title": "{%curl%}",
-			"image": "null"
+			image: "null"
 		},
 		"iemobile": {
-			"title": "{%IEMobile%}",
-			"image": "msie-mobile"
+			upper: [0, 1, 2],
+			image: "msie-mobile"
 		},
 		"waterfox": {
-			"title": "{%WaterFox%}"
+			upper: [0, 5]
 		},
 		"webianshell": {
-			"title": "Webian {%Shell%}"
+			title: "Webian {%Shell%}"
 		},
 		"webrender": {
-			"title": "Webrender"
+			upper: [0]
 		},
 		"weltweitimnetzbrowser": {
-			"title": "Weltweitimnetz {%Browser%}",
-			"image": "weltweitimnetzbrowser"
+			title: "Weltweitimnetz {%Browser%}",
+			image: "weltweitimnetzbrowser"
 		},
 		"whitehat aviator": {
-			"title": "{%WhiteHat Aviator%}",
-			"image": "aviator"
+			upper: [0, 5, 9],
+			image: "aviator"
 		},
 		"wkiosk": {
-			"title": "wKiosk"
+			title: "wKiosk"
 		},
 		"worldwideweb": {
-			"title": "{%WorldWideWeb%}"
+			upper: [0, 5, 9]
 		},
 		"x-smiles": {
-			"title": "{%X-Smiles%}"
+			upper: [0, 2]
 		},
 		"xiino": {
-			"image": "null"
+			image: "null"
 		},
 		"yabrowser": {
-			"title": "Yandex.{%Browser%}",
-			"image": "yandex"
+			upper: [0, 2],
+			image: "yandex"
 		},
 		"zbrowser": {
-			"title": "{%zBrowser%}"
+			upper: [1]
 		},
 		"zipzap": {
-			"title": "{%ZipZap%}"
+			upper: [0, 3]
 		},
 		"abrowse": {
-			"title": "{%ABrowse Browser%}"
+			title: "{%ABrowse Browser%}"
 		},
 		"none": {
-			"title": "Unknown",
-			"image": "unknown"
+			title: "Unknown",
+			image: "unknown"
 		}
 	};
+	var browserRegEx = new RegExp(browserList.concat(Object.keys(defaultBrowserList)).join("|"), "i");
+
 	var displayNameList = {
 		"msie": {
 			callback: function (rep, ret) {
@@ -717,9 +690,6 @@
 		"atomicbrowser": {
 			name: "Atomic Web Browser"
 		},
-		"barcapro": {
-			name: "Barca Pro"
-		},
 		"dplus": {
 			name: "D+"
 		},
@@ -751,6 +721,11 @@
 				if (ret.version == "Firefox") {
 					ret.version = "";
 				}
+			}
+		}, 
+		"yabrowser": {
+			callback: function (rep, ret) {
+				ret.name = "Yandex.Browser";
 			}
 		}
 	};
@@ -818,30 +793,49 @@
 
 	BROWSER.analyze = function (uaString) {
 		var ret = {
-			"ua": uaString,
-			"name": "",
-			"version": "",
-			"full": "",
-			"image": "",
-			"dir": "browser"
+			ua: uaString,
+			name: "",
+			version: "",
+			full: "",
+			image: "",
+			dir: "browser"
 		};
 		var res = uaString.match(browserRegEx);
 		var rep = null;
 		if (res !== null) {
 			var name = res[0].toLowerCase();
+			var upper = null;
+
 			rep = {};
-			if (typeof defaultBrowserList[name] !== 'undefined') {
-				rep = defaultBrowserList[name];
+			if (!!defaultBrowserList[name]) {
+				Object.keys(defaultBrowserList[name]).forEach(function(key) {
+					if (key !== 'upper') {
+						rep[key] = defaultBrowserList[name][key];
+					} else {
+						upper = defaultBrowserList[name].upper;
+					}
+				});
 			}
-			if (typeof rep.title == "undefined") {
-				rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function (m) {
-					return m.toUpperCase(); // Repeat dirty code...
-				}) + "%}";
+			if (!('title' in rep)) {
+				if (upper !== null) {
+					var upperTitle = name;
+					upper.forEach(function(letterId) {
+						upperTitle = upperTitle.substr(0, letterId) + upperTitle.substr(letterId, 1).toUpperCase() + upperTitle.substr(letterId + 1, upperTitle.length); // fuck IE
+					});
+					rep.title = "{%" + upperTitle + "%}";
+				} else {
+					rep.title = "{%" + name.toLowerCase().replace(/[a-z]/, function (m) {
+						return m.toUpperCase(); // Repeat dirty code...
+					}) + "%}";
+				}
 			}
-			if (typeof rep.image == "undefined") {
+			if (!('image' in rep)) {
 				rep.image = name;
 			}
 			setRetName(ret, rep);
+		} else if (/QQ(?!Download|Pinyin)/.test(ret.ua)) {
+			ret.full = getVersion(ret, "QQ");
+			ret.image = "qq";
 		} else if (/Galaxy/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
 			ret.full = getVersion(ret, 'Galaxy');
 			ret.image = "galaxy";
@@ -875,14 +869,13 @@
 			/WebKit/i.test(ret.ua))) {
 			ret.name = ret.full = "Ubuntu Web Browser";
 			ret.image = "ubuntuwebbrowser";
-		} else if (/Avant\ Browser/i.test(ret.ua)) {
+		} else if (/Avant\ Browser/i.test(ret.ua)) { // Fuck it
 			ret.full = "Avant " + getVersion(ret, 'Browser');
 			ret.image = "avantbrowser";
 		} else if (/AppleWebkit/i.test(ret.ua) && /Android/i.test(ret.ua) && !/Chrome/i.test(ret.ua)) {
 			ret.full = getVersion(ret, 'Android Webkit');
 			ret.image = "android-webkit";
 		} else if (/Windows.+Chrome.+Edge/i.test(ret.ua)) {
-			// Project Spartan
 			ret.full = getVersion(ret, 'Edge');
 			ret.image = "edge";
 		} else if (/Chrome|crios/i.test(ret.ua)) {
@@ -893,7 +886,10 @@
 				ret.full = "Google " + getVersion(ret, 'Chrome');
 				ret.image = "chrome";
 			}
-		} else if (/Safari/i.test(ret.ua) && !/Nokia/i.test(ret.ua)) {
+		} else if (/Nokia/i.test(ret.ua) && !/Trident/i.test(ret.ua)) {
+			ret.full = "Nokia Web Browser";
+			ret.image = "maemo";
+		} else if (/Safari/i.test(ret.ua)) {
 			ret.name = "Safari";
 			if (/Version/i.test(ret.ua)) {
 				ret.full = getVersion(ret, 'Safari');
@@ -905,9 +901,6 @@
 				ret.full = "Mobile " + ret.full;
 			}
 			ret.image = "safari";
-		} else if (/Nokia/i.test(ret.ua) && !/Trident/i.test(ret.ua)) {
-			ret.full = "Nokia Web Browser";
-			ret.image = "maemo";
 		} else if (/Firefox/i.test(ret.ua)) {
 			ret.full = getVersion(ret, 'Firefox');
 			ret.image = "firefox";
@@ -1881,8 +1874,8 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.3";
-	userAgent.publishDate = "20151107";
+	userAgent.version = "0.4";
+	userAgent.publishDate = "20151128";
 
 	userAgent.analyze = function (uaString) {
 		var returnObject = {};
@@ -1901,7 +1894,6 @@
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
 	};
-
 
 	// Node.js
 	if (NODE) {

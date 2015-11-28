@@ -10,8 +10,8 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.3";
-	userAgent.publishDate = "20151107";
+	userAgent.version = "0.4";
+	userAgent.publishDate = "20151128";
 
 	userAgent.analyze = function (uaString) {
 		var returnObject = {};
@@ -30,7 +30,6 @@
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
 	};
-
 
 	// Node.js
 	if (NODE) {
