@@ -1,8 +1,11 @@
 useragent.js
 ===========
+[![npm](https://img.shields.io/npm/v/useragent.js.svg)](https://www.npmjs.com/package/useragent.js)
 [![Coverage Status](https://coveralls.io/repos/zsxsoft/useragent.js/badge.svg)](https://coveralls.io/r/zsxsoft/useragent.js)
 [![Build Status](https://travis-ci.org/zsxsoft/useragent.js.svg?branch=master)](https://travis-ci.org/zsxsoft/useragent.js)
-
+[![David deps](https://david-dm.org/zsxsoft/useragent.js.svg)](https://david-dm.org/zsxsoft/useragent.js)
+[![npm](https://img.shields.io/npm/dm/useragent.js.svg)](https://www.npmjs.com/package/useragent.js)
+[![GitHub release](https://img.shields.io/github/release/zsxsoft/useragent.js.svg)](https://github.com/zsxsoft/useragent.js/releases)
 
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
