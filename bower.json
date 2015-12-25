@@ -1,7 +1,7 @@
 {
   "name": "useragent.js",
-  "main": "index.js",
-  "version": "0.3.0",
+  "main": "dist/useragent.min.js",
+  "version": "0.4.0",
   "homepage": "https://zsxsoft.github.io/useragent.js",
   "authors": [
     "zsx <zsx@zsxsoft.com>"
@@ -16,9 +16,6 @@
     "UserAgent"
   ],
   "license": "MIT",
-  "main": {
-    "dist/useragent.min.js"
-  },
   "ignore": [
     "**/.*",
     "node_modules",
