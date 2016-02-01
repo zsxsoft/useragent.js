@@ -42,9 +42,12 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					banner: '/*!\n * ' + packageJson.name + '\n * version: ' + packageJson.version + '\n * build: <%= new Date() %>\n * author: zsx<zsx@zsxsoft.com> \n*/',
+					unsafe: true,
+					pure_getters: true, 
 				},
 				src: 'dist/useragent.js',
 				dest: 'dist/useragent.min.js',
+
 			}
 		},
 		replace: {

@@ -1388,8 +1388,106 @@
 
 })(this);
 (function (root) {
+	var windowsVersion = {
+		"6.4": ["10", "6"], // Windows 10 before 10240 
+		"10.0": ["10", "6"],
+		"6.3": ["8.1", "5"],
+		"6.2": ["8", "5"],
+		"6.1": ["7", "4"],
+		"6.0": ["Vista", "3"],
+		"5.2": ["Server 2003", "2"],
+		"5.1": ["XP", "2"],
+		"5.01": ["2000 Service Pack 1", "1"],
+		"5.0": ["2000", "1"],
+		"4.0": ["NT 4.0", "1"],
+		"3.51": ["NT 3.11", "1"],
+	};
+
+	var osRegEx = new RegExp([
+		"BB10", "BeOS", "DragonFly", "FreeBSD", "Inferno",
+		"SunOS", "Solaris", "J2ME\/MIDP",
+		"MorphOS", "NetBSD", "OpenBSD", "Unix", "webOS"
+	].join("|"), "i");
+	var defaultOSList = {
+		bb10: {
+			name: "BlackBerry OS 10",
+			image: "blackberry"
+		},
+		dragonfly: {
+			name: "DragonFly BSD",
+			image: "dragonflybsd"
+		},
+		freebsd: {
+			name: "FreeBSD"
+		},
+		morphos: {
+			name: "MorphOS"
+		},
+		openbsd: {
+			name: "OpenBSD"
+		},
+		netbsd: {
+			name: "NetBSD"
+		},
+		beos: {
+			name: "BeOS"
+		},
+		webos: {
+			name: "Palm webOS",
+			image: "palm"
+		},
+		sunos: {
+			name: "Solaris",
+			image: "solaris"
+		},
+		"j2me\/midp": {
+			name: "J2ME/MIDP Device",
+			image: "java"
+		}
+	};
+
+	var linuxRegEx = new RegExp([
+		"Arch ?Linux", "Chakra", "Crunchbang", "Debian", "Gentoo", "Kanotix", "Knoppix",
+		"LindowsOS", "Linspire", "Mageia", "Pardus", "Rosa", "Sabayon",
+		"Slackware", "Suse", "VectorLinux", "Venenux", "Xandros", "Zenwalk"
+	].join("|"), "i");
+	var defaultLinuxList = {
+		"arch linux": {
+			image: "archlinux",
+			name: "Arch Linux"
+		},
+		archlinux: {
+			name: "Arch Linux"
+		},
+		suse: {
+			name: "openSUSE"
+		},
+		lindowsos: {
+			name: "LindowsOS"
+		},
+		linspire: {
+			image: "lindowsos"
+		}
+	};
+	var linuxWithVersion = {
+		"centos": ["centos", /.el([.0-9a-zA-Z]+).centos/i],
+		"fedora": ["fedora", /.fc([.0-9a-zA-Z]+)/i],
+		"foresight linux": ["foresight", /Foresight\ Linux\/([.0-9a-zA-Z]+)/i],
+		"linux mint": ["linuxmint", /Linux\ Mint\/([.0-9a-zA-Z]+)/i],
+		"mandriva": ["mandriva", /mdv\/([.0-9a-zA-Z]+)/i],
+		"moonos": ["moonos", /moonos\/([.0-9a-zA-Z]+)/i]
+	};
+	var linuxWithVersionRegEx = new RegExp("(" + Object.keys(linuxWithVersion).join("|") + ")", "i");
+
+
+	var returnWindows = function (ret, version) {
+		ret.full += " " + windowsVersion[version][0];
+		ret.image = "win-" + windowsVersion[version][1];
+		ret.version = version;
+	};
 
 	var analyzeWindows = function (ret) {
+
 		ret.full = "Windows";
 		ret.name = "Windows";
 		ret.image = 'win-2';
@@ -1412,79 +1510,24 @@
 			ret.name = "Windows NT";
 			rep = ret.ua.match(/Windows NT ([.0-9]+)/i);
 			if (rep !== null) {
-				switch (rep[1]) {
-					case "6.4":
-					case "10.0":
-						ret.full = "Windows 10";
-						ret.image = "win-6";
-						break;
-					case "6.3":
-						ret.full = "Windows 8.1";
-						ret.image = "win-5";
-						break;
-					case "6.2":
-						ret.full = "Windows 8";
-						ret.image = "win-5";
-						break;
-					case "6.1":
-						ret.full = "Windows 7";
-						ret.image = "win-4";
-						break;
-					case "6.0":
-						ret.full = "Windows Vista";
-						ret.image = "win-3";
-						break;
-					case "5.2":
-						ret.full = "Windows Server 2003";
-						ret.image = "win-2";
-						break;
-					case "5.1":
-						ret.full = "Windows XP";
-						ret.image = "win-2";
-						break;
-					//#JSCOVERAGE_IF false
-					case "5.01":
-						ret.full = "Windows 2000 Service Pack 1";
-						ret.image = "win-1";
-						break;
-					//#JSCOVERAGE_ENDIF
-					case "5.0":
-						ret.full = "Windows 2000";
-						ret.image = "win-1";
-						break;
-					case "4.0":
-						ret.full = "Windows NT 4.0";
-						ret.image = "win-1";
-						break;
-					case "3.51":
-						ret.full = "Windows NT 3.11";
-						ret.image = "win-1";
-						break;
+				if (windowsVersion[rep[1]]) {
+					returnWindows(ret, rep[1]);
 				}
-				ret.version = rep[1];
-			} else {
-
 			}
-		} else if (/Windows XP/i.test(ret.ua)) {
-			ret.version = "5.1";
-			ret.name = "Windows NT";
-			ret.full = "Windows XP";
-			ret.image = "win-2";
+		}
+
+		if (ret.full !== "Windows") {
+			return true;
+		}
+
+		if (/Windows XP/i.test(ret.ua)) {
+			returnWindows(ret, "5.1");
 		} else if (/Windows 2000/i.test(ret.ua)) {
-			ret.version = "5.0";
-			ret.name = "Windows NT";
-			ret.full = "Windows 2000";
-			ret.image = "win-1";
+			returnWindows(ret, "5.0");
 		} else if (/WinNT4.0/i.test(ret.ua)) {
-			ret.version = "4.0";
-			ret.name = "Windows NT";
-			ret.full = "Windows NT 4.0";
-			ret.image = "win-1";
+			returnWindows(ret, "4.0");
 		} else if (/WinNT3.51/i.test(ret.ua)) {
-			ret.version = "3.51";
-			ret.name = "Windows NT";
-			ret.full = "Windows NT 3.11";
-			ret.image = "win-1";
+			returnWindows(ret, "3.51");
 		} else if (/Win(dows )?3.11|Win16/i.test(ret.ua)) {
 			ret.full += " 3.11";
 			ret.image = "win-1";
@@ -1526,106 +1569,22 @@
 		ret.image = '';
 		ret.version = '';
 		var rep = null;
-		var linuxRegEx = new RegExp([
-			"Arch ?Linux", "Chakra", "Crunchbang", "Debian", "Gentoo", "Kanotix", "Knoppix",
-			"LindowsOS", "Linspire", "Mageia", "Pardus", "Rosa", "Sabayon",
-			"Slackware", "Suse", "VectorLinux", "Venenux", "Xandros", "Zenwalk"
-		].join("|"), "i");
-		var defaultLinuxList = {
-			"arch linux": {
-				image: "archlinux",
-				name: "Arch Linux"
-			},
-			archlinux: {
-				name: "Arch Linux"
-			},
-			suse: {
-				name: "openSUSE"
-			},
-			lindowsos: {
-				name: "LindowsOS"
-			},
-			linspire: {
-				image: "lindowsos"
-			}
-		};
-
 		var res = ret.ua.match(linuxRegEx);
+		var name = "";
 
 		if (res !== null) {
-			var name = res[0].toLowerCase();
+			name = res[0].toLowerCase();
 			ret.name = name.replace(/(\w)/, function (string) {
 				return string.toUpperCase();
 			});
 			ret.image = name;
 
-			if (typeof defaultLinuxList[name] !== 'undefined') {
+			if (!!defaultLinuxList[name]) {
 				ret.name = defaultLinuxList[name].name || ret.name;
 				ret.image = defaultLinuxList[name].image || ret.image;
 			}
 
-		} else if (/CentOS/i.test(ret.ua)) {
-			ret.name = "CentOS";
-
-			if (rep = ret.ua.match(/.el([.0-9a-zA-Z]+).centos/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "centos";
-
-		} else if (/Fedora/i.test(ret.ua)) {
-			ret.name = "Fedora";
-
-			if (rep = ret.ua.match(/.fc([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "fedora";
-		} else if (/Foresight\ Linux/i.test(ret.ua)) {
-			ret.name = "Foresight Linux";
-
-			if (rep = ret.ua.match(/Foresight\ Linux\/([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "foresight";
-
-		} else if (/Linux\ Mint/i.test(ret.ua)) {
-			ret.name = "Linux Mint";
-
-			if (rep = ret.ua.match(/Linux\ Mint\/([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "linuxmint";
-		} else if (/Mandriva/i.test(ret.ua)) {
-			ret.name = "Mandriva";
-			if (rep = ret.ua.match(/mdv([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "mandriva";
-		} else if (/moonOS/i.test(ret.ua)) {
-			ret.name = "moonOS";
-
-			if (rep = ret.ua.match(/moonOS\/([.0-9a-zA-Z]+)/i)) {
-				ret.version = rep[1];
-			}
-
-			ret.image = "moonos";
-
-		} else if (/Red\ Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
-			ret.name = "Red Hat";
-
-			if (rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)) {
-				ret.name += " Enterprise Linux";
-				ret.version = rep[1].replace(/_/g, ".");
-			}
-
-			ret.image = "red-hat";
-
-			// Pulled out of order to help ensure better detection for above platforms
-		} else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) {
+		} else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) { // The count of Ubuntu users is more than others.
 
 			ret.name = "Ubuntu";
 
@@ -1649,6 +1608,24 @@
 				ret.image = childUbuntuVersion + ret.image;
 			}
 
+		} else if (rep = ret.ua.match(linuxWithVersionRegEx)) {
+			name = rep[1].toLowerCase();
+			ret.name = rep[1];
+			if (rep = ret.ua.match(linuxWithVersion[name][1])) {
+				ret.version = rep[1];
+			}
+			ret.image = linuxWithVersion[name][0];
+		} 
+		else if (/Red\ Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
+			ret.name = "Red Hat";
+
+			if (rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)) {
+				ret.name += " Enterprise Linux";
+				ret.version = rep[1].replace(/_/g, ".");
+			}
+
+			ret.image = "red-hat";
+
 		} else {
 			ret.name = "GNU/Linux";
 			ret.image = "linux";
@@ -1668,49 +1645,6 @@
 		ret.version = '';
 		ret.full = "";
 
-		var osRegEx = new RegExp([
-			"BB10", "BeOS", "DragonFly", "FreeBSD", "Inferno",
-			"SunOS", "Solaris", "J2ME\/MIDP",
-			"MorphOS", "NetBSD", "OpenBSD", "Unix", "webOS"
-		].join("|"), "i");
-		var defaultOSList = {
-			bb10: {
-				name: "BlackBerry OS 10",
-				image: "blackberry"
-			},
-			dragonfly: {
-				name: "DragonFly BSD",
-				image: "dragonflybsd"
-			},
-			freebsd: {
-				name: "FreeBSD"
-			},
-			morphos: {
-				name: "MorphOS"
-			},
-			openbsd: {
-				name: "OpenBSD"
-			},
-			netbsd: {
-				name: "NetBSD"
-			},
-			beos: {
-				name: "BeOS"
-			},
-			webos: {
-				name: "Palm webOS",
-				image: "palm"
-			},
-			sunos: {
-				name: "Solaris",
-				image: "solaris"
-			},
-			"j2me\/midp": {
-				name: "J2ME/MIDP Device",
-				image: "java"
-			}
-		};
-
 		var res = ret.ua.match(osRegEx);
 		var rep;
 
@@ -1721,7 +1655,7 @@
 			});
 			ret.image = name;
 
-			if (typeof defaultOSList[name] !== 'undefined') {
+			if (!!defaultOSList[name]) {
 				ret.name = defaultOSList[name].name || ret.name;
 				ret.image = defaultOSList[name].image || ret.image;
 			}
@@ -1855,13 +1789,14 @@
 		//#JSCOVERAGE_ENDIF
 		//#JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
 	} else {
-		root.USERAGENT_OS = function () { };
+		root.USERAGENT_OS = function () {};
 		USERAGENT_OS.prototype.analyze = OS.analyze;
 	}
 	//#JSCOVERAGE_ENDIF
 
 
 })(this);
+
 /* global USERAGENT_OS */
 /* global USERAGENT_DEVICE */
 /* global USERAGENT_BROWSER */
