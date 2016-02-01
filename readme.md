@@ -10,7 +10,10 @@ useragent.js
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
 ##Compatibility
-Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer 6+ / Google Chrome / Mozilla Firefox / Apple Safari
+Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer *+ / Google Chrome / Mozilla Firefox / Apple Safari
+
+##IE&lt;8
+Please import a Polyfill of ``Object.keys`` before import this. See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 ##Installion
 npm: ``$ npm install useragent.js``
