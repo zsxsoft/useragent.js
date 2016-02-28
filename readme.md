@@ -7,20 +7,20 @@ useragent.js
 [![npm](https://img.shields.io/npm/dm/useragent.js.svg)](https://www.npmjs.com/package/useragent.js)
 [![GitHub release](https://img.shields.io/github/release/zsxsoft/useragent.js.svg)](https://github.com/zsxsoft/useragent.js/releases)
 
-A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
+A User-agent analyze project. Demo: http://project.zsxsoft.com/useragent.js/withimage.html
 
 ##Compatibility
 Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer *+ / Google Chrome / Mozilla Firefox / Apple Safari
 
-##IE&lt;8
+###IE&lt;8
 Please import a Polyfill of ``Object.keys`` before import this. See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 ##Installion
-npm: ``$ npm install useragent.js``
+``$ npm install useragent.js``
 
-bower: ``$ bower install useragent.js``
+##Compress
 
-If you are using in your browser, you can run ```grunt``` to compress it.
+If you want to use it in the browser directly, please run ``grunt`` to compress it.
 
 ##Test
 ```bash
@@ -65,11 +65,6 @@ console.log(Useragent);
 ####In Classical ASP
 [Click here](http://zsxsoft.github.io/useragent.js/classicalasp.html)
 
-##Work with image
-[Click here](http://zsxsoft.github.io/useragent.js/withimage.html)
-
-You can get images from [php-useragent](https://github.com/zsxsoft/php-useragent).
-
 ## Supported Browsers/Platforms
 
 [Click here to see full list.](http://project.zsxsoft.com/useragent.js/supported.html)
@@ -79,3 +74,10 @@ Tested Browsers: Amazon Silk / Android Webkit / Avant Browser / Comodo Dragon / 
 OS: Android / Arch Linux / CentOS / Chrome OS / Debain / Fedora / FreeBSD / OSX / Red Hat / openSUSE / SymbianOS / Unix / Palm webOS / Windows 3.1 - 10 / Ubuntu / Linux and so on..
 
 Devices: Xiaomi / BlackBerry / Nexus / HTC / Huawei / Kindle / Lenovo / LG / Motorola / Nokia / OnePlus / PlayStation / Samsung / Sony Xperia / ZTE / Ubuntu / Windows Phone / Apple Family and so on.
+
+
+## License
+
+The MIT License
+
+The images can be gotten from [php-useragent](https://github.com/zsxsoft/php-useragent).
