@@ -65,6 +65,49 @@ console.log(Useragent);
 ####In Classical ASP
 [Click here](http://zsxsoft.github.io/useragent.js/classicalasp.html)
 
+## Result
+```javascript
+{ ua: 'Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14',
+  os:
+   { ua: 'Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14',
+     name: 'iOS',
+     version: '7.1.2',
+     full: 'iOS 7.1.2',
+     windows: false,
+     linux: false,
+     x64: false,
+     dir: 'os',
+     image: 'mac-3' },
+  device:
+   { ua: 'Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14',
+     name: 'Apple iPad',
+     image: 'ipad',
+     brand: 'Apple',
+     model: 'iPad',
+     dir: 'device',
+     full: 'Apple iPad' },
+  browser:
+   { ua: 'Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14',
+     name: 'QQ',
+     version: '4.1.1.14',
+     full: 'QQ 4.1.1.14',
+     image: 'qq',
+     dir: 'browser' },
+  platform: 
+  /*
+    Copied from device or os.
+    .platform = .device, 
+        but if device.name === "" then .platform = .os
+   */
+   { ua: 'Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14',
+     name: 'Apple iPad',
+     image: 'ipad',
+     brand: 'Apple',
+     model: 'iPad',
+     dir: 'device',
+     full: 'Apple iPad' } }
+```
+
 ## Supported Browsers/Platforms
 
 [Click here to see full list.](http://project.zsxsoft.com/useragent.js/supported.html)
