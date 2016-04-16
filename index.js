@@ -2,8 +2,8 @@
 /* global USERAGENT_DEVICE */
 /* global USERAGENT_BROWSER */
 /* global define */
+"use strict";
 (function (root) {
-	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
 	var CMD = typeof define !== 'undefined' && define.cmd;

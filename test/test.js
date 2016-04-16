@@ -5,17 +5,24 @@ exports.testUserAgents = function(test) {
 		var item = testUAList[index];
 		var ua = userAgent.analyze(item[0][0]);
 		test.equals(item[1][0], ua.browser.image, ua.ua);
-		test.equals(item[1][1], ua.platform.dir, ua.ua);
-		test.equals(item[1][2], ua.platform.image, ua.ua);
-		test.equals(item[1][3], ua.browser.full, ua.ua);
-		test.equals(item[1][4], ua.platform.full, ua.ua);
+		test.equals(item[1][1], ua.platform.image, ua.ua);
+		test.equals(item[1][2], ua.device.image, ua.ua);
+		test.equals(item[1][3], ua.os.image, ua.ua);
 
-		/*if (item[1][3] != ua.platform.full) {
-			console.log(ua.ua);
-			console.log(item[1][3]);
-			console.log(ua.platform.full);
-			console.log("");
-		}*/
+		test.equals(item[1][4], ua.platform.dir, ua.ua);
+		test.equals(item[1][5], ua.platform.full, ua.ua);
+
+		test.equals(item[1][6], ua.browser.name, ua.ua);
+		test.equals(item[1][7], ua.browser.version, ua.ua);
+
+		test.equals(item[1][8], ua.os.name, ua.ua);
+		test.equals(item[1][9], ua.os.version, ua.ua);
+		test.equals(item[1][10], ua.os.full, ua.ua);
+
+		test.equals(item[1][11], ua.device.brand, ua.ua);
+		test.equals(item[1][12], ua.device.model, ua.ua);
+		test.equals(item[1][13], ua.device.full, ua.ua);
+
 	}
 
 	test.done();
