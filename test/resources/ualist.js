@@ -298,7 +298,7 @@
         ],
         [
             ["Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"],
-            ["nokia", "nokia", "nokia", "null", "device", "Nokia", "Browser", "8.5.0", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["nokia", "nokia", "nokia", "meego", "device", "Nokia", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "", "Nokia"]
         ],
         [
             ["Nokia5320di"],
@@ -1790,7 +1790,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0"],
-            ["tizen", "linux", "null", "linux", "os", "GNU/Linux", "Tizen", "2.0", "GNU/Linux", "", "GNU/Linux", "", "", ""]
+            ["tizen", "tizen", "null", "tizen", "os", "Tizen", "Tizen", "2.0", "Tizen", "", "Tizen", "", "", ""]
         ],
         [
             ["Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)"],
@@ -2182,11 +2182,23 @@
         ],
         [
             ["Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; NOKIA; Nokia 920) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0"],
-            ["edge", "nokia", "nokia", "windowsphone", "device", "Nokia Lumia 920", "Edge", "12.0", "Windows Phone", "10.0", "Windows Phone 10.0", "Nokia", "Lumia 920", "Nokia Lumia 920"]
+            ["edge", "nokia", "nokia", "win-6", "device", "Nokia Lumia 920", "Edge", "12.0", "Windows", "10 Mobile", "Windows 10 Mobile", "Nokia", "Lumia 920", "Nokia Lumia 920"]
         ],
         [
             ["Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) GSA/3.2.1.25875 Mobile/11D167 Safari/8536.25"],
             ["google", "iphone", "iphone", "mac-3", "device", "Apple iPhone", "Google Search App", "3.2.1.25875", "iOS", "7.1", "iOS 7.1", "Apple", "iPhone", "Apple iPhone"]
+        ],
+        [
+            ["Mozilla/5.0 (MeeGo) AppleWebKit/534.13 (KHTML, like Gecko) Mobile Safari/534.13"],
+            ["safari", "meego", "null", "meego", "os", "Meego", "Mobile Safari", "", "Meego", "", "Meego", "", "", ""]
+        ],
+        [
+            ["Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"],
+            ["nokia", "nokia", "nokia", "meego", "device", "Nokia", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "", "Nokia"]
+        ],
+        [
+            ["Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Mobile Safari/537.36 Edge/14.14263"],
+            ["edge", "microsoft", "microsoft", "win-6", "device", "Microsoft Lumia 950", "Edge", "14.14263", "Windows", "10 Mobile", "Windows 10 Mobile", "Microsoft", "Lumia 950", "Microsoft Lumia 950"]
         ]
     ];
     // Node.js
