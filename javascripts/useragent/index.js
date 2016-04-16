@@ -2,16 +2,16 @@
 /* global USERAGENT_DEVICE */
 /* global USERAGENT_BROWSER */
 /* global define */
+"use strict";
 (function (root) {
-	"use strict";
 
 	var NODE = typeof module !== 'undefined' && module.exports;
 	var CMD = typeof define !== 'undefined' && define.cmd;
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.3";
-	userAgent.publishDate = "20151107";
+	userAgent.version = "0.5.1";
+	userAgent.publishDate = "20160416";
 
 	userAgent.analyze = function (uaString) {
 		var returnObject = {};
@@ -30,7 +30,6 @@
 		userAgent.deviceDetect = DEVICE;
 		userAgent.browserDetect = BROWSER;
 	};
-
 
 	// Node.js
 	if (NODE) {
