@@ -36,6 +36,10 @@
         <span id="device"></span>
       </p>
       <p>
+        Your Platform:
+        <span id="platform"></span>
+      </p>
+      <p>
         <br/>
       </p>
 
@@ -61,7 +65,8 @@
     document.getElementById("useragent").innerHTML = ua.ua;
     document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
     document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
-    document.getElementById("device").innerHTML = ua.device.full;
+    document.getElementById("device").innerHTML = ua.device.full + " (BRAND = " + ua.device.brand + " MODEL = "  + ua.device.model + " )";
+    document.getElementById("platform").innerHTML = ua.platform.full;
   })();</script>
 
 </body>
