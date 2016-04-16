@@ -294,13 +294,15 @@
     var analyzeItem = function(ret, deviceList) {
         var rep = null;
         var fixedName = "";
-        var i = 0;
         var deviceItem = null;
-        for (var device in deviceList) { // We can use forEach instead on IE9+.
-            deviceItem = deviceList[device];
+        var deviceKeys = Object.keys(deviceList);
+        for (var i = 0; i < deviceKeys.length; i++) {
+            deviceItem = deviceList[deviceKeys[i]];
             if (!(rep = ret.ua.match(deviceItem.regEx))) continue;
 
-            for (var singleName in deviceItem) {
+            var deviceItems = Object.keys(deviceItem);
+            for (var j = 0; j < deviceItems.length; j++) {
+            	var singleName = deviceItems[j];
                 var singleItem = deviceItem[singleName];
                 switch (singleName) {
                     case "childItem":
@@ -316,8 +318,8 @@
                             ret[singleName] += " ";
                         }
                         fixedName = singleItem;
-                        for (i = 1; i < rep.length; i++) { // rep[0] is useless
-                            fixedName = fixedName.replace(new RegExp("\\$" + i, "g"), rep[i]);
+                        for (var k = 1; k < rep.length; k++) { // rep[0] is useless
+                            fixedName = fixedName.replace(new RegExp("\\$" + k, "g"), rep[k]);
                         }
                         ret[singleName] += fixedName;
 
