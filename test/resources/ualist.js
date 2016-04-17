@@ -2243,6 +2243,22 @@
         [
             ["Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Mobile; rv:31.0) Gecko/31.0 Firefox/31.0 SailfishBrowser/1.0"],
             ["sailfishbrowser", "jolla", "null", "jolla", "os", "Jolla", "Sailfish Browser", "1.0", "Jolla", "", "Jolla", "", "", ""]
+        ],
+        [
+            ["Mozilla/5.0 (iPad3,1; iPad; U; CPU OS 7_0_4 like Mac OS X; en_GB) com.google.GooglePlus/29676 (KHTML, like Gecko) Mobile/J1AP (gzip)"],
+            ["google", "ipad", "ipad", "mac-3", "device", "Apple iPad", "", "", "iOS", "7.0.4", "iOS 7.0.4", "Apple", "iPad", "Apple iPad"]
+        ],
+        [
+            ["com.google.android.youtube/5.3.32(Linux; U; Android 4.0.3; ro_RO; GOCLEVER NETBOOK R103 Build/IML74K) gzip"],
+            ["google", "android", "null", "android", "os", "Android 4.0.3", "Youtube", "5.3.32", "Android", "4.0.3", "Android 4.0.3", "", "", ""]
+        ],
+        [
+            ["NS/3.3.1 (Linux; U; Android 5.0.1; en-in; phone/Nexus 5 Build/LRX22C; Density/480; gzip) com.google.android.apps.magazines/2014102707"],
+            ["google", "google-nexusone", "google-nexusone", "android", "device", "Google Nexus 5", "", "", "Android", "5.0.1", "Android 5.0.1", "Google", "Nexus 5", "Google Nexus 5"]
+        ],
+        [
+            ["Mozilla/5.0 (Windows; U; Windows NT 5.1; cs-CZ) AppleWebKit/532.4 (KHTML, like Gecko) Google Earth/5.2.1.1329 Safari/532.4"],
+            ["google", "win-2", "null", "win-2", "os", "Windows XP", "Google Earth", "5.2.1.1329", "Windows NT", "5.1", "Windows XP", "", "", ""]
         ]
     ];
     // Node.js
