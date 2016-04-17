@@ -2098,7 +2098,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobiile Safari/533.1"],
-            ["android-webkit", "meizu", "meizu", "android", "device", "Meizu", "Android Webkit", "4.0", "Android", "2.3.5", "Android 2.3.5", "Meizu", "", "Meizu"]
+            ["android-webkit", "meizu", "meizu", "android", "device", "Meizu MX", "Android Webkit", "4.0", "Android", "2.3.5", "Android 2.3.5", "Meizu", "MX", "Meizu MX"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.4.4; Xperia SP Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 YiXin/3.2.0"],
@@ -2226,7 +2226,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.1.2; Xperia Miro Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Mobile Safari/537.36"],
-            ["miro", "xperia", "xperia", "android", "device", "Sony Xperia Miro", "Miro", "", "Android", "4.1.2", "Android 4.1.2", "Sony", "Xperia Miro", "Sony Xperia Miro"]
+            ["chrome", "xperia", "xperia", "android", "device", "Sony Xperia Miro", "Chrome", "27.0.1453.90", "Android", "4.1.2", "Android 4.1.2", "Sony", "Xperia Miro", "Sony Xperia Miro"]
         ],
         [
             ["WhatsApp/2.11.102 Android/4.0.4 Device/Motorola-XOOM_2"],
@@ -2271,6 +2271,54 @@
         [
             ["Mozilla/5.0 (Linux; Android 4.4.2; ko-kr; SAMSUNG SHV-E300S Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36"],
             ["chrome", "samsung", "samsung", "android", "device", "Samsung E300S", "Chrome", "28.0.1500.94", "Android", "4.4.2", "Android 4.4.2", "Samsung", "E300S", "Samsung E300S"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.2.1; zh-CN; M045 Build/JOP40D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.0.0.488 U3/0.8.0 Mobile Safari/534.30"],
+            ["ucbrowser", "meizu", "meizu", "android", "device", "Meizu M045", "UC Browser", "10.0.0.488", "Android", "4.2.1", "Android 4.2.1", "Meizu", "M045", "Meizu M045"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90)"],
+            ["mozilla", "meizu", "meizu", "android", "device", "Meizu MX", "", "", "Android", "2.3.5", "Android 2.3.5", "Meizu", "MX", "Meizu MX"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 5.0.2; en-gb; PLK-AL10 Build/HONORPLK-AL10) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.3 Mobile Safari/537.36"],
+            ["qqbrowser", "huawei", "huawei", "android", "device", "Huawei PLK-AL10", "MQQBrowser", "5.3", "Android", "5.0.2", "Android 5.0.2", "Huawei", "PLK-AL10", "Huawei PLK-AL10"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; CHM-U01 Build/HonorCHM-U01) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.5.2.582 U3/0.8.0 Mobile Safari/534.30"],
+            ["ucbrowser", "huawei", "huawei", "android", "device", "Huawei CHM-U01", "UC Browser", "10.5.2.582", "Android", "4.4.2", "Android 4.4.2", "Huawei", "CHM-U01", "Huawei CHM-U01"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; H60-L11 Build/HDH60-L11) AppleWebKit/533.1 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 TBS/025410 Mobile Safari/533.1 MicroMessenger/6.1.0.66_r1062275.542 NetType/WIFI"],
+            ["qqbrowser", "huawei", "huawei", "android", "device", "Huawei H60-L11", "MQQBrowser", "5.4", "Android", "4.4.2", "Android 4.4.2", "Huawei", "H60-L11", "Huawei H60-L11"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.1; Letv X3-50 UHD Build/V760R360C162B10235T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.25 Safari/537.36"],
+            ["chrome", "letv", "letv", "android", "device", "Letv X3", "Chrome", "45.0.2454.25", "Android", "5.0.1", "Android 5.0.1", "Letv", "X3", "Letv X3"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.1; Lenovo TAB S8-50LC Build/BMAIN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.95 Safari/537.36"],
+            ["chrome", "lenovo", "lenovo", "android", "device", "Lenovo TAB", "Chrome", "48.0.2564.95", "Android", "5.0.1", "Android 5.0.1", "Lenovo", "TAB", "Lenovo TAB"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.1; Nexus 7 Build/LRX22C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.59 Safari/537.36 OPR/26.0.1656.87080"],
+            ["opera-1", "google-nexusone", "google-nexusone", "android", "device", "Google Nexus 7", "Opera", "26.0.1656.87080", "Android", "5.0.1", "Android 5.0.1", "Google", "Nexus 7", "Google Nexus 7"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.1; YOGA Tablet 2-1050F Build/LRX22C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36 OPR/34.0.2044.98679"],
+            ["opera-1", "lenovo", "lenovo", "android", "device", "Lenovo Yoga 2", "Opera", "34.0.2044.98679", "Android", "5.0.1", "Android 5.0.1", "Lenovo", "Yoga 2", "Lenovo Yoga 2"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 2.3.4; xx; HTC Flyer P510e Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
+            ["android-webkit", "htc", "htc", "android", "device", "HTC Flyer", "Android Webkit", "4.0", "Android", "2.3.4", "Android 2.3.4", "HTC", "Flyer", "HTC Flyer"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 2.3.5; xx; Dell V04B Build/GRJ90) AppleWebKit/530.17 (KHTML, like Gecko) FlyFlow/2.3 Version/4.0 Mobile Safari/530.17 baidubrowser/042_1.41.3.2_diordna_069_045/lleD_01_5.3.2_B40V-lleD/1000134f/0146F6A8AB026C4A2705693E9A014A"],
+            ["bidubrowser", "dell", "dell", "android", "device", "Dell", "Baidu Browser", "042", "Android", "2.3.5", "Android 2.3.5", "Dell", "", "Dell"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.1.1; TCL TAB 7 Build/GSDT011) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19"],
+            ["chrome", "tcl", "tcl", "android", "device", "TCL TAB", "Chrome", "18.0.1025.166", "Android", "4.1.1", "Android 4.1.1", "TCL", "TAB", "TCL TAB"]
         ]
     ];
     // Node.js
