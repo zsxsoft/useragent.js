@@ -1790,7 +1790,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0"],
-            ["tizenbrowser", "tizen", "null", "tizen", "os", "Tizen", "Tizen Browser", "2.0", "Tizen", "", "Tizen", "", "", ""]
+            ["tizen", "tizen", "null", "tizen", "os", "Tizen", "Tizen Browser", "2.0", "Tizen", "", "Tizen", "", "", ""]
         ],
         [
             ["Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)"],

@@ -16,7 +16,7 @@
 		'Iceape', 'Hana',
 		'Kapiko', 'Kazehakase', 'Kinza', 'Konqueror', 'Kylo',
 		'Lunascape', 'Lynx', 'Madfox', 'Maxthon',
-		'Midori', 'Minefield', 'Minimo',
+		'Midori', 'Minefield', 'Minimo', 
 		'Mosaic', 'Netscape',
 		'Obigo', 'Orca',
 		'Oregano', 'Otter',
@@ -25,10 +25,10 @@
 		'Shiira', 'Skyfire',
 		'Stainless', 'Sundance', 'Sunrise',
 		'Surf', 'Swiftfox', 'Swiftweasel',
-		'Thunderbird', 'Tizen',
+		'Thunderbird',
 		'Tjusig', 'UC?\ ?Browser|UCWEB',
 		'polarity', 'polaris', 'pogo', 'prism', 'superbird', 'songbird',
-		'Usejump', 'Vivaldi', 'Wyzo',
+		'Usejump', 'Vivaldi', 'Wyzo', 'WhatsApp', 'Weibo'
 	];
 
 	var defaultBrowserList = {
@@ -193,6 +193,10 @@
 			upper: [0, 8],
 			image: "firewebnavigator"
 		},
+		"fbav": {
+			title: "{%FBAV%}", 
+			image: "facebook"
+		},
 		"globalmojo": {
 			upper: [0, 6]
 		},
@@ -202,6 +206,22 @@
 		"google wireless transcoder": {
 			title: "Google Wireless Transcoder",
 			image: "google"
+		},
+		"google earth": {
+			upper: [0, 7], 
+			image: "google"
+		},
+		"google.android.apps": {
+			title: "Google App", 
+			image: "google"
+		},
+		"googleplus": {
+			title: "Google+",
+			image: "google"
+		},
+		"youtube": {
+			title: "{%Youtube%}", 
+			image: "google",
 		},
 		"gosurf": {
 			upper: [0, 2]
@@ -265,6 +285,9 @@
 		"internetsurfboard": {
 			upper: [0, 8],
 		},
+		"itunes": {
+			upper: [1]
+		},
 		"jasmine": {
 			image: "samsung"
 		},
@@ -279,6 +302,10 @@
 		"strata": {
 			title: "Kirix {%Strata%}",
 			image: "kirix-strata"
+		},
+		"sailfishbrowser": {
+			title: "{%SailfishBrowser%}", 
+			upper: [0, 8]
 		},
 		"kkman": {
 			upper: [0, 1]
@@ -324,6 +351,11 @@
 		"micromessenger": {
 			upper: [0, 5],
 			image: "wechat"
+		},
+		"microsoft office": {
+			title: "{%Microsoft Office%}",
+			upper: [0, 10], 
+			image: "office"
 		},
 		"minibrowser": {
 			upper: [0, 5]
@@ -514,6 +546,14 @@
 		"tenfourfox": {
 			upper: [0, 3, 7]
 		},
+		"tizenbrowser": {
+			title: "{%TizenBrowser%}",
+			image: "tizen"
+		},
+		"tizen browser": {
+			title: "{%Tizen Browser%}", 
+			image: "tizen"
+		},
 		"theworld": {
 			title: "TheWorld Browser"
 		},
@@ -634,6 +674,17 @@
 				}
 			}
 		},
+		"microsoft office": {
+			callback: function(rep, ret) {
+				ret.version = ""; // Do not detect it
+				/**
+				 * Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2
+				 * Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)
+				 *
+				 * I can't find the best way to detect the version of Office
+				 */
+			}
+		},
 		"nf-browser": {
 			name: "NetFront"
 		},
@@ -688,6 +739,15 @@
 		"smarttv": {
 			name: "Maple Browser"
 		},
+		"miuibrowser": {
+			name: "MIUI Browser"
+		}, 
+		"sailfishbrowser": {
+			name: "Sailfish Browser"
+		},
+		"fbav": {
+			name: "Facebook"
+		},
 		"atomicbrowser": {
 			name: "Atomic Web Browser"
 		},
@@ -699,6 +759,9 @@
 		},
 		"nichrome/self": {
 			name: "NiChrome"
+		},
+		"tizenbrowser": {
+			name: "Tizen Browser"
 		},
 		"gsa": {
 			name: "Google Search App"
@@ -766,7 +829,7 @@
 			start = " rv";
 		} else if (lowerTitle == "nichrome/self") {
 			start = "self";
-		}
+		} 
 		start = start.replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\-]', 'g'), '\\$&');
 		var regEx = new RegExp(start + '[\ |\/|\:]?([.0-9a-zA-Z]+)', 'i');
 		var rep = ret.ua.match(regEx);
@@ -970,9 +1033,16 @@
 'use strict';
 (function(root) {
     var deviceList = [{
-        regEx: /(MEIZU (MX|M9)|M030)|MX-3/i,
+        regEx: /MEIZU (MX|M9)|MX-\d|M0(4|5)\d|M35\d/i,
         brand: "Meizu",
-        image: "meizu"
+        image: "meizu",
+        childItem: [{
+            regEx: /(M(04|05|35)\d)/i,
+            model: "$1"
+        }, {
+            regEx: /(MX[0-9]{0,1})/i,
+            model: "$1"
+        }]
     }, {
         regEx: /MI-ONE|MI \d|HM NOTE/i,
         brand: "Xiaomi",
@@ -1034,13 +1104,20 @@
             start: "HTC[ |_|-]?"
         }
     }, {
-        regEx: /huawei/i,
+        regEx: /huawei|Honor|Che\d|H60-L/i,
         brand: "Huawei",
         image: "huawei",
         version: {
             start: "HUAWEI( |\_)?",
             item: 2
-        }
+        },
+        childItem: [{
+            regEx: /HONOR[\ ]?([A-Za-z0-9]{3,4}\-[A-Za-z0-9]{3,4})|(Che[0-9]{1}-[a-zA-Z0-9]{4})/i,
+            model: "$1"
+        }, {
+            regEx: /(H60-L\d+)/i,
+            model: "$1"
+        }]
     }, {
         regEx: /Kindle/i,
         brand: "Amazon",
@@ -1057,15 +1134,25 @@
             start: "k-touch[ _]"
         }
     }, {
-        regEx: /Lenovo|lepad/i,
+        regEx: /Lenovo|lepad|Yoga/i,
         brand: "Lenovo",
         image: "lenovo",
         childItem: [{
             regEx: "lepad",
             model: "LePad"
+        }, {
+            regEx: /Yoga( Tablet)?[\ |\-|\/|\_]([.0-9a-zA-Z]+)/i,
+            model: "Yoga $2"
         }],
         version: {
             start: "Lenovo[\ |\-|\/|\_]"
+        }
+    }, {
+        regEx: /Letv/i,
+        brand: "Letv",
+        image: "letv",
+        version: {
+            start: "Letv[- \/]"
         }
     }, {
         regEx: /LG/i,
@@ -1156,6 +1243,20 @@
         brand: "OPPO",
         image: "oppo"
     }, {
+        regEx: /A0001|A2005|E1003|One [A-Z]\d{4}/i,
+        brand: "OnePlus",
+        image: "oneplus",
+        childItem: [{
+            regEx: /A0001/,
+            model: "One"
+        }, {
+            regEx: /A2005/,
+            model: "Two",
+        }, {
+            regEx: /E1003/,
+            model: "X"
+        }]
+    }, {
         regEx: / Pixi\/| Pre\/|Palm|webos/i,
         brand: "Palm",
         image: "palm",
@@ -1167,7 +1268,7 @@
             model: "Pre"
         }]
     }, {
-        regEx: /Galaxy Nexus|Smart-?TV|GT-|Samsung/i,
+        regEx: /Galaxy Nexus|Smart-?TV|GT-|SM-|SCH-|SHV-|Samsung/i,
         brand: "Samsung",
         image: "samsung",
         childItem: [{
@@ -1176,15 +1277,10 @@
         }, {
             regEx: /Galaxy Nexus/i,
             model: "Galaxy Nexus"
-        }, {
-            regEx: /GT-/i,
-            version: {
-                start: "GT-"
-            }
         }],
         version: {
-            start: "Samsung-(SCH-)?",
-            item: 2
+            start: "(Samsung-(SCH-)?|GT-|SM-|SCH-|SHV-)",
+            item: 3
         }
     }, {
         regEx: /PlayStation/i,
@@ -1200,6 +1296,13 @@
         image: "sonyericsson",
         version: {
             start: "SonyEricsson"
+        }
+    }, {
+        regEx: /TCL/i,
+        brand: "TCL",
+        image: "tcl",
+        version: {
+            start: "TCL ?"
         }
     }, {
         regEx: /vivo/i,
@@ -1254,7 +1357,7 @@
         var versionRegEx = new RegExp(deviceItem.version.start + "([.0-9a-zA-Z]+)" + deviceItem.version.end, "i");
 
         if (rep = ret.ua.match(versionRegEx)) {
-            ret.model += ret.model === "" ? "" : " " + rep[deviceItem.version.item].replace(/_/g, "");
+            ret.model += (ret.model === "" ? "" : " ") + rep[deviceItem.version.item].replace(/_/g, "");
             //ret.addChild = false; // If it has some supplementary name then do not check child.
         }
 
@@ -1271,7 +1374,7 @@
 
             var deviceItems = Object.keys(deviceItem);
             for (var j = 0; j < deviceItems.length; j++) {
-            	var singleName = deviceItems[j];
+                var singleName = deviceItems[j];
                 var singleItem = deviceItem[singleName];
                 switch (singleName) {
                     case "childItem":
@@ -1462,7 +1565,7 @@
     };
 
     var linuxRegEx = new RegExp([
-        "Arch ?Linux", "Chakra", "Crunchbang", "Debian", "Gentoo", "Kanotix", "Knoppix",
+        "Arch ?Linux", "Chakra", "Crunchbang", "Debian", "Gentoo", "Kanotix", "Knoppix", "Jolla",
         "LindowsOS", "Linspire", "Mageia", "Pardus", "Rosa", "Sabayon",
         "Slackware", "Suse", "VectorLinux", "Venenux", "Xandros", "Zenwalk"
     ].join("|"), "i");
@@ -1683,7 +1786,7 @@
         else if (/Android|ADR /i.test(ret.ua)) {
             ret.name = "Android";
             ret.image = "android";
-            if (rep = ret.ua.match(/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i)) {
+            if (rep = ret.ua.match(/(Android|Adr)[\ |\/]([.0-9]+)/i)) {
                 ret.version = rep[2];
             }
         } else if (/Tizen/i.test(ret.ua)) {
@@ -1692,7 +1795,7 @@
         } else if (/(iPhone|CPU)\ OS/.test(ret.ua)) {
             ret.name = "iOS";
             ret.image = "mac-3";
-            if (rep = ret.ua.match(/(iPhone|CPU)\ OS\ ([._0-9a-zA-Z]+)/i)) {
+            if (rep = ret.ua.match(/(iPhone|CPU)\ OS\ ([._0-9]+)/i)) {
                 ret.version = rep[2].replace(/_/g, ".");
             }
         } else if (/AmigaOS/i.test(ret.ua)) {
@@ -1840,8 +1943,8 @@
 	var AMD = typeof define !== 'undefined' && define.amd;
 	var userAgent = {};
 
-	userAgent.version = "0.5.2";
-	userAgent.publishDate = "20160416";
+	userAgent.version = "0.5.3";
+	userAgent.publishDate = "20160417";
 
 	userAgent.analyze = function (uaString) {
 		var returnObject = {};
