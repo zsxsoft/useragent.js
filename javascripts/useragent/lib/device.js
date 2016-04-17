@@ -1,9 +1,16 @@
 'use strict';
 (function(root) {
     var deviceList = [{
-        regEx: /(MEIZU (MX|M9)|M030)|MX-3/i,
+        regEx: /MEIZU (MX|M9)|MX-\d|M0(4|5)\d|M35\d/i,
         brand: "Meizu",
-        image: "meizu"
+        image: "meizu",
+        childItem: [{
+            regEx: /(M(04|05|35)\d)/i,
+            model: "$1"
+        }, {
+            regEx: /(MX[0-9]{0,1})/i,
+            model: "$1"
+        }]
     }, {
         regEx: /MI-ONE|MI \d|HM NOTE/i,
         brand: "Xiaomi",
@@ -65,13 +72,20 @@
             start: "HTC[ |_|-]?"
         }
     }, {
-        regEx: /huawei/i,
+        regEx: /huawei|Honor|Che\d|H60-L/i,
         brand: "Huawei",
         image: "huawei",
         version: {
             start: "HUAWEI( |\_)?",
             item: 2
-        }
+        },
+        childItem: [{
+            regEx: /HONOR[\ ]?([A-Za-z0-9]{3,4}\-[A-Za-z0-9]{3,4})|(Che[0-9]{1}-[a-zA-Z0-9]{4})/i,
+            model: "$1"
+        }, {
+            regEx: /(H60-L\d+)/i,
+            model: "$1"
+        }]
     }, {
         regEx: /Kindle/i,
         brand: "Amazon",
@@ -88,15 +102,25 @@
             start: "k-touch[ _]"
         }
     }, {
-        regEx: /Lenovo|lepad/i,
+        regEx: /Lenovo|lepad|Yoga/i,
         brand: "Lenovo",
         image: "lenovo",
         childItem: [{
             regEx: "lepad",
             model: "LePad"
+        }, {
+            regEx: /Yoga( Tablet)?[\ |\-|\/|\_]([.0-9a-zA-Z]+)/i,
+            model: "Yoga $2"
         }],
         version: {
             start: "Lenovo[\ |\-|\/|\_]"
+        }
+    }, {
+        regEx: /Letv/i,
+        brand: "Letv",
+        image: "letv",
+        version: {
+            start: "Letv[- \/]"
         }
     }, {
         regEx: /LG/i,
@@ -187,6 +211,20 @@
         brand: "OPPO",
         image: "oppo"
     }, {
+        regEx: /A0001|A2005|E1003|One [A-Z]\d{4}/i,
+        brand: "OnePlus",
+        image: "oneplus",
+        childItem: [{
+            regEx: /A0001/,
+            model: "One"
+        }, {
+            regEx: /A2005/,
+            model: "Two",
+        }, {
+            regEx: /E1003/,
+            model: "X"
+        }]
+    }, {
         regEx: / Pixi\/| Pre\/|Palm|webos/i,
         brand: "Palm",
         image: "palm",
@@ -198,7 +236,7 @@
             model: "Pre"
         }]
     }, {
-        regEx: /Galaxy Nexus|Smart-?TV|GT-|Samsung/i,
+        regEx: /Galaxy Nexus|Smart-?TV|GT-|SM-|SCH-|SHV-|Samsung/i,
         brand: "Samsung",
         image: "samsung",
         childItem: [{
@@ -207,15 +245,10 @@
         }, {
             regEx: /Galaxy Nexus/i,
             model: "Galaxy Nexus"
-        }, {
-            regEx: /GT-/i,
-            version: {
-                start: "GT-"
-            }
         }],
         version: {
-            start: "Samsung-(SCH-)?",
-            item: 2
+            start: "(Samsung-(SCH-)?|GT-|SM-|SCH-|SHV-)",
+            item: 3
         }
     }, {
         regEx: /PlayStation/i,
@@ -231,6 +264,13 @@
         image: "sonyericsson",
         version: {
             start: "SonyEricsson"
+        }
+    }, {
+        regEx: /TCL/i,
+        brand: "TCL",
+        image: "tcl",
+        version: {
+            start: "TCL ?"
         }
     }, {
         regEx: /vivo/i,
@@ -285,7 +325,7 @@
         var versionRegEx = new RegExp(deviceItem.version.start + "([.0-9a-zA-Z]+)" + deviceItem.version.end, "i");
 
         if (rep = ret.ua.match(versionRegEx)) {
-            ret.model += ret.model === "" ? "" : " " + rep[deviceItem.version.item].replace(/_/g, "");
+            ret.model += (ret.model === "" ? "" : " ") + rep[deviceItem.version.item].replace(/_/g, "");
             //ret.addChild = false; // If it has some supplementary name then do not check child.
         }
 
@@ -302,7 +342,7 @@
 
             var deviceItems = Object.keys(deviceItem);
             for (var j = 0; j < deviceItems.length; j++) {
-            	var singleName = deviceItems[j];
+                var singleName = deviceItems[j];
                 var singleItem = deviceItem[singleName];
                 switch (singleName) {
                     case "childItem":

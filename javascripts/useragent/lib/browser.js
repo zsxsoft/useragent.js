@@ -16,7 +16,7 @@
 		'Iceape', 'Hana',
 		'Kapiko', 'Kazehakase', 'Kinza', 'Konqueror', 'Kylo',
 		'Lunascape', 'Lynx', 'Madfox', 'Maxthon',
-		'Midori', 'Minefield', 'Minimo',
+		'Midori', 'Minefield', 'Minimo', 
 		'Mosaic', 'Netscape',
 		'Obigo', 'Orca',
 		'Oregano', 'Otter',
@@ -25,10 +25,10 @@
 		'Shiira', 'Skyfire',
 		'Stainless', 'Sundance', 'Sunrise',
 		'Surf', 'Swiftfox', 'Swiftweasel',
-		'Thunderbird', 'Tizen',
+		'Thunderbird',
 		'Tjusig', 'UC?\ ?Browser|UCWEB',
 		'polarity', 'polaris', 'pogo', 'prism', 'superbird', 'songbird',
-		'Usejump', 'Vivaldi', 'Wyzo',
+		'Usejump', 'Vivaldi', 'Wyzo', 'WhatsApp', 'Weibo'
 	];
 
 	var defaultBrowserList = {
@@ -193,6 +193,10 @@
 			upper: [0, 8],
 			image: "firewebnavigator"
 		},
+		"fbav": {
+			title: "{%FBAV%}", 
+			image: "facebook"
+		},
 		"globalmojo": {
 			upper: [0, 6]
 		},
@@ -202,6 +206,22 @@
 		"google wireless transcoder": {
 			title: "Google Wireless Transcoder",
 			image: "google"
+		},
+		"google earth": {
+			upper: [0, 7], 
+			image: "google"
+		},
+		"google.android.apps": {
+			title: "Google App", 
+			image: "google"
+		},
+		"googleplus": {
+			title: "Google+",
+			image: "google"
+		},
+		"youtube": {
+			title: "{%Youtube%}", 
+			image: "google",
 		},
 		"gosurf": {
 			upper: [0, 2]
@@ -265,6 +285,9 @@
 		"internetsurfboard": {
 			upper: [0, 8],
 		},
+		"itunes": {
+			upper: [1]
+		},
 		"jasmine": {
 			image: "samsung"
 		},
@@ -279,6 +302,10 @@
 		"strata": {
 			title: "Kirix {%Strata%}",
 			image: "kirix-strata"
+		},
+		"sailfishbrowser": {
+			title: "{%SailfishBrowser%}", 
+			upper: [0, 8]
 		},
 		"kkman": {
 			upper: [0, 1]
@@ -324,6 +351,11 @@
 		"micromessenger": {
 			upper: [0, 5],
 			image: "wechat"
+		},
+		"microsoft office": {
+			title: "{%Microsoft Office%}",
+			upper: [0, 10], 
+			image: "office"
 		},
 		"minibrowser": {
 			upper: [0, 5]
@@ -514,6 +546,14 @@
 		"tenfourfox": {
 			upper: [0, 3, 7]
 		},
+		"tizenbrowser": {
+			title: "{%TizenBrowser%}",
+			image: "tizen"
+		},
+		"tizen browser": {
+			title: "{%Tizen Browser%}", 
+			image: "tizen"
+		},
 		"theworld": {
 			title: "TheWorld Browser"
 		},
@@ -634,6 +674,17 @@
 				}
 			}
 		},
+		"microsoft office": {
+			callback: function(rep, ret) {
+				ret.version = ""; // Do not detect it
+				/**
+				 * Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2
+				 * Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)
+				 *
+				 * I can't find the best way to detect the version of Office
+				 */
+			}
+		},
 		"nf-browser": {
 			name: "NetFront"
 		},
@@ -688,6 +739,15 @@
 		"smarttv": {
 			name: "Maple Browser"
 		},
+		"miuibrowser": {
+			name: "MIUI Browser"
+		}, 
+		"sailfishbrowser": {
+			name: "Sailfish Browser"
+		},
+		"fbav": {
+			name: "Facebook"
+		},
 		"atomicbrowser": {
 			name: "Atomic Web Browser"
 		},
@@ -699,6 +759,9 @@
 		},
 		"nichrome/self": {
 			name: "NiChrome"
+		},
+		"tizenbrowser": {
+			name: "Tizen Browser"
 		},
 		"gsa": {
 			name: "Google Search App"
@@ -766,7 +829,7 @@
 			start = " rv";
 		} else if (lowerTitle == "nichrome/self") {
 			start = "self";
-		}
+		} 
 		start = start.replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\-]', 'g'), '\\$&');
 		var regEx = new RegExp(start + '[\ |\/|\:]?([.0-9a-zA-Z]+)', 'i');
 		var rep = ret.ua.match(regEx);
