@@ -30,19 +30,19 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HUAWEI Y516-T00 Build/HUAWEIY516-T00) AppleWebKit/534.24 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.24 T5/2.0 baiduboxapp/6.0.1 (Baidu; P1 4.2.2)"],
-            ["android-webkit", "huawei", "huawei", "android", "device", "Huawei", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "Huawei", "", "Huawei"]
+            ["android-webkit", "huawei", "huawei", "android", "device", "Huawei Y516", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "Huawei", "Y516", "Huawei Y516"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; K-Touch T60 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MxBrowser/4.3.2.2000"],
-            ["android-webkit", "k-touch", "k-touch", "android", "device", "K-Touch", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "K-Touch", "", "K-Touch"]
+            ["android-webkit", "k-touch", "k-touch", "android", "device", "K-Touch T60", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "K-Touch", "T60", "K-Touch T60"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; Lenovo A520/S101) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
-            ["android-webkit", "lenovo", "lenovo", "android", "device", "Lenovo", "Android Webkit", "4.0", "Android", "2.3.5", "Android 2.3.5", "Lenovo", "", "Lenovo"]
+            ["android-webkit", "lenovo", "lenovo", "android", "device", "Lenovo A520", "Android Webkit", "4.0", "Android", "2.3.5", "Android 2.3.5", "Lenovo", "A520", "Lenovo A520"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; LG-P880 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "lg", "lg", "android", "device", "LG", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "LG", "", "LG"]
+            ["android-webkit", "lg", "lg", "android", "device", "LG P880", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "LG", "P880", "LG P880"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
@@ -86,11 +86,11 @@
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.3; zh-cn; SAMSUNG-SCH-P709E Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36"],
-            ["chrome", "samsung", "samsung", "android", "device", "Samsung", "Chrome", "28.0.1500.94", "Android", "4.3", "Android 4.3", "Samsung", "", "Samsung"]
+            ["chrome", "samsung", "samsung", "android", "device", "Samsung P709E", "Chrome", "28.0.1500.94", "Android", "4.3", "Android 4.3", "Samsung", "P709E", "Samsung P709E"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.4.2; HTC One Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 QvodPlayerBrowser:3.4.19 Mobile-Ser:10086"],
-            ["chrome", "htc", "htc", "android", "device", "HTC", "Chrome", "30.0.0.0", "Android", "4.4.2", "Android 4.4.2", "HTC", "", "HTC"]
+            ["chrome", "htc", "htc", "android", "device", "HTC One", "Chrome", "30.0.0.0", "Android", "4.4.2", "Android 4.4.2", "HTC", "One", "HTC One"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.4.4; Nexus 4 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36"],
@@ -126,7 +126,7 @@
         ],
         [
             ["Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8S by HTC) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537"],
-            ["msie-mobile", "htc", "htc", "windowsphone", "device", "HTC", "IEMobile", "11.0", "Windows Phone", "8.1", "Windows Phone 8.1", "HTC", "", "HTC"]
+            ["msie-mobile", "htc", "htc", "windowsphone", "device", "HTC 8S", "IEMobile", "11.0", "Windows Phone", "8.1", "Windows Phone 8.1", "HTC", "8S", "HTC 8S"]
         ],
         [
             ["Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Nokia 909) like Gecko"],
@@ -146,7 +146,7 @@
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.2; ARM; Trident/7.0; Touch; rv:11.0; WPDesktop; HTC; Windows Phone 8X by HTC) like Gecko"],
-            ["msie11", "htc", "htc", "windowsphone", "device", "HTC", "", "11.0", "Windows Phone", "8", "Windows Phone 8", "HTC", "", "HTC"]
+            ["msie11", "htc", "htc", "windowsphone", "device", "HTC 8X", "", "11.0", "Windows Phone", "8", "Windows Phone 8", "HTC", "8X", "HTC 8X"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.2; ARM; Trident/7.0; Touch; rv:11.0; WPDesktop; Nokia 920) like Gecko"],
@@ -294,15 +294,15 @@
         ],
         [
             ["Mozilla/5.0 (Symbian/3; Series60/5.3 Nokia701/111.030.0609; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/533.4 (KHTML, like Gecko) NokiaBrowser/7.4.2.6 Mobile Safari/533.4 3gpp-gba"],
-            ["nokia", "nokia", "nokia", "symbian", "device", "Nokia", "Browser", "7.4.2.6", "SymbianOS", "3", "SymbianOS 3", "Nokia", "", "Nokia"]
+            ["nokia", "nokia", "nokia", "symbian", "device", "Nokia 701", "Browser", "7.4.2.6", "SymbianOS", "3", "SymbianOS 3", "Nokia", "701", "Nokia 701"]
         ],
         [
             ["Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"],
-            ["nokia", "nokia", "nokia", "meego", "device", "Nokia", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "", "Nokia"]
+            ["nokia", "nokia", "nokia", "meego", "device", "Nokia N9", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "N9", "Nokia N9"]
         ],
         [
             ["Nokia5320di"],
-            ["maemo", "nokia", "nokia", "null", "device", "Nokia", "", "", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["maemo", "nokia", "nokia", "null", "device", "Nokia 5320di", "", "", "Unknown", "", "Unknown", "Nokia", "5320di", "Nokia 5320di"]
         ],
         [
             ["Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.17"],
@@ -414,7 +414,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.4; en-US; ZTE V970 Build/IMM76D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/10.0.0.488 U3/0.8.0 Mobile Safari/533.1"],
-            ["ucbrowser", "zte", "zte", "android", "device", "ZTE", "UC Browser", "10.0.0.488", "Android", "4.0.4", "Android 4.0.4", "ZTE", "", "ZTE"]
+            ["ucbrowser", "zte", "zte", "android", "device", "ZTE V970", "UC Browser", "10.0.0.488", "Android", "4.0.4", "Android 4.0.4", "ZTE", "V970", "ZTE V970"]
         ],
         [
             ["Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; ARM; Touch; WPDesktop) UCBrowser/2.9.0.263"],
@@ -426,15 +426,15 @@
         ],
         [
             ["JUC(Linux;U;2.3.7;Zh_cn;lenovo a60;320*480;)UCWEB7.8.1.96/139/800"],
-            ["ucbrowser", "lenovo", "lenovo", "linux", "device", "Lenovo", "UC Browser", "7.8.1.96", "GNU/Linux", "", "GNU/Linux", "Lenovo", "", "Lenovo"]
+            ["ucbrowser", "lenovo", "lenovo", "linux", "device", "Lenovo a60", "UC Browser", "7.8.1.96", "GNU/Linux", "", "GNU/Linux", "Lenovo", "a60", "Lenovo a60"]
         ],
         [
             ["NOKIAN95/UCWEB8.9.0.253/28/999"],
-            ["ucbrowser", "nokia", "nokia", "null", "device", "Nokia", "UC Browser", "8.9.0.253", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["ucbrowser", "nokia", "nokia", "null", "device", "Nokia N95", "UC Browser", "8.9.0.253", "Unknown", "", "Unknown", "Nokia", "N95", "Nokia N95"]
         ],
         [
             ["NokiaC1-02i/2.0 (04.10) Profile/MIDP-2.1 Configuration/CLDC-1.1 UCWEB/2.0 (Java; U; MIDP-2.0; zh-CN; nokiac1-02i) U2/1.0.0 UCBrowser/9.0.0.261 U2/1.0.0 Mobile UNTRUSTED/1.0"],
-            ["ucbrowser", "nokia", "nokia", "null", "device", "Nokia", "UC Browser", "9.0.0.261", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["ucbrowser", "nokia", "nokia", "null", "device", "Nokia C1", "UC Browser", "9.0.0.261", "Unknown", "", "Unknown", "Nokia", "C1", "Nokia C1"]
         ],
         [
             ["Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X; zh-CN) AppleWebKit/537.51.2 (KHTML, like Gecko) CriOS/23.0.1271.100 Mobile/11D257 Safari/7534.48.3 UCBrowser/9.9.2.490"],
@@ -442,7 +442,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; K-Touch T619+ Build/MocorDroid2.3.5) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.8.511 U3/0.8.0 Mobile Safari/534.30"],
-            ["ucbrowser", "k-touch", "k-touch", "android", "device", "K-Touch", "UC Browser", "9.9.8.511", "Android", "4.0.3", "Android 4.0.3", "K-Touch", "", "K-Touch"]
+            ["ucbrowser", "k-touch", "k-touch", "android", "device", "K-Touch T619", "UC Browser", "9.9.8.511", "Android", "4.0.3", "Android 4.0.3", "K-Touch", "T619", "K-Touch T619"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 YaBrowser/14.7.1916.15705 Safari/537.36"],
@@ -630,7 +630,7 @@
         ],
         [
             ["SonyEricssonW800i/R1BD001/SEMC-Browser/4.2 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["semcbrowser", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson", "SEMC Browser", "4.2", "Unknown", "", "Unknown", "SonyEricsson", "", "SonyEricsson"]
+            ["semcbrowser", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson W800i", "SEMC Browser", "4.2", "Unknown", "", "Unknown", "SonyEricsson", "W800i", "SonyEricsson W800i"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 5.2; RW; rv:7.0a1) Gecko/20091211 SeaMonkey/9.23a1pre"],
@@ -702,7 +702,7 @@
         ],
         [
             ["Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; HTC-P715a; en-ca) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16"],
-            ["safari", "htc", "htc", "mac-3", "device", "HTC", "Safari", "5.0", "Mac OS X", "10.6.3", "Mac OS X 10.6.3", "HTC", "", "HTC"]
+            ["safari", "htc", "htc", "mac-3", "device", "HTC P715a", "Safari", "5.0", "Mac OS X", "10.6.3", "Mac OS X 10.6.3", "HTC", "P715a", "HTC P715a"]
         ],
         [
             ["Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/521.32.1 (KHTML, like Gecko) Safari/521.32.1"],
@@ -794,7 +794,7 @@
         ],
         [
             ["Opera/9.80 (J2ME/MIDP; Opera Mini/Nokia2730c-1/22.478; U; en) Presto/2.5.25 Version/10.54"],
-            ["opera-2", "nokia", "nokia", "java", "device", "Nokia", "Opera Mini", "Nokia2730c", "J2ME/MIDP Device", "", "J2ME/MIDP Device", "Nokia", "", "Nokia"]
+            ["opera-2", "nokia", "nokia", "java", "device", "Nokia 2730c", "Opera Mini", "Nokia2730c", "J2ME/MIDP Device", "", "J2ME/MIDP Device", "Nokia", "2730c", "Nokia 2730c"]
         ],
         [
             ["Opera/9.80 (iPhone; Opera Mini/7.1.32694/27.1407; U; en) Presto/2.8.119 Version/11.10"],
@@ -826,7 +826,7 @@
         ],
         [
             ["HTC_HD2_T8585 Opera/9.70 (Windows NT 5.1; U; de)"],
-            ["opera-1", "htc", "htc", "win-2", "device", "HTC", "Opera", "9.70", "Windows NT", "5.1", "Windows XP", "HTC", "", "HTC"]
+            ["opera-1", "htc", "htc", "win-2", "device", "HTC HD2", "Opera", "9.70", "Windows NT", "5.1", "Windows XP", "HTC", "HD2", "HTC HD2"]
         ],
         [
             ["Opera/9.64 (X11; Linux i686; U; Linux Mint; it) Presto/2.1.1"],
@@ -878,19 +878,19 @@
         ],
         [
             ["NokiaE5-00/SymbianOS/9.1 Series60/3.0 3gpp-gba"],
-            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia", "", "", "SymbianOS", "9.1", "SymbianOS 9.1", "Nokia", "", "Nokia"]
+            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia E5", "", "", "SymbianOS", "9.1", "SymbianOS 9.1", "Nokia", "E5", "Nokia E5"]
         ],
         [
             ["NokiaN97/21.1.107 (SymbianOS/9.4; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebkit/525 (KHTML, like Gecko) BrowserNG/7.1.4"],
-            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia", "", "", "SymbianOS", "9.4", "SymbianOS 9.4", "Nokia", "", "Nokia"]
+            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia N97", "", "", "SymbianOS", "9.4", "SymbianOS 9.4", "Nokia", "N97", "Nokia N97"]
         ],
         [
             ["NokiaN97i/SymbianOS/9.1 Series60/3.0"],
-            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia", "", "", "SymbianOS", "9.1", "SymbianOS 9.1", "Nokia", "", "Nokia"]
+            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia N97i", "", "", "SymbianOS", "9.1", "SymbianOS 9.1", "Nokia", "N97i", "Nokia N97i"]
         ],
         [
             ["Nokia5250/10.0.011 (SymbianOS/9.4; U; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML, like Gecko) Safari/525 3gpp-gba"],
-            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia", "", "", "SymbianOS", "9.4", "SymbianOS 9.4", "Nokia", "", "Nokia"]
+            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia 5250", "", "", "SymbianOS", "9.4", "SymbianOS 9.4", "Nokia", "5250", "Nokia 5250"]
         ],
         [
             ["NetSurf/2.0 (Linux; i686)"],
@@ -918,7 +918,7 @@
         ],
         [
             ["SAMSUNG-C5212/C5212XDIK1 NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["netfront", "samsung", "samsung", "null", "device", "Samsung", "NetFront", "3.4", "Unknown", "", "Unknown", "Samsung", "", "Samsung"]
+            ["netfront", "samsung", "samsung", "null", "device", "Samsung C5212", "NetFront", "3.4", "Unknown", "", "Unknown", "Samsung", "C5212", "Samsung C5212"]
         ],
         [
             ["Mozilla/4.0 (compatible; Linux 2.6.10) NetFront/3.3 Kindle/1.0 (screen 600x800)"],
@@ -926,19 +926,19 @@
         ],
         [
             ["SonyEricssonK800c/R8BF Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "", "SonyEricsson"]
+            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson K800c", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "K800c", "SonyEricsson K800c"]
         ],
         [
             ["SonyEricssonK530i/R6BA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "", "SonyEricsson"]
+            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson K530i", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "K530i", "SonyEricsson K530i"]
         ],
         [
             ["SonyEricssonK530c/R8BA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "", "SonyEricsson"]
+            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson K530c", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "K530c", "SonyEricsson K530c"]
         ],
         [
             ["SonyEricssonK510c/R4EA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "", "SonyEricsson"]
+            ["netfront", "sonyericsson", "sonyericsson", "null", "device", "SonyEricsson K510c", "NetFront", "3.3", "Unknown", "", "Unknown", "SonyEricsson", "K510c", "SonyEricsson K510c"]
         ],
         [
             ["Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2a2pre) Gecko/20090825 Namoroka/3.6a2pre"],
@@ -1078,11 +1078,11 @@
         ],
         [
             ["MOT-L7/NA.ACR_RB MIB/2.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1"],
-            ["mib", "motorola", "motorola", "null", "device", "Motorola", "MIB", "2.2.1", "Unknown", "", "Unknown", "Motorola", "", "Motorola"]
+            ["mib", "motorola", "motorola", "null", "device", "Motorola L7", "MIB", "2.2.1", "Unknown", "", "Unknown", "Motorola", "L7", "Motorola L7"]
         ],
         [
             ["MOT-V300/0B.09.19R MIB/2.2 Profile/MIDP-2.0 Configuration/CLDC-1.0"],
-            ["mib", "motorola", "motorola", "null", "device", "Motorola", "MIB", "2.2", "Unknown", "", "Unknown", "Motorola", "", "Motorola"]
+            ["mib", "motorola", "motorola", "null", "device", "Motorola V300", "MIB", "2.2", "Unknown", "", "Unknown", "Motorola", "V300", "Motorola V300"]
         ],
         [
             ["Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/533.1 (KHTML, like Gecko) Maxthon/3.0.8.2 Safari/533.1"],
@@ -1266,7 +1266,7 @@
         ],
         [
             ["HTC_Touch_3G Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)"],
-            ["msie-mobile", "htc", "htc", "win-2", "device", "HTC", "IEMobile", "7.11", "Windows", "", "Windows CE", "HTC", "", "HTC"]
+            ["msie-mobile", "htc", "htc", "win-2", "device", "HTC Touch", "IEMobile", "7.11", "Windows", "", "Windows CE", "HTC", "Touch", "HTC Touch"]
         ],
         [
             ["Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.0; Trident/3.1; IEMobile/7.0; Nokia;N70)"],
@@ -1346,11 +1346,11 @@
         ],
         [
             ["NokiaE66/GoBrowser/2.0.297"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "2.0.297", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia E66", "GOBrowser", "2.0.297", "Unknown", "", "Unknown", "Nokia", "E66", "Nokia E66"]
         ],
         [
             ["Nokia5800XpressMusic/GoBrowser/1.6.0.46"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "1.6.0.46", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia 5800XpressMusic", "GOBrowser", "1.6.0.46", "Unknown", "", "Unknown", "Nokia", "5800XpressMusic", "Nokia 5800XpressMusic"]
         ],
         [
             ["Mozilla/5.0 (Android 2.2; zh-cn; HTC Desire)/GoBrowser"],
@@ -1358,19 +1358,19 @@
         ],
         [
             ["NokiaX6/GoBrowser"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia X6", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "X6", "Nokia X6"]
         ],
         [
             ["NokiaN97_mini/GoBrowser"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia N97", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "N97", "Nokia N97"]
         ],
         [
             ["NokiaC5-00/GoBrowser"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia C5", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "C5", "Nokia C5"]
         ],
         [
             ["Nokia6120c/GoBrowser"],
-            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "", "Nokia"]
+            ["gobrowser", "nokia", "nokia", "null", "device", "Nokia 6120c", "GOBrowser", "", "Unknown", "", "Unknown", "Nokia", "6120c", "Nokia 6120c"]
         ],
         [
             ["Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)"],
@@ -1634,11 +1634,11 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "lg", "lg", "android", "device", "LG", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "LG", "", "LG"]
+            ["android-webkit", "lg", "lg", "android", "device", "LG L160L", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "LG", "L160L", "LG L160L"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "htc", "htc", "android", "device", "HTC", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "HTC", "", "HTC"]
+            ["android-webkit", "htc", "htc", "android", "device", "HTC Sensation", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "HTC", "Sensation", "HTC Sensation"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.3; en-us) AppleWebKit/999+ (KHTML, like Gecko) Safari/999.9"],
@@ -1662,7 +1662,7 @@
         ],
         [
             ["Mozilla/5.0 (compatible; Teleca Q7; Brew 3.1.5; U; en) 480X800 LGE VX11000"],
-            ["obigo", "lg", "lg", "null", "device", "LG", "Teleca", "Q7", "Unknown", "", "Unknown", "LG", "", "LG"]
+            ["obigo", "lg", "lg", "null", "device", "LG VX11000", "Teleca", "Q7", "Unknown", "", "Unknown", "LG", "VX11000", "LG VX11000"]
         ],
         [
             ["Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21"],
@@ -1774,7 +1774,7 @@
         ],
         [
             ["HTC-ST7377/1.59.502.3 (67150) Opera/9.50 (Windows NT 5.1; U; en) UP.Link/6.3.1.17.0"],
-            ["openwave", "htc", "htc", "win-2", "device", "HTC", "Openwave Mobile Browser", "6.3.1.17.0", "Windows NT", "5.1", "Windows XP", "HTC", "", "HTC"]
+            ["openwave", "htc", "htc", "win-2", "device", "HTC ST7377", "Openwave Mobile Browser", "6.3.1.17.0", "Windows NT", "5.1", "Windows XP", "HTC", "ST7377", "HTC ST7377"]
         ],
         [
             ["Mozilla/5.0 (X11; Linux x86_64; rv:2.0) Gecko/20110318 WebianShell/0."],
@@ -1942,15 +1942,15 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "htc", "htc", "android", "device", "HTC", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "HTC", "", "HTC"]
+            ["android-webkit", "htc", "htc", "android", "device", "HTC Sensation", "Android Webkit", "4.0", "Android", "4.0.3", "Android 4.0.3", "HTC", "Sensation", "HTC Sensation"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.2; fr-lu; HTC Legend Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
-            ["android-webkit", "htc", "htc", "android", "device", "HTC", "Android Webkit", "4.0", "Android", "2.2", "Android 2.2", "HTC", "", "HTC"]
+            ["android-webkit", "htc", "htc", "android", "device", "HTC Legend", "Android Webkit", "4.0", "Android", "2.2", "Android 2.2", "HTC", "Legend", "HTC Legend"]
         ],
         [
             ["UA: Mozilla/5.0 (Linux; U; Android 1.6; es-es; HTC Tattoo 1.67.164.9 Build/DRC79) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1"],
-            ["android-webkit", "htc", "htc", "android", "device", "HTC", "Android Webkit", "3.1.2", "Android", "1.6", "Android 1.6", "HTC", "", "HTC"]
+            ["android-webkit", "htc", "htc", "android", "device", "HTC Tattoo", "Android Webkit", "3.1.2", "Android", "1.6", "Android 1.6", "HTC", "Tattoo", "HTC Tattoo"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.2; xx-xx; lepad_001b Build/PQXU100.4.0097.042211) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
@@ -1994,11 +1994,11 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-CN; Coolpad 8670 Build/JDQ39) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.2.467 U3/0.8.0 Mobile Safari/533.1"],
-            ["ucbrowser", "coolpad", "coolpad", "android", "device", "CoolPad", "UC Browser", "9.9.2.467", "Android", "4.2.2", "Android 4.2.2", "CoolPad", "", "CoolPad"]
+            ["ucbrowser", "coolpad", "coolpad", "android", "device", "CoolPad 8670", "UC Browser", "9.9.2.467", "Android", "4.2.2", "Android 4.2.2", "CoolPad", "8670", "CoolPad 8670"]
         ],
         [
             ["CoolPad8736_CMCC_TD/1.0 Linux/3.0.8 Android/4.2 Release/6.25.2013 Browser/AppleWebkit534.30"],
-            ["android-webkit", "coolpad", "coolpad", "android", "device", "CoolPad", "Android Webkit", "", "Android", "4.2", "Android 4.2", "CoolPad", "", "CoolPad"]
+            ["android-webkit", "coolpad", "coolpad", "android", "device", "CoolPad 8736", "Android Webkit", "", "Android", "4.2", "Android 4.2", "CoolPad", "8736", "CoolPad 8736"]
         ],
         [
             ["Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21"],
@@ -2006,15 +2006,15 @@
         ],
         [
             ["UCWEB/2.0 (Linux; U; Android 4.2.1; zh-CN; vivo X3t) U2/1.0.0 UCBrowser/9.9.4.484 U2/1.0.0 Mobile"],
-            ["ucbrowser", "vivo", "vivo", "android", "device", "vivo", "UC Browser", "9.9.4.484", "Android", "4.2.1", "Android 4.2.1", "vivo", "", "vivo"]
+            ["ucbrowser", "vivo", "vivo", "android", "device", "vivo X3t", "UC Browser", "9.9.4.484", "Android", "4.2.1", "Android 4.2.1", "vivo", "X3t", "vivo X3t"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; vivo X3L Build/JLS36C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "vivo", "vivo", "android", "device", "vivo", "Android Webkit", "4.0", "Android", "4.3", "Android 4.3", "vivo", "", "vivo"]
+            ["android-webkit", "vivo", "vivo", "android", "device", "vivo X3L", "Android Webkit", "4.0", "Android", "4.3", "Android 4.3", "vivo", "X3L", "vivo X3L"]
         ],
         [
             ["HUAWEI_P6-T00_TD/5.0 Android/4.2.2 (Linux; U; Android 4.2.2; zh-cn) Release/03.20.2013 Browser/WAP2.0 (AppleWebKit/534.30) Mobile Safari/534.30"],
-            ["android-webkit", "huawei", "huawei", "android", "device", "Huawei", "Android Webkit", "", "Android", "4.2.2", "Android 4.2.2", "Huawei", "", "Huawei"]
+            ["android-webkit", "huawei", "huawei", "android", "device", "Huawei P6", "Android Webkit", "", "Android", "4.2.2", "Android 4.2.2", "Huawei", "P6", "Huawei P6"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"],
@@ -2110,15 +2110,15 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; GT-I9300I Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 Mobile Safari/537.36"],
-            ["qqbrowser", "samsung", "samsung", "android", "device", "Samsung", "MQQBrowser", "5.4", "Android", "4.3", "Android 4.3", "Samsung", "", "Samsung"]
+            ["qqbrowser", "samsung", "samsung", "android", "device", "Samsung I9300I", "MQQBrowser", "5.4", "Android", "4.3", "Android 4.3", "Samsung", "I9300I", "Samsung I9300I"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.1.2; zh-CN; GT-N7100 Build/JZO54K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.2.467 U3/0.8.0 Mobile Safari/533.1"],
-            ["ucbrowser", "samsung", "samsung", "android", "device", "Samsung", "UC Browser", "9.9.2.467", "Android", "4.1.2", "Android 4.1.2", "Samsung", "", "Samsung"]
+            ["ucbrowser", "samsung", "samsung", "android", "device", "Samsung N7100", "UC Browser", "9.9.2.467", "Android", "4.1.2", "Android 4.1.2", "Samsung", "N7100", "Samsung N7100"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; nl-nl; GT-I9505 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"],
-            ["android-webkit", "samsung", "samsung", "android", "device", "Samsung", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "Samsung", "", "Samsung"]
+            ["android-webkit", "samsung", "samsung", "android", "device", "Samsung I9505", "Android Webkit", "4.0", "Android", "4.2.2", "Android 4.2.2", "Samsung", "I9505", "Samsung I9505"]
         ],
         [
             ["AtomicBrowser/7.0.1 CFNetwork/672.0.8 Darwin/14.0.0"],
@@ -2174,7 +2174,7 @@
         ],
         [
             ["Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+"],
-            ["safari", "blackberry", "blackberry", "null", "device", "BlackBerry", "Mobile Safari", "7.1.0.346", "Unknown", "", "Unknown", "BlackBerry", "", "BlackBerry"]
+            ["safari", "blackberry", "blackberry", "null", "device", "BlackBerry 9900", "Mobile Safari", "7.1.0.346", "Unknown", "", "Unknown", "BlackBerry", "9900", "BlackBerry 9900"]
         ],
         [
             ["Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+"],
@@ -2194,11 +2194,15 @@
         ],
         [
             ["Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"],
-            ["nokia", "nokia", "nokia", "meego", "device", "Nokia", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "", "Nokia"]
+            ["nokia", "nokia", "nokia", "meego", "device", "Nokia N9", "Browser", "8.5.0", "Meego", "", "Meego", "Nokia", "N9", "Nokia N9"]
         ],
         [
             ["Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Mobile Safari/537.36 Edge/14.14263"],
             ["edge", "microsoft", "microsoft", "win-6", "device", "Microsoft Lumia 950", "Edge", "14.14263", "Windows", "10 Mobile", "Windows 10 Mobile", "Microsoft", "Lumia 950", "Microsoft Lumia 950"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36"],
+            ["chrome", "samsung", "samsung", "android", "device", "Samsung G900P", "Chrome", "48.0.2564.23", "Android", "5.0", "Android 5.0", "Samsung", "G900P", "Samsung G900P"]
         ]
     ];
     // Node.js
