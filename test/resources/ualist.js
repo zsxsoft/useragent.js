@@ -266,7 +266,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.1.1; zh-cn; MI 2SC Build/JRO03L) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36 XiaoMi/MiuiBrowser/2.1.1"],
-            ["miuibrowser", "xiaomi", "xiaomi", "android", "device", "Xiaomi 2SC", "MiuiBrowser", "2.1.1", "Android", "4.1.1", "Android 4.1.1", "Xiaomi", "2SC", "Xiaomi 2SC"]
+            ["miuibrowser", "xiaomi", "xiaomi", "android", "device", "Xiaomi 2SC", "MIUI Browser", "2.1.1", "Android", "4.1.1", "Android 4.1.1", "Xiaomi", "2SC", "Xiaomi 2SC"]
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 2.2; fr-fr; Desire_A8181 Build/FRF91) App3leWebKit/53.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"],
@@ -1790,7 +1790,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0"],
-            ["tizen", "tizen", "null", "tizen", "os", "Tizen", "Tizen", "2.0", "Tizen", "", "Tizen", "", "", ""]
+            ["tizenbrowser", "tizen", "null", "tizen", "os", "Tizen", "Tizen Browser", "2.0", "Tizen", "", "Tizen", "", "", ""]
         ],
         [
             ["Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)"],
@@ -1846,7 +1846,7 @@
         ],
         [
             ["Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5"],
-            ["kirix-strata", "iphone", "iphone", "mac-3", "device", "Apple iPhone", "Strata", "", "iOS", "712", "iOS 712", "Apple", "iPhone", "Apple iPhone"]
+            ["facebook", "iphone", "iphone", "mac-3", "device", "Apple iPhone", "Facebook", "14.0.0.25.26", "iOS", "712", "iOS 712", "Apple", "iPhone", "Apple iPhone"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/31.0.1650.63 Safari/537.36"],
@@ -2223,6 +2223,26 @@
         [
             ["Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)"],
             ["office", "microsoft", "microsoft", "win-5", "device", "Microsoft", "Microsoft Office", "", "Windows NT", "6.2", "Windows 8", "Microsoft", "", "Microsoft"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.1.2; Xperia Miro Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Mobile Safari/537.36"],
+            ["miro", "xperia", "xperia", "android", "device", "Sony Xperia Miro", "Miro", "", "Android", "4.1.2", "Android 4.1.2", "Sony", "Xperia Miro", "Sony Xperia Miro"]
+        ],
+        [
+            ["WhatsApp/2.11.102 Android/4.0.4 Device/Motorola-XOOM_2"],
+            ["whatsapp", "motorola", "motorola", "android", "device", "Motorola Xoom", "Whatsapp", "2.11.102", "Android", "4.0.4", "Android 4.0.4", "Motorola", "Xoom", "Motorola Xoom"]
+        ],
+        [
+            ["Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11B554a Weibo (iPhone3,2__weibo__4.2.5__iphone__os7.0.4)"],
+            ["weibo", "iphone", "iphone", "mac-3", "device", "Apple iPhone", "Weibo", "", "iOS", "7.0.4", "iOS 7.0.4", "Apple", "iPhone", "Apple iPhone"]
+        ],
+        [
+            ["Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B411 [FBAN/FBIOS;FBAV/26.0.0.11.13;FBBV/7806348;FBDV/iPhone5,2;FBMD/iPhone;FBSN/iPhone OS;FBSV/8.1;FBSS/2; FBCR/3DK;FBID/phone;FBLC/da_DK;FBOP/5]"],
+            ["facebook", "iphone", "iphone", "mac-3", "device", "Apple iPhone", "Facebook", "26.0.0.11.13", "iOS", "8.1", "iOS 8.1", "Apple", "iPhone", "Apple iPhone"]
+        ],
+        [
+            ["Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Mobile; rv:31.0) Gecko/31.0 Firefox/31.0 SailfishBrowser/1.0"],
+            ["sailfishbrowser", "jolla", "null", "jolla", "os", "Jolla", "Sailfish Browser", "1.0", "Jolla", "", "Jolla", "", "", ""]
         ]
     ];
     // Node.js
