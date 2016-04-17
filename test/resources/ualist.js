@@ -2203,6 +2203,26 @@
         [
             ["Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36"],
             ["chrome", "samsung", "samsung", "android", "device", "Samsung G900P", "Chrome", "48.0.2564.23", "Android", "5.0", "Android 5.0", "Samsung", "G900P", "Samsung G900P"]
+        ],
+        [
+            ["Mozilla/5.0 (SymbianOS/9.3; U; Series60/3.2 NokiaN79-3/10.018; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413"],
+            ["maemo", "nokia", "nokia", "symbian", "device", "Nokia N79", "", "", "SymbianOS", "9.3", "SymbianOS 9.3", "Nokia", "N79", "Nokia N79"]
+        ],
+        [
+            ["iTunes/10.2.1 (Windows; Microsoft Windows 7 Enterprise Edition Service Pack 1 (Build 7601)) AppleWebKit/533.20.25"],
+            ["itunes", "microsoft", "microsoft", "win-2", "device", "Microsoft", "iTunes", "10.2.1", "Windows", "", "Windows", "Microsoft", "", "Microsoft"]
+        ],
+        [
+            ["Microsoft Office PowerPoint 2013 (15.0.4693) Windows NT 6.2"],
+            ["office", "microsoft", "microsoft", "win-5", "device", "Microsoft", "Microsoft Office", "", "Windows NT", "6.2", "Windows 8", "Microsoft", "", "Microsoft"]
+        ],
+        [
+            ["Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2"],
+            ["office", "microsoft", "microsoft", "win-5", "device", "Microsoft", "Microsoft Office", "", "Windows NT", "6.2", "Windows 8", "Microsoft", "", "Microsoft"]
+        ],
+        [
+            ["Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)"],
+            ["office", "microsoft", "microsoft", "win-5", "device", "Microsoft", "Microsoft Office", "", "Windows NT", "6.2", "Windows 8", "Microsoft", "", "Microsoft"]
         ]
     ];
     // Node.js
