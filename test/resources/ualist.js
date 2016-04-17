@@ -2259,6 +2259,18 @@
         [
             ["Mozilla/5.0 (Windows; U; Windows NT 5.1; cs-CZ) AppleWebKit/532.4 (KHTML, like Gecko) Google Earth/5.2.1.1329 Safari/532.4"],
             ["google", "win-2", "null", "win-2", "os", "Windows XP", "Google Earth", "5.2.1.1329", "Windows NT", "5.1", "Windows XP", "", "", ""]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.2.2; nl-nl; SAMSUNG GT-I9505 Build/JDQ39) AppleWebKit/535.19 (KHTML, like Gecko) Version/1.0 Chrome/18.0.1025.308 Mobile Safari/535.19"],
+            ["chrome", "samsung", "samsung", "android", "device", "Samsung I9505", "Chrome", "18.0.1025.308", "Android", "4.2.2", "Android 4.2.2", "Samsung", "I9505", "Samsung I9505"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.3; en-us; SAMSUNG SCH-I545 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36"],
+            ["chrome", "samsung", "samsung", "android", "device", "Samsung I545", "Chrome", "28.0.1500.94", "Android", "4.3", "Android 4.3", "Samsung", "I545", "Samsung I545"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.4.2; ko-kr; SAMSUNG SHV-E300S Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36"],
+            ["chrome", "samsung", "samsung", "android", "device", "Samsung E300S", "Chrome", "28.0.1500.94", "Android", "4.4.2", "Android 4.4.2", "Samsung", "E300S", "Samsung E300S"]
         ]
     ];
     // Node.js
