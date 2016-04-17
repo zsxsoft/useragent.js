@@ -2319,6 +2319,18 @@
         [
             ["Mozilla/5.0 (Linux; Android 4.1.1; TCL TAB 7 Build/GSDT011) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19"],
             ["chrome", "tcl", "tcl", "android", "device", "TCL TAB", "Chrome", "18.0.1025.166", "Android", "4.1.1", "Android 4.1.1", "TCL", "TAB", "TCL TAB"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36"],
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus One", "Chrome", "39.0.2171.93", "Android", "4.4.4", "Android 4.4.4", "OnePlus", "One", "OnePlus One"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1.1; ONE A2005 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36"],
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus Two", "Chrome", "47.0.2526.83", "Android", "5.1.1", "Android 5.1.1", "OnePlus", "Two", "OnePlus Two"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36"],
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus X", "Chrome", "46.0.2490.76", "Android", "5.1", "Android 5.1", "OnePlus", "X", "OnePlus X"]
         ]
     ];
     // Node.js
