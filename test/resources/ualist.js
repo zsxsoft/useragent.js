@@ -2363,6 +2363,10 @@
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; hasee H45 T3 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/6.0 Mobile Safari/537.36"],
             ["qqbrowser", "hasee", "hasee", "android", "device", "Hasee H45 T3", "MQQBrowser", "6.0", "Android", "4.2.2", "Android 4.2.2", "Hasee", "H45 T3", "Hasee H45 T3"]
+        ],
+        [
+            ["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"],
+            ["chrome", "mac-3", "null", "mac-3", "os", "macOS 10.12.0", "Chrome", "51.0.2704.103", "macOS", "10.12.0", "macOS 10.12.0", "", "", ""]
         ]
     ];
     // Node.js
