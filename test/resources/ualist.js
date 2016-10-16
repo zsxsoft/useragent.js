@@ -14,7 +14,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HM NOTE 1W Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30; 360browser(securitypay,securityinstalled); 360(android,uppayplugin); 360 Aphone Browser (5.4.1)"],
-            ["360se", "xiaomi", "xiaomi", "android", "device", "Xiaomi HM-NOTE 1W", "", "", "Android", "4.2.2", "Android 4.2.2", "Xiaomi", "HM-NOTE 1W", "Xiaomi HM-NOTE 1W"]
+            ["360se", "xiaomi", "xiaomi", "android", "device", "Redmi Note 1W", "", "", "Android", "4.2.2", "Android 4.2.2", "Redmi", "Note 1W", "Redmi Note 1W"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko se5_i) Chrome/31.0.1650.63 Safari/537.36 QIHU 360SE"],
