@@ -2322,15 +2322,19 @@
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36"],
-            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus One", "Chrome", "39.0.2171.93", "Android", "4.4.4", "Android 4.4.4", "OnePlus", "One", "OnePlus One"]
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 1", "Chrome", "39.0.2171.93", "Android", "4.4.4", "Android 4.4.4", "OnePlus", "1", "OnePlus 1"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 5.1.1; ONE A2005 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36"],
-            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus Two", "Chrome", "47.0.2526.83", "Android", "5.1.1", "Android 5.1.1", "OnePlus", "Two", "OnePlus Two"]
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 2", "Chrome", "47.0.2526.83", "Android", "5.1.1", "Android 5.1.1", "OnePlus", "2", "OnePlus 2"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36"],
             ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus X", "Chrome", "46.0.2490.76", "Android", "5.1", "Android 5.1", "OnePlus", "X", "OnePlus X"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 6.0.1; ONEPLUS A3000 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36"],
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 3", "Chrome", "50.0.2661.86", "Android", "6.0.1", "Android 6.0.1", "OnePlus", "3", "OnePlus 3"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36"],
