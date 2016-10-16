@@ -2355,6 +2355,14 @@
         [
             ["Mozilla/5.0 (Linux; Android 5.0.2; Redmi Note 2 Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36"],
             ["chrome", "xiaomi", "xiaomi", "android", "device", "Redmi Note 2", "Chrome", "45.0.2454.95", "Android", "5.0.2", "Android 5.0.2", "Redmi", "Note 2", "Redmi Note 2"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; HS-T96 Build/IML74K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.5.2.394 U3/0.8.0 Mobile Safari/533.1"],
+            ["ucbrowser", "hisense", "hisense", "android", "device", "Hisense HS-T96", "UC Browser", "9.5.2.394", "Android", "4.0.3", "Android 4.0.3", "Hisense", "HS-T96", "Hisense HS-T96"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; hasee H45 T3 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/6.0 Mobile Safari/537.36"],
+            ["qqbrowser", "hasee", "hasee", "android", "device", "Hasee H45 T3", "MQQBrowser", "6.0", "Android", "4.2.2", "Android 4.2.2", "Hasee", "H45 T3", "Hasee H45 T3"]
         ]
     ];
     // Node.js
