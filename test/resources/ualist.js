@@ -2331,6 +2331,26 @@
         [
             ["Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36"],
             ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus X", "Chrome", "46.0.2490.76", "Android", "5.1", "Android 5.1", "OnePlus", "X", "OnePlus X"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Xiaomi 4c", "Chrome", "43.0.2357.121", "Android", "5.1.1", "Android 5.1.1", "Xiaomi", "4c", "Xiaomi 4c"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1; MX5 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36"],
+            ["chrome", "meizu", "meizu", "android", "device", "Meizu MX5", "Chrome", "40.2214.121", "Android", "5.1", "Android 5.1", "Meizu", "MX5", "Meizu MX5"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.4.4; HM 2A Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Redmi 2A", "Chrome", "33.0.0.0", "Android", "4.4.4", "Android 4.4.4", "Redmi", "2A", "Redmi 2A"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1; m3 note Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36"],
+            ["chrome", "meizu", "meizu", "android", "device", "Meizu m3 note", "Chrome", "40.2214.121", "Android", "5.1", "Android 5.1", "Meizu", "m3 note", "Meizu m3 note"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.2; Redmi Note 2 Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Redmi Note 2", "Chrome", "45.0.2454.95", "Android", "5.0.2", "Android 5.0.2", "Redmi", "Note 2", "Redmi Note 2"]
         ]
     ];
     // Node.js
