@@ -1,6 +1,6 @@
 {
   "name": "useragent.js",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,10 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1",
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "~1.0.1",
