@@ -1,30 +1,30 @@
 /** Required Node > 4.0 */
-'use strict';
-let fs = require('fs');
-let userAgent = require("./index");
-let testUAList = require('./test/resources/ualist.js');
-let buildObject = [];
+'use strict'
+let fs = require('fs')
+let userAgent = require('./index')
+let testUAList = require('./test/resources/ualist.js')
+let buildObject = []
 testUAList.forEach((item) => {
-    let ua = userAgent.analyze(item[0][0]);
-    buildObject.push([
+  let ua = userAgent.analyze(item[0][0])
+  buildObject.push([
         [item[0][0]],
-        [
-            ua.browser.image,
-            ua.platform.image,
-            ua.device.image,
-            ua.os.image,
-            ua.platform.dir,
-            ua.platform.full,
-            ua.browser.name,
-            ua.browser.version,
-            ua.os.name,
-            ua.os.version,
-            ua.os.full,
-            ua.device.brand,
-            ua.device.model,
-            ua.device.full
-        ],
-    ])
+    [
+      ua.browser.image,
+      ua.platform.image,
+      ua.device.image,
+      ua.os.image,
+      ua.platform.dir,
+      ua.platform.full,
+      ua.browser.name,
+      ua.browser.version,
+      ua.os.name,
+      ua.os.version,
+      ua.os.full,
+      ua.device.brand,
+      ua.device.model,
+      ua.device.full
+    ]
+  ])
 })
 fs.writeFileSync('./test/resources/ualist.js', `
 (function(){var testUAList=${JSON.stringify(buildObject)};
@@ -46,4 +46,4 @@ fs.writeFileSync('./test/resources/ualist.js', `
 	} else {
 		window.testUAList = testUAList;
 	}
-})();`, 'utf-8');
+})();`, 'utf-8')
