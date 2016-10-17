@@ -2,11 +2,9 @@
 
 module.exports = function (grunt) {
   var packageJson = grunt.file.readJSON('package.json')
-  var encode = grunt.option('encode') || 'utf8'
   var language = grunt.option('language') || 'node'
   var doNotCompile = grunt.option('without-compile') || false
   language = language.toLowerCase()
-
   grunt.initConfig({
     pkg: packageJson,
     copy: {
@@ -82,12 +80,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-    transcoding: {
-      options: {
-        charset: encode
-      },
-      src: ['dist/*.js']
-    },
     eslint: {
       before: {
         options: {
@@ -109,7 +101,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-transcoding')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-nodeunit')
 
@@ -121,7 +112,6 @@ module.exports = function (grunt) {
       tasks.push('uglify')
     }
 
-    tasks.push('transcoding')
     if (language === 'asp') {
       tasks.push('copy:asp')
     }
