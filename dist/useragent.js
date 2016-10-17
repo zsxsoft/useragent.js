@@ -1002,33 +1002,22 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     }
     return ret
   }
-// Node.js
-// #JSCOVERAGE_IF typeof module !== 'undefined' && module.exports
-  if (typeof module !== 'undefined' && module.exports) {
+
+  /* @covignore */
+  if (typeof module !== 'undefined' && module.exports) { // Nodejs / Commonjs
     module.exports = BROWSER
-  }
-// #JSCOVERAGE_ENDIF
-// #JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
-// AMD
-  else if (typeof define !== 'undefined' && define.amd) {
+  } else if (typeof define !== 'undefined' && define.amd) { // RequireJS
     define([], function () {
       return BROWSER
     })
+  } else if (typeof define !== 'undefined' && define.cmd) { // SeaJS
+    define([], function (require, exports, module) {
+      module.exports = BROWSER
+    })
+  } else { // Direct
+    root.USERAGENT_BROWSER = function () {}
+    root.USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
   }
-// #JSCOVERAGE_ENDIF
-// #JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
-// CMD
-else if (typeof define !== 'undefined' && define.cmd) {
-  define([], function (require, exports, module) {
-    module.exports = BROWSER
-  })
-// #JSCOVERAGE_ENDIF
-// #JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
-} else {
-  root.USERAGENT_BROWSER = function () { }
-  USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
-}
-// #JSCOVERAGE_ENDIF
 })(this)
 
 'use strict';
@@ -1470,18 +1459,14 @@ else if (typeof define !== 'undefined' && define.cmd) {
       ret.model = 'iPhone'
       ret.image = 'iphone'
     }
-
-        // Some special UA..
-        // is MSIE
-        else if (/MSIE.+?Windows.+?Trident/i.test(ret.ua) && !/Windows ?Phone/i.test(ret.ua)) {
-          ret.brand = ''
-          ret.model = ''
-          ret.image = 'null'
-        }
-        // No Device match
-        else {
-          ret.image = 'null'
-        }
+    else if (/MSIE.+?Windows.+?Trident/i.test(ret.ua) && !/Windows ?Phone/i.test(ret.ua)) { // is MSIE
+      ret.brand = ''
+      ret.model = ''
+      ret.image = 'null'
+    }
+    else {
+      ret.image = 'null'
+    }
   }
 
   var DEVICE = {}
@@ -1501,33 +1486,21 @@ else if (typeof define !== 'undefined' && define.cmd) {
     return ret
   }
 
-    // Node.js
-    // #JSCOVERAGE_IF typeof module !== 'undefined' && module.exports
-  if (typeof module !== 'undefined' && module.exports) {
+  /* @covignore */
+  if (typeof module !== 'undefined' && module.exports) { // Nodejs / Commonjs
     module.exports = DEVICE
-  }
-    // #JSCOVERAGE_ENDIF
-    // #JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
-    // AMD
-  else if (typeof define !== 'undefined' && define.amd) {
+  } else if (typeof define !== 'undefined' && define.amd) { // RequireJS
     define([], function () {
       return DEVICE
     })
+  } else if (typeof define !== 'undefined' && define.cmd) { // SeaJS
+    define([], function (require, exports, module) {
+      module.exports = DEVICE
+    })
+  } else { // Direct
+    root.USERAGENT_DEVICE = function () {}
+    root.USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
   }
-    // #JSCOVERAGE_ENDIF
-    // #JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
-    // CMD
-    else if (typeof define !== 'undefined' && define.cmd) {
-      define([], function (require, exports, module) {
-        module.exports = DEVICE
-      })
-        // #JSCOVERAGE_ENDIF
-        // #JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
-    } else {
-      root.USERAGENT_DEVICE = function () {}
-      USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
-    }
-    // #JSCOVERAGE_ENDIF
 })(this)
 
 'use strict';
@@ -1717,6 +1690,7 @@ else if (typeof define !== 'undefined' && define.cmd) {
     var rep = null
     var res = ret.ua.match(linuxRegEx)
     var name = ''
+    linuxWithVersionRegEx.lastIndex = 0
 
     if (res !== null) {
       name = res[0].toLowerCase()
@@ -1729,9 +1703,7 @@ else if (typeof define !== 'undefined' && define.cmd) {
         ret.name = defaultLinuxList[name].name || ret.name
         ret.image = defaultLinuxList[name].image || ret.image
       }
-    } else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) {
- // The count of Ubuntu users is more than others.
-
+    } else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) { // The count of Ubuntu users is more than others.
       ret.name = 'Ubuntu'
       rep = ret.ua.match(/Ubuntu[\/| ]([.0-9]+[.0-9a-zA-Z]+)/i)
 
@@ -1755,17 +1727,19 @@ else if (typeof define !== 'undefined' && define.cmd) {
         })
         ret.image = childUbuntuVersion + ret.image
       }
-    } else if (rep = ret.ua.match(linuxWithVersionRegEx)) {
+    } else if (linuxWithVersionRegEx.test(ret.ua)) {
+      rep = ret.ua.match(linuxWithVersionRegEx)
       name = rep[1].toLowerCase()
       ret.name = rep[1]
-      if (rep = ret.ua.match(linuxWithVersion[name][1])) {
+      rep = ret.ua.match(linuxWithVersion[name][1])
+      if (rep) {
         ret.version = rep[1]
       }
       ret.image = linuxWithVersion[name][0]
     } else if (/Red Hat/i.test(ret.ua) || /RedHat/i.test(ret.ua)) {
       ret.name = 'Red Hat'
-
-      if (rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)) {
+      rep = ret.ua.match(/.el([._0-9a-zA-Z]+)/i)
+      if (rep) {
         ret.name += ' Enterprise Linux'
         ret.version = rep[1].replace(/_/g, '.')
       }
@@ -1807,7 +1781,8 @@ else if (typeof define !== 'undefined' && define.cmd) {
     else if (/Android|ADR /i.test(ret.ua)) {
       ret.name = 'Android'
       ret.image = 'android'
-      if (rep = ret.ua.match(/(Android|Adr)[ |\/]([.0-9]+)/i)) {
+      rep = ret.ua.match(/(Android|Adr)[ |\/]([.0-9]+)/i)
+      if (rep) {
         ret.version = rep[2]
       }
     } else if (/Tizen/i.test(ret.ua)) {
@@ -1816,12 +1791,14 @@ else if (typeof define !== 'undefined' && define.cmd) {
     } else if (/(iPhone|CPU) OS/.test(ret.ua)) {
       ret.name = 'iOS'
       ret.image = 'mac-3'
-      if (rep = ret.ua.match(/(iPhone|CPU) OS ([._0-9]+)/i)) {
+      rep = ret.ua.match(/(iPhone|CPU) OS ([._0-9]+)/i)
+      if (rep) {
         ret.version = rep[2].replace(/_/g, '.')
       }
     } else if (/AmigaOS/i.test(ret.ua)) {
       ret.name = 'AmigaOS'
-      if (rep = ret.ua.match(/AmigaOS ([.0-9a-zA-Z]+)/i)) {
+      rep = ret.ua.match(/AmigaOS ([.0-9a-zA-Z]+)/i)
+      if (rep) {
         ret.version = rep[1]
       }
       ret.image = 'amigaos'
@@ -1830,7 +1807,8 @@ else if (typeof define !== 'undefined' && define.cmd) {
       ret.image = 'chromeos'
     } else if (/IRIX/i.test(ret.ua)) {
       ret.name = 'IRIX'
-      if (rep = ret.ua.match(/IRIX(64)? ([.0-9a-zA-Z]+)/i)) {
+      rep = ret.ua.match(/IRIX(64)? ([.0-9a-zA-Z]+)/i)
+      if (rep) {
         if (rep[1] !== undefined && rep[1] !== '') {
           ret.x64 = true
         }
@@ -1840,7 +1818,8 @@ else if (typeof define !== 'undefined' && define.cmd) {
       }
       ret.image = 'irix'
     } else if (/Mac/i.test(ret.ua) || /Darwin/i.test(ret.ua)) {
-      if (rep = ret.ua.match(/(Mac OS ?X)/i)) {
+      rep = ret.ua.match(/(Mac OS ?X)/i)
+      if (rep) {
         ret.version = ret.ua.substr(ret.ua.toLowerCase().indexOf(rep[1].toLowerCase()))
         ret.version = ret.version.substr(0, ret.version.indexOf(')'))
         if (ret.version.indexOf(';') > 0) {
@@ -1876,12 +1855,14 @@ else if (typeof define !== 'undefined' && define.cmd) {
     } else if (/RISC OS/i.test(ret.ua)) {
       ret.name = 'RISC OS'
       ret.image = 'risc'
-      if (rep = ret.ua.match(/RISC OS ([.0-9a-zA-Z]+)/i)) {
+      rep = ret.ua.match(/RISC OS ([.0-9a-zA-Z]+)/i)
+      if (rep) {
         ret.version = rep[1]
       }
     } else if (/Symb(ian)?(OS)?/i.test(ret.ua)) {
       ret.name = 'SymbianOS'
-      if (rep = ret.ua.match(/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i)) {
+      rep = ret.ua.match(/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i)
+      if (rep) {
         ret.version = rep[3]
       }
       ret.image = 'symbian'
@@ -1927,49 +1908,35 @@ else if (typeof define !== 'undefined' && define.cmd) {
     }
     return ret
   }
-
-    // Node.js
-    // #JSCOVERAGE_IF typeof module !== 'undefined' && module.exports
-  if (typeof module !== 'undefined' && module.exports) {
+  /* @covignore */
+  if (typeof module !== 'undefined' && module.exports) { // Nodejs / Commonjs
     module.exports = OS
-  }
-    // #JSCOVERAGE_ENDIF
-    // #JSCOVERAGE_IF typeof define !== 'undefined' && define.amd
-    // AMD
-  else if (typeof define !== 'undefined' && define.amd) {
+  } else if (typeof define !== 'undefined' && define.amd) { // RequireJS
     define([], function () {
       return OS
     })
+  } else if (typeof define !== 'undefined' && define.cmd) { // SeaJS
+    define([], function (require, exports, module) {
+      module.exports = OS
+    })
+  } else { // Direct
+    root.USERAGENT_OS = function () {}
+    root.USERAGENT_OS.prototype.analyze = OS.analyze
   }
-    // #JSCOVERAGE_ENDIF
-    // #JSCOVERAGE_IF typeof define !== 'undefined' && define.cmd
-    // CMD
-    else if (typeof define !== 'undefined' && define.cmd) {
-      define([], function (require, exports, module) {
-        module.exports = OS
-      })
-        // #JSCOVERAGE_ENDIF
-        // #JSCOVERAGE_IF typeof define === 'undefined' && typeof module === 'undefined'
-    } else {
-      root.USERAGENT_OS = function () {}
-      USERAGENT_OS.prototype.analyze = OS.analyze
-    }
-    // #JSCOVERAGE_ENDIF
 })(this)
 
 /* global USERAGENT_OS */
 /* global USERAGENT_DEVICE */
 /* global USERAGENT_BROWSER */
-/* global define */
 'use strict';
 (function (root) {
-  var NODE = typeof module !== 'undefined' && module.exports
+  var CommonJS = typeof module !== 'undefined' && module.exports
   var CMD = typeof define !== 'undefined' && define.cmd
   var AMD = typeof define !== 'undefined' && define.amd
   var userAgent = {}
 
-  userAgent.version = '0.5.3'
-  userAgent.publishDate = '20160417'
+  userAgent.version = '0.5.4'
+  userAgent.publishDate = '20161017'
 
   userAgent.analyze = function (uaString) {
     var returnObject = {}
@@ -1988,8 +1955,7 @@ else if (typeof define !== 'undefined' && define.cmd) {
     userAgent.browserDetect = BROWSER
   }
 
-// Node.js
-  if (NODE) {
+  if (CommonJS) {
     if (process.env.UAJS_COV) {
       var libs = ['-cov/os', '-cov/device', '-cov/browser'] // To prevent webpack pack lib-cov.
       requireFunction(userAgent, require('./lib' + libs[0]), require('./lib' + libs[1]), require('./lib' + libs[2]))
@@ -1999,23 +1965,21 @@ else if (typeof define !== 'undefined' && define.cmd) {
 
     module.exports = userAgent
   }
-// AMD
   else if (AMD) {
     define(['./lib/os', './lib/device', './lib/browser'], function (OS, DEVICE, BROWSER) {
       requireFunction(userAgent, OS, DEVICE, BROWSER)
       return userAgent
     })
   }
-// CMD
-else if (CMD) {
-  define(function (require, exports, module) {
-    requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'))
-    module.exports = userAgent
-  })
-} else {
-  if (typeof USERAGENT_OS !== 'undefined') userAgent.osDetect = new USERAGENT_OS()
-  if (typeof USERAGENT_DEVICE !== 'undefined') userAgent.deviceDetect = new USERAGENT_DEVICE()
-  if (typeof USERAGENT_BROWSER !== 'undefined') userAgent.browserDetect = new USERAGENT_BROWSER()
-  root.USERAGENT = userAgent
-}
+  else if (CMD) {
+    define(function (require, exports, module) {
+      requireFunction(userAgent, require('./lib/os'), require('./lib/device'), require('./lib/browser'))
+      module.exports = userAgent
+    })
+  } else {
+    if (typeof USERAGENT_OS !== 'undefined') userAgent.osDetect = new USERAGENT_OS()
+    if (typeof USERAGENT_DEVICE !== 'undefined') userAgent.deviceDetect = new USERAGENT_DEVICE()
+    if (typeof USERAGENT_BROWSER !== 'undefined') userAgent.browserDetect = new USERAGENT_BROWSER()
+    root.USERAGENT = userAgent
+  }
 })(this)
