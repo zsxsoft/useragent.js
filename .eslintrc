@@ -1,12 +1,18 @@
 {
-  root: true,
-  parserOptions: {
-    sourceType: 'module'
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module"
   },
-  extends: 'standard',
-  env: {
-    browser: true,
-    node: true,
-    es6: false
+  "extends": "standard",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": false
+  },
+  "globals": {
+    "define": true
+  },
+  "rules": {
+    "brace-style": ["off"]
   }
 }

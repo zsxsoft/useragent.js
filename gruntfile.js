@@ -30,9 +30,6 @@ module.exports = function (grunt) {
       }
     },
     concat: {
-            /* options: {
-            	separator: ";"
-            },*/
       dist: {
         src: ['dist/tmp/lib/*.js', 'dist/tmp/index.js'],
         dest: 'dist/useragent.js'
@@ -97,16 +94,9 @@ module.exports = function (grunt) {
           configFile: './.eslintrc',
           ignore: false
         },
-        src: ['dist/tmp/*.js']
-      },
-
-      concat: {
-        options: {
-          configFile: './.eslintrc',
-          ignore: false
-        },
-        src: ['dist/useragent.js']
+        src: ['lib/*.js']
       }
+
     },
     nodeunit: {
       all: ['test/test.js']
@@ -114,19 +104,19 @@ module.exports = function (grunt) {
 
   })
 
+  grunt.loadNpmTasks('grunt-eslint')
   grunt.loadNpmTasks('grunt-text-replace')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-transcoding')
   grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-eslint')
   grunt.loadNpmTasks('grunt-contrib-nodeunit')
 
   grunt.registerTask('default', 'useragent.js', function () {
-    var tasks = ['nodeunit', 'copy:base']
+    var tasks = ['eslint:before', 'nodeunit', 'copy:base']
     if (language === 'asp' || language === 'wscript') tasks.push('replace:asp')
-    tasks.push('eslint:before', 'concat', 'eslint:concat')
+    tasks.push('concat')
     if (!doNotCompile) {
       tasks.push('uglify')
     }
