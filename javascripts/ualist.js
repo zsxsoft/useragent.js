@@ -14,7 +14,7 @@
         ],
         [
             ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HM NOTE 1W Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30; 360browser(securitypay,securityinstalled); 360(android,uppayplugin); 360 Aphone Browser (5.4.1)"],
-            ["360se", "xiaomi", "xiaomi", "android", "device", "Xiaomi HM-NOTE 1W", "", "", "Android", "4.2.2", "Android 4.2.2", "Xiaomi", "HM-NOTE 1W", "Xiaomi HM-NOTE 1W"]
+            ["360se", "xiaomi", "xiaomi", "android", "device", "Redmi Note 1W", "", "", "Android", "4.2.2", "Android 4.2.2", "Redmi", "Note 1W", "Redmi Note 1W"]
         ],
         [
             ["Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko se5_i) Chrome/31.0.1650.63 Safari/537.36 QIHU 360SE"],
@@ -2322,15 +2322,51 @@
         ],
         [
             ["Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36"],
-            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus One", "Chrome", "39.0.2171.93", "Android", "4.4.4", "Android 4.4.4", "OnePlus", "One", "OnePlus One"]
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 1", "Chrome", "39.0.2171.93", "Android", "4.4.4", "Android 4.4.4", "OnePlus", "1", "OnePlus 1"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 5.1.1; ONE A2005 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36"],
-            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus Two", "Chrome", "47.0.2526.83", "Android", "5.1.1", "Android 5.1.1", "OnePlus", "Two", "OnePlus Two"]
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 2", "Chrome", "47.0.2526.83", "Android", "5.1.1", "Android 5.1.1", "OnePlus", "2", "OnePlus 2"]
         ],
         [
             ["Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36"],
             ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus X", "Chrome", "46.0.2490.76", "Android", "5.1", "Android 5.1", "OnePlus", "X", "OnePlus X"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 6.0.1; ONEPLUS A3000 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36"],
+            ["chrome", "oneplus", "oneplus", "android", "device", "OnePlus 3", "Chrome", "50.0.2661.86", "Android", "6.0.1", "Android 6.0.1", "OnePlus", "3", "OnePlus 3"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Xiaomi 4c", "Chrome", "43.0.2357.121", "Android", "5.1.1", "Android 5.1.1", "Xiaomi", "4c", "Xiaomi 4c"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1; MX5 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36"],
+            ["chrome", "meizu", "meizu", "android", "device", "Meizu MX5", "Chrome", "40.2214.121", "Android", "5.1", "Android 5.1", "Meizu", "MX5", "Meizu MX5"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 4.4.4; HM 2A Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Redmi 2A", "Chrome", "33.0.0.0", "Android", "4.4.4", "Android 4.4.4", "Redmi", "2A", "Redmi 2A"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.1; m3 note Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36"],
+            ["chrome", "meizu", "meizu", "android", "device", "Meizu m3 note", "Chrome", "40.2214.121", "Android", "5.1", "Android 5.1", "Meizu", "m3 note", "Meizu m3 note"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; Android 5.0.2; Redmi Note 2 Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36"],
+            ["chrome", "xiaomi", "xiaomi", "android", "device", "Redmi Note 2", "Chrome", "45.0.2454.95", "Android", "5.0.2", "Android 5.0.2", "Redmi", "Note 2", "Redmi Note 2"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; HS-T96 Build/IML74K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.5.2.394 U3/0.8.0 Mobile Safari/533.1"],
+            ["ucbrowser", "hisense", "hisense", "android", "device", "Hisense HS-T96", "UC Browser", "9.5.2.394", "Android", "4.0.3", "Android 4.0.3", "Hisense", "HS-T96", "Hisense HS-T96"]
+        ],
+        [
+            ["Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; hasee H45 T3 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/6.0 Mobile Safari/537.36"],
+            ["qqbrowser", "hasee", "hasee", "android", "device", "Hasee H45 T3", "MQQBrowser", "6.0", "Android", "4.2.2", "Android 4.2.2", "Hasee", "H45 T3", "Hasee H45 T3"]
+        ],
+        [
+            ["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"],
+            ["chrome", "mac-3", "null", "mac-3", "os", "macOS 10.12.0", "Chrome", "51.0.2704.103", "macOS", "10.12.0", "macOS 10.12.0", "", "", ""]
         ]
     ];
     // Node.js
