@@ -1015,8 +1015,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = BROWSER
     })
   } else { // Direct
-    root.USERAGENT_BROWSER = function () {}
-    root.USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
+    USERAGENT_BROWSER = function () {}
+    USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
   }
 })(this)
 
@@ -1498,8 +1498,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = DEVICE
     })
   } else { // Direct
-    root.USERAGENT_DEVICE = function () {}
-    root.USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
+    USERAGENT_DEVICE = function () {}
+    USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
   }
 })(this)
 
@@ -1628,7 +1628,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       ret.full = ret.name + (ret.version === '' ? '' : ' ' + ret.version)
     } else if (/Windows NT/i.test(ret.ua)) {
       ret.name = 'Windows NT'
-      rep = ret.ua.match(/Windows NT ([.0-9]+)/i)
+      rep = ret.ua.match(/Windows NT (\d+\.\d+)/i)
       if (rep !== null) {
         if (windowsVersion[rep[1]]) {
           returnWindows(ret, rep[1])
@@ -1920,8 +1920,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = OS
     })
   } else { // Direct
-    root.USERAGENT_OS = function () {}
-    root.USERAGENT_OS.prototype.analyze = OS.analyze
+    USERAGENT_OS = function () {}
+    USERAGENT_OS.prototype.analyze = OS.analyze
   }
 })(this)
 
@@ -1980,6 +1980,6 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     if (typeof USERAGENT_OS !== 'undefined') userAgent.osDetect = new USERAGENT_OS()
     if (typeof USERAGENT_DEVICE !== 'undefined') userAgent.deviceDetect = new USERAGENT_DEVICE()
     if (typeof USERAGENT_BROWSER !== 'undefined') userAgent.browserDetect = new USERAGENT_BROWSER()
-    root.USERAGENT = userAgent
+    USERAGENT = userAgent
   }
 })(this)
