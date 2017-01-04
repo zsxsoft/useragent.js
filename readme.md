@@ -14,7 +14,7 @@ A User-agent analyze project. Demo: http://project.zsxsoft.com/useragent.js/with
 - Windows Script Host (ASP / WScript / CScript)
 - Edge / Chrome / Firefox / Safari / Internet Explorer >= 8
 
-###IE&lt;8
+### IE&lt;8
 Import a Polyfill of ``Object.keys`` before import this. See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 ## Installion
@@ -49,7 +49,7 @@ console.log(Useragent);
 })();
 ```
 
-### RequireJS
+### Requirejs
 [Click here](http://zsxsoft.github.io/useragent.js/requirejs.html)
 
 ### Classical ASP

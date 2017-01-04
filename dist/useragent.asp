@@ -1931,13 +1931,14 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
 /* global USERAGENT_BROWSER */
 'use strict';
 (function (root) {
+
   var CommonJS = typeof module !== 'undefined' && module.exports
   var CMD = typeof define !== 'undefined' && define.cmd
   var AMD = typeof define !== 'undefined' && define.amd
   var userAgent = {}
 
-  userAgent.version = '0.5.4'
-  userAgent.publishDate = '20161017'
+  userAgent.version = '0.5.6'
+  userAgent.publishDate = '20170104'
 
   userAgent.analyze = function (uaString) {
     var returnObject = {}
