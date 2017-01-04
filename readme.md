@@ -9,61 +9,56 @@ useragent.js
 
 A User-agent analyze project. Demo: http://project.zsxsoft.com/useragent.js/withimage.html
 
-##Compatibility
-Node.JS / (Windows) Classical ASP / (Windows) WScript / (Windows) CScript / Internet Explorer *+ / Google Chrome / Mozilla Firefox / Apple Safari
+## Compatibility
+- Nodejs >= 0.12
+- Windows Script Host (ASP / WScript / CScript)
+- Edge / Chrome / Firefox / Safari / Internet Explorer >= 8
 
 ###IE&lt;8
-Please import a Polyfill of ``Object.keys`` before import this. See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+Import a Polyfill of ``Object.keys`` before import this. See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
-##Installion
+## Installion
 ``$ npm install useragent.js``
 
-##Compress
-
-If you want to use it in the browser directly, please run ``grunt`` to compress it.
-
-##Test
-```bash
-$ npm test
-```
-
-##Run
-####In Node
+## Usage
+### Nodejs
 ```javascript
-var userAgent = require("useragent.js");
-var ua = userAgent.analyze("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36");
-console.log("TEST UA: " + ua.ua);
-console.log("TEST BROWSER:" + ua.browser.full + " (" + ua.browser.name + " VERSION = " + ua.browser.version + " )");
-console.log("TEST OS:" + ua.os.full + " (" + ua.os.name + " VERSION = " + ua.os.version + " )");
-console.log("TEST DEVICE:" + ua.device.full);
+const userAgent = require("useragent.js");
+const ua = userAgent.analyze("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36");
+console.log(`TEST UA: ${ua.ua}`);
+console.log(`TEST BROWSER: ${ua.browser.full} (${ua.browser.name}, ${ua.browser.version})`);
+console.log(`TEST OS: ${ua.os.full} (${ua.os.name}, ${ua.os.version})`);
+console.log(`TEST DEVICE: ${ua.device.full}`);
 ```
 
-####In Webpack / browserify
+### Webpack / browserify
 ```javascript
 import Useragent from 'useragent.js';
 console.log(Useragent);
 ```
 
-####In Browser
+### Browser
 [Click here](http://zsxsoft.github.io/useragent.js/basic.html)
 ```javascript
 (function () {
-		var ua = USERAGENT.analyze(navigator.userAgent);
-		document.getElementById("useragent").innerHTML = ua.ua;
-		document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
-		document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
-		document.getElementById("device").innerHTML = ua.device.full;
+  var ua = USERAGENT.analyze(navigator.userAgent);
+  document.getElementById("useragent").innerHTML = ua.ua;
+  document.getElementById("browser").innerHTML = ua.browser.full + " (" + ua.browser.name + " VERSION = "  + ua.browser.version + " )";
+  document.getElementById("os").innerHTML = ua.os.full + " (" + ua.os.name + " VERSION = "  + ua.os.version + " )";
+  document.getElementById("device").innerHTML = ua.device.full;
 })();
 ```
 
-####In RequireJS
+### RequireJS
 [Click here](http://zsxsoft.github.io/useragent.js/requirejs.html)
 
-####In SeaJS
-[Click here](http://zsxsoft.github.io/useragent.js/seajs.html)
-
-####In Classical ASP
+### Classical ASP
 [Click here](http://zsxsoft.github.io/useragent.js/classicalasp.html)
+
+## Test
+```bash
+$ npm test
+```
 
 ## Result
 ```javascript
@@ -123,4 +118,5 @@ Devices: Xiaomi / BlackBerry / Nexus / HTC / Huawei / Kindle / Lenovo / LG / Mot
 
 The MIT License
 
-The images can be gotten from [php-useragent](https://github.com/zsxsoft/php-useragent).
+## Images
+Download icons from [php-useragent](https://github.com/zsxsoft/php-useragent).

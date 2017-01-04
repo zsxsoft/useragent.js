@@ -1,6 +1,6 @@
 {
   "name": "useragent.js",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
   "main": "index.js",
   "scripts": {
