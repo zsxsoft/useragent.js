@@ -2367,6 +2367,10 @@
         [
             ["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"],
             ["chrome", "mac-3", "null", "mac-3", "os", "macOS 10.12.0", "Chrome", "51.0.2704.103", "macOS", "10.12.0", "macOS 10.12.0", "", "", ""]
+        ],
+        [
+            ["Mozilla/5.0 (Windows NT 10.0.14986; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2950.4 Safari/537.36"],
+            ["chrome", "win-6", "null", "win-6", "os", "Windows 10 x64", "Chrome", "57.0.2950.4", "Windows NT", "10.0", "Windows 10 x64", "", "", ""]
         ]
     ];
     // Node.js
