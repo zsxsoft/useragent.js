@@ -1015,8 +1015,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = BROWSER
     })
   } else { // Direct
-    USERAGENT_BROWSER = function () {}
-    USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
+    root.USERAGENT_BROWSER = function () {}
+    root.USERAGENT_BROWSER.prototype.analyze = BROWSER.analyze
   }
 })(this)
 
@@ -1498,8 +1498,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = DEVICE
     })
   } else { // Direct
-    USERAGENT_DEVICE = function () {}
-    USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
+    root.USERAGENT_DEVICE = function () {}
+    root.USERAGENT_DEVICE.prototype.analyze = DEVICE.analyze
   }
 })(this)
 
@@ -1920,8 +1920,8 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       module.exports = OS
     })
   } else { // Direct
-    USERAGENT_OS = function () {}
-    USERAGENT_OS.prototype.analyze = OS.analyze
+    root.USERAGENT_OS = function () {}
+    root.USERAGENT_OS.prototype.analyze = OS.analyze
   }
 })(this)
 
@@ -1930,13 +1930,14 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
 /* global USERAGENT_BROWSER */
 'use strict';
 (function (root) {
+
   var CommonJS = typeof module !== 'undefined' && module.exports
   var CMD = typeof define !== 'undefined' && define.cmd
   var AMD = typeof define !== 'undefined' && define.amd
   var userAgent = {}
 
-  userAgent.version = '0.5.4'
-  userAgent.publishDate = '20161017'
+  userAgent.version = '0.5.6'
+  userAgent.publishDate = '20170104'
 
   userAgent.analyze = function (uaString) {
     var returnObject = {}
@@ -1980,6 +1981,6 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     if (typeof USERAGENT_OS !== 'undefined') userAgent.osDetect = new USERAGENT_OS()
     if (typeof USERAGENT_DEVICE !== 'undefined') userAgent.deviceDetect = new USERAGENT_DEVICE()
     if (typeof USERAGENT_BROWSER !== 'undefined') userAgent.browserDetect = new USERAGENT_BROWSER()
-    USERAGENT = userAgent
+    root.USERAGENT = userAgent
   }
 })(this)
