@@ -123,7 +123,7 @@
       ret.full = ret.name + (ret.version === '' ? '' : ' ' + ret.version)
     } else if (/Windows NT/i.test(ret.ua)) {
       ret.name = 'Windows NT'
-      rep = ret.ua.match(/Windows NT ([.0-9]+)/i)
+      rep = ret.ua.match(/Windows NT (\d+\.\d+)/i)
       if (rep !== null) {
         if (windowsVersion[rep[1]]) {
           returnWindows(ret, rep[1])
