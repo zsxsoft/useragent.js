@@ -1,7 +1,7 @@
 {
   "name": "useragent.js",
   "main": "dist/useragent.min.js",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "homepage": "https://zsxsoft.github.io/useragent.js",
   "authors": [
     "zsx <zsx@zsxsoft.com>"
