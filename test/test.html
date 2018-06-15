@@ -21,17 +21,31 @@
 
 var test = {
 	equals: function (a, b, c) {
-		document.write("<p class='" + (a == b ? 'correct' : 'error') + "'>" + (a == b ? a : c) + "</p>");
+		var ret = a === b
+		document.write("<p class='" + (ret ? 'correct' : 'error') + "'>" + (ret ? a : (a + ' - ' + b + ' - ' + c)) + "</p>");
 	}
 }
 for (var index in testUAList) {
 	var item = testUAList[index];
 	var ua = USERAGENT.analyze(item[0][0]);
 	test.equals(item[1][0], ua.browser.image, ua.ua);
-	test.equals(item[1][1], ua.platform.dir, ua.ua);
-	test.equals(item[1][2], ua.platform.image, ua.ua);
-	test.equals(item[1][3], ua.browser.full, ua.ua);
-	test.equals(item[1][4], ua.platform.full, ua.ua);
+	test.equals(item[1][1], ua.platform.image, ua.ua);
+	test.equals(item[1][2], ua.device.image, ua.ua);
+	test.equals(item[1][3], ua.os.image, ua.ua);
+
+	test.equals(item[1][4], ua.platform.dir, ua.ua);
+	test.equals(item[1][5], ua.platform.full, ua.ua);
+
+	test.equals(item[1][6], ua.browser.name, ua.ua);
+	test.equals(item[1][7], ua.browser.version, ua.ua);
+
+	test.equals(item[1][8], ua.os.name, ua.ua);
+	test.equals(item[1][9], ua.os.version, ua.ua);
+	test.equals(item[1][10], ua.os.full, ua.ua);
+
+	test.equals(item[1][11], ua.device.brand, ua.ua);
+	test.equals(item[1][12], ua.device.model, ua.ua);
+	test.equals(item[1][13], ua.device.full, ua.ua);
 }
 
 var fun = function () {
