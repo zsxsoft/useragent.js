@@ -3,7 +3,6 @@
 /* global USERAGENT_BROWSER */
 'use strict';
 (function (root) {
-
   var CommonJS = typeof module !== 'undefined' && module.exports
   var CMD = typeof define !== 'undefined' && define.cmd
   var AMD = typeof define !== 'undefined' && define.amd

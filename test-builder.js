@@ -7,7 +7,7 @@ let buildObject = []
 testUAList.forEach((item) => {
   let ua = userAgent.analyze(item[0][0])
   buildObject.push([
-        [item[0][0]],
+    [item[0][0]],
     [
       ua.browser.image,
       ua.platform.image,

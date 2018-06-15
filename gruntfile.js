@@ -115,7 +115,7 @@ module.exports = function (grunt) {
     if (language === 'asp') {
       tasks.push('copy:asp')
     }
-        // tasks.push("replace:uglify");
+    // tasks.push("replace:uglify");
     tasks.push('clean')
 
     grunt.task.run(tasks)
