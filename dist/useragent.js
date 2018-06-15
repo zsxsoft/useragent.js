@@ -86,6 +86,10 @@
     'baidubrowser': {
       image: 'bidubrowser'
     },
+    'baiduboxapp': {
+      title: '{%BaiduBoxApp%}',
+      image: 'bidubrowser'
+    },
     'baiduhd': {
       title: '{%BaiduHD%}',
       image: 'bidubrowser'
@@ -677,7 +681,7 @@
     'microsoft office': {
       callback: function (rep, ret) {
         ret.version = '' // Do not detect it
-/**
+        /**
  * Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2
  * Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)
  *
@@ -807,12 +811,12 @@
     if ((lowerTitle === 'opera' || lowerTitle === 'opera next' || lowerTitle === 'opera developer') && /OPR/i.test(ret.ua)) {
       start = 'OPR'
     } else if (
-((lowerTitle === 'opera' || lowerTitle === 'opera next' || lowerTitle === 'opera labs') && /Version/i.test(ret.ua)) ||
+      ((lowerTitle === 'opera' || lowerTitle === 'opera next' || lowerTitle === 'opera labs') && /Version/i.test(ret.ua)) ||
 ((lowerTitle === 'opera mobi' && /Version/i.test(ret.ua))) ||
 ((lowerTitle === 'safari' && /Version/i.test(ret.ua))) ||
 ((lowerTitle === 'pre' && /Version/i.test(ret.ua))) ||
 ((lowerTitle === 'android webkit'))
-) {
+    ) {
       start = 'Version'
     } else if (lowerTitle === 'links') {
       start = 'Links ('
@@ -821,14 +825,14 @@
     } else if (lowerTitle === 'ucweb' && /UCBrowser/i.test(ret.ua)) {
       start = 'UCBrowser'
     } else if (
-lowerTitle === 'tenfourfox' ||
-lowerTitle === 'classilla' ||
-lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
-) {
-// We have IE11 or newer
+      (lowerTitle === 'tenfourfox' || lowerTitle === 'classilla' || lowerTitle === 'msie') && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
+    ) {
+      // We have IE11 or newer
       start = ' rv'
     } else if (lowerTitle === 'nichrome/self') {
       start = 'self'
+    } else if (lowerTitle === 'edga') {
+      ret.name = 'Edge Android'
     }
     start = start.replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\-]', 'g'), '\\$&')
     var regEx = new RegExp(start + '[ |/|:]?([.0-9a-zA-Z]+)', 'i')
@@ -929,8 +933,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     } else if (/SE /i.test(ret.ua) && /MetaSr/i.test(ret.ua)) {
       ret.name = ret.full = 'Sogou Explorer'
       ret.image = 'sogou'
-    } else if ((/Ubuntu; Mobile/i.test(ret.ua) || /Ubuntu; Tablet/i.test(ret.ua) &&
-/WebKit/i.test(ret.ua))) {
+    } else if (((/Ubuntu; Mobile/i.test(ret.ua) || /Ubuntu; Tablet/i.test(ret.ua)) && /WebKit/i.test(ret.ua))) {
       ret.name = ret.full = 'Ubuntu Web Browser'
       ret.image = 'ubuntuwebbrowser'
     } else if (/Avant Browser/i.test(ret.ua)) { // Fuck it
@@ -941,6 +944,9 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       ret.image = 'android-webkit'
     } else if (/Windows.+Chrome.+Edge/i.test(ret.ua)) {
       ret.full = getVersion(ret, 'Edge')
+      ret.image = 'edge'
+    } else if (/Edga/i.test(ret.ua)) {
+      ret.full = getVersion(ret, 'Edga')
       ret.image = 'edge'
     } else if (/Chrome|crios/i.test(ret.ua)) {
       if (/crios/i.test(ret.ua)) {
@@ -971,7 +977,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     } else if (/MSIE/i.test(ret.ua) || /Trident/i.test(ret.ua)) {
       ret.full = 'Internet Explorer' + getVersion(ret, 'MSIE')
       ret.image = 'msie'
-      rep = ret.ua.match(/(MSIE[ |\/]?| rv:)([.0-9a-zA-Z]+)/i)
+      rep = ret.ua.match(/(MSIE[ |/]?| rv:)([.0-9a-zA-Z]+)/i)
       if (rep !== null) {
         var ieVersion = parseInt(rep[2])
         if (ieVersion >= 11) {
@@ -1380,7 +1386,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
 
     if (rep) {
       ret.model += (ret.model === '' ? '' : ' ') + rep[deviceItem.version.item].replace(/_/g, '')
-            // ret.addChild = false; // If it has some supplementary name then do not check child.
+      // ret.addChild = false; // If it has some supplementary name then do not check child.
     }
   }
 
@@ -1401,7 +1407,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
           case 'childItem':
           case 'version':
           case 'regEx':
-                        // Do nothing..
+            // Do nothing..
             break
           case 'brand':
           case 'model':
@@ -1442,10 +1448,9 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
 
   var analyze = function (ret) {
     if (analyzeItem(ret, deviceList)) {
-      return
+      // Do nothing
     }
-
-        // Apple
+    // Apple
     else if (/iPad/i.test(ret.ua)) {
       ret.brand = 'Apple'
       ret.model = 'iPad'
@@ -1613,7 +1618,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       ret.name += ' Phone'
       ret.image = 'windowsphone'
 
-      rep = ret.ua.match(/Windows Phone (OS )?([0-9\.]+)/i)
+      rep = ret.ua.match(/Windows Phone (OS )?([0-9.]+)/i)
       if (rep !== null) {
         ret.version = rep[2]
         var intVersion = parseInt(ret.version)
@@ -1669,13 +1674,13 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
     } else if (/Windows CE|Windows .+Mobile/i.test(ret.ua)) {
       ret.full += ' CE'
       ret.image = 'win-2'
-            // #JSCOVERAGE_IF false
+      // #JSCOVERAGE_IF false
     } else if (/WM5/i.test(ret.ua)) {
       ret.name += ' Mobile'
       ret.version = '5'
       ret.full = ret.name + ' ' + ret.version
       ret.image = 'win-phone'
-            // #JSCOVERAGE_ENDIF
+      // #JSCOVERAGE_ENDIF
     } else if (/WindowsMobile/i.test(ret.ua)) {
       ret.name += ' Mobile'
       ret.full = ret.name
@@ -1705,7 +1710,7 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
       }
     } else if (/(L|K|X|Ed)?Ubuntu/i.test(ret.ua)) { // The count of Ubuntu users is more than others.
       ret.name = 'Ubuntu'
-      rep = ret.ua.match(/Ubuntu[\/| ]([.0-9]+[.0-9a-zA-Z]+)/i)
+      rep = ret.ua.match(/Ubuntu[/| ]([.0-9]+[.0-9a-zA-Z]+)/i)
 
       if (rep) {
         ret.version = rep[1]
@@ -1777,11 +1782,11 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
         ret.image = defaultOSList[name].image || ret.image
       }
     }
-        // Opera's Useragent does not contains 'Linux'
+    // Opera's Useragent does not contains 'Linux'
     else if (/Android|ADR /i.test(ret.ua)) {
       ret.name = 'Android'
       ret.image = 'android'
-      rep = ret.ua.match(/(Android|Adr)[ |\/]([.0-9]+)/i)
+      rep = ret.ua.match(/(Android|Adr)[ |/]([.0-9]+)/i)
       if (rep) {
         ret.version = rep[2]
       }
@@ -1930,14 +1935,10 @@ lowerTitle === 'msie' && / rv:([.0-9a-zA-Z]+)/i.test(ret.ua)
 /* global USERAGENT_BROWSER */
 'use strict';
 (function (root) {
-
   var CommonJS = typeof module !== 'undefined' && module.exports
   var CMD = typeof define !== 'undefined' && define.cmd
   var AMD = typeof define !== 'undefined' && define.amd
   var userAgent = {}
-
-  userAgent.version = '0.5.6'
-  userAgent.publishDate = '20170104'
 
   userAgent.analyze = function (uaString) {
     var returnObject = {}
